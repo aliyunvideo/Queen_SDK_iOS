@@ -75,6 +75,26 @@ typedef NS_ENUM(NSInteger, kQueenBeautyParams) {
      腮红，值的范围[0,1]，默认0
      */
     kQueenBeautyParamsBlush            = 9,
+    /** 脸部美颜参数项，需要先打开QueenBeautyTypeFaceBuffing 项
+     口红色相 [-0.5,0.5], 默认0
+    */
+    kQueenBeautyParamsLipstickColorParam  = 10,
+    /** 脸部美颜参数项，需要先打开QueenBeautyTypeFaceBuffing 项
+     口红饱和度[0,1], 默认0
+    */
+    kQueenBeautyParamsLipstickGlossParam  = 11,
+    /** 脸部美颜参数项，需要先打开QueenBeautyTypeFaceBuffing 项
+     口红明度[0,1], 默认0
+    */
+    kQueenBeautyParamsLipstickBrightnessParam = 12,
+    /** 脸部美颜参数项，需要先打开QueenBeautyTypeFaceBuffing 项
+     亮眼[0,1], 默认0
+    */
+    kQueenBeautyParamsBrightenEye         = 13,
+    /** 脸部美颜参数项，需要先打开QueenBeautyTypeFaceBuffing 项
+     红润[0,1], 默认0
+    */
+    kQueenBeautyParamsSkinRed             = 14,
 };
 
 /**美妆类型，需要先打开QueenBeautyTypeMakeup 类型
@@ -172,9 +192,15 @@ typedef NS_ENUM(NSInteger, kQueenBeautyFaceShapeType) {
     /** 人中，值的范围[-1,1]，默认0
      */
     kQueenBeautyFaceShapeTypePhiltrum      = 21,
+    /** 发际线，值的范围[-1,1]，默认0
+     */
+    kQueenBeautyFaceShapeTypeHairLine = 22,
+    /** 嘴角上扬(微笑)，值的范围[0,1]，默认0
+     */
+    kQueenBeautyFaceShapeTypeSmile = 23,
     /** 最大值
      */
-    kQueenBeautyFaceShapeTypeMAX           = 22
+    kQueenBeautyFaceShapeTypeMAX        = 24
 };
 
 /** 美妆混合模式

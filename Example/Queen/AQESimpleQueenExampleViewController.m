@@ -74,6 +74,16 @@
     [self.beautyEngine setQueenBeautyParams:kQueenBeautyParamsLipstick value:0.5f];
     // 设置腮红系数
     [self.beautyEngine setQueenBeautyParams:kQueenBeautyParamsBlush value:0.5f];
+    // 设置口红色相系数
+    [self.beautyEngine setQueenBeautyParams:kQueenBeautyParamsLipstickColorParam value:0.1f];
+    // 设置口红饱和度系数
+    [self.beautyEngine setQueenBeautyParams:kQueenBeautyParamsLipstickGlossParam value:0.5f];
+    // 设置口红明度系数
+    [self.beautyEngine setQueenBeautyParams:kQueenBeautyParamsLipstickBrightnessParam value:0.5f];
+    // 设置亮眼系数
+    [self.beautyEngine setQueenBeautyParams:kQueenBeautyParamsBrightenEye value:0.5f];
+    // 设置红润系数
+    [self.beautyEngine setQueenBeautyParams:kQueenBeautyParamsSkinRed value:0.5f];
     
     // 打开美妆功能开关
     [self.beautyEngine setQueenBeautyType:kQueenBeautyTypeMakeup enable:YES];
@@ -86,6 +96,10 @@
     [self.beautyEngine setQueenBeautyType:kQueenBeautyTypeFaceShape enable:YES];
     // 设置大眼系数
     [self.beautyEngine setFaceShape:kQueenBeautyFaceShapeTypeBigEye value:1.0f];
+    // 设置发际线系数
+    [self.beautyEngine setFaceShape:kQueenBeautyFaceShapeTypeHairLine value:1.0f];
+    // 设置嘴角上扬(微笑)系数
+    [self.beautyEngine setFaceShape:kQueenBeautyFaceShapeTypeSmile value:1.0f];
     
     // 打开滤镜功能开关
     [self.beautyEngine setQueenBeautyType:kQueenBeautyTypeLUT enable:YES];
@@ -93,9 +107,20 @@
     [self.beautyEngine setLutImagePath:@"lookups/lookup_1.png"];
     
     // 添加贴纸
-    [self.beautyEngine addMaterialWithPath:@"sticker/baiyang"];
+    [self.beautyEngine addMaterialWithPath:@"sticker/0"];
     //    // 删除贴纸
-    //    [self.beautyEngine removeMaterialWithPath:@"sticker/baiyang"];
+    //    [self.beautyEngine removeMaterialWithPath:@"sticker/0"];
+    
+    // 开启绿幕抠图功能
+    NSString *backgroundImgPath = @"background/red.png";
+    BOOL enableBlue = NO;
+    float threshold = 1.0f;
+    [self.beautyEngine setGreenScreen:backgroundImgPath blueScreenEnabled:enableBlue threshold:threshold autoThresholdEnabled:NO];
+    //    // 开启蓝幕抠图功能
+    //    enableBlue = YES;
+    //    [self.beautyEngine setGreenScreen:backgroundImgPath blueScreenEnabled:enableBlue threshold:threshold autoThresholdEnabled:NO];
+    //    // 取消抠图功能
+    //    [self.beautyEngine setGreenScreen:nil blueScreenEnabled:enableBlue threshold:threshold autoThresholdEnabled:NO];
     
     //    // 展示人脸识别特征点
     //    [self.beautyEngine showFaceDetectPoint:YES];

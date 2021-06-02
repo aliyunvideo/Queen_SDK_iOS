@@ -132,6 +132,16 @@
  */
 - (void)removeMaterialWithPath:(NSString *)materialPath;
 
+#pragma mark - "抠图相关API"
+/**
+ * @brief 绿幕/蓝幕抠图
+ * @param backgroundImagePath 需要绿/蓝幕替换的背景资源路径，传空即为取消抠图功能
+ * @param blueScreenEnabled 是否蓝幕抠图
+ * @param threshold 幕布敏感度[1,10]，默认1
+ * @param autoThresholdEnabled 是否根据环境动态计算幕布敏感度，为true时调节参数threshold失效，为false时调节参数threshold生效
+ */
+- (void)setGreenScreen:(NSString *)backgroundImagePath blueScreenEnabled:(BOOL)blueScreenEnabled threshold:(float)threshold autoThresholdEnabled:(BOOL)autoThresholdEnabled;
+
 #pragma mark - "数据处理"
 
 /** 处理PixelBuffer类型数据
