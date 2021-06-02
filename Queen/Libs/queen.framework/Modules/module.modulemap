@@ -1,0 +1,6 @@
+framework module queen {
+  umbrella header "queen.h"
+
+  export *
+  module * { export * }
+}
