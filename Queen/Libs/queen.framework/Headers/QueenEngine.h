@@ -26,12 +26,12 @@
 @property (nonatomic, assign) CVPixelBufferRef bufferOut;
 
 /**
- * @brief 输入图像的角度，值为0/90/180/270，默认值为0
+ * @brief 输入图像的角度，值为0/90/180/270，默认值为0，注：仅当QueenEngineConfigInfo的autoSettingImgAngle设置为YES才会生效
  */
 @property (nonatomic, assign) size_t inputAngle;
 
 /**
- * @brief 输出算法结果数据需要旋转的角度，值为0/90/180/270，默认值为0
+ * @brief 输出算法结果数据需要旋转的角度，值为0/90/180/270，默认值为0，注：仅当QueenEngineConfigInfo的autoSettingImgAngle设置为YES才会生效
  */
 @property (nonatomic, assign) size_t outputAngle;
 
@@ -42,13 +42,38 @@
 
 @end
 
+/** Queen美颜引擎处理Texture数据类
+ */
+
+@interface QETextureData : NSObject
+
+@property (nonatomic, assign) uint32_t inputTextureID;
+@property (nonatomic, assign) uint32_t outputTextureID;
+@property (nonatomic, assign) int width;
+@property (nonatomic, assign) int height;
+@property (nonatomic, assign) bool isOes;
+
+@end
+
 /** Queen美颜引擎类
  */
 @interface QueenEngine : NSObject
 
+/**
+ * @brief 初始化引擎
+ * @param configInfo 初始化配置
+ *
+ */
 - (instancetype)initWithConfigInfo:(QueenEngineConfigInfo *)configInfo;
 
+/**
+ * @brief 销毁引擎，需要在渲染线程调用
+ *
+ */
+- (void)destroyEngine;
+
 #pragma mark - "美颜类型和美颜参数API"
+
 /**
  * @brief 打开或者关闭某个美颜类型
  * @param type QueenBeautyType 类型的一个值
@@ -149,6 +174,25 @@
  * @return 接口调用状态码
  */
 - (kQueenResultCode)processPixelBuffer:(QEPixelBufferData *)pixelBufferData;
+
+/** 处理Texture类型数据
+ * @param textureData 需要处理的数据
+ * @return 接口调用状态码
+ */
+- (kQueenResultCode)processTexture:(QETextureData *)textureData;
+
+/** 视频帧数据更新处理，用于做engine算法层的数据处理，注：如处理Texture类型数据时需高级美颜处理需要调用此接口，处理PixelBuffer类型数据不需要调用此接口
+ * @param imageData 帧图片流
+ * @param format 帧图片流格式
+ * @param width 帧图片宽度
+ * @param height 帧图片高度
+ * @param stride 用于检测的图像的跨度(以像素为单位),即每行的字节数, 默认情况下设为 0
+ * @param intputAngle 当前输入帧图片需旋转的角度，计算方式参考Sample工程，注：仅当QueenEngineConfigInfo的autoSettingImgAngle设置为YES才会生效
+ * @param outputAngle 算法输出结果所需旋转的角度，计算方式参考Sample工程，注：仅当QueenEngineConfigInfo的autoSettingImgAngle设置为YES才会生效
+ * @param flipAxis 输出数据的xy轴翻转处理,0为不旋转,1为x轴翻转,2为y轴翻转
+ */
+- (void)updateInputDataAndRunAlg:(uint8_t *)imageData withImgFormat:(kQueenImageFormat)format withWidth:(int)width withHeight:(int)height withStride:(int)stride
+                  withInputAngle:(int)intputAngle withOutputAngle:(int)outputAngle withFlipAxis:(int)flipAxis;
 
 #pragma mark - "调试相关"
 

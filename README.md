@@ -18,7 +18,7 @@
 
 ### pods集成方式：
 ```ruby
-pod 'Queen', '1.1.0-official-pro'
+pod 'Queen', '1.1.2-official-pro'
 ```
 ### 本地集成方式：
 
@@ -57,8 +57,16 @@ CoreVideo.framework
 {
     // 初始化引擎配置信息对象
     QueenEngineConfigInfo *configInfo = [QueenEngineConfigInfo new];
-    NSString *bundlPath = [[NSBundle mainBundle] bundlePath];
+
+    // 设置是否自动设置图片旋转角度，如设备锁屏，并且默认图像采集来自摄像头的话可以设置自动设置图片旋转角度
+#if kEnableCustomSettingImgAngle
+    configInfo.autoSettingImgAngle = NO;
+#else
+    configInfo.autoSettingImgAngle = YES;
+#endif
+
     // 设置资源根目录
+    NSString *bundlPath = [[NSBundle mainBundle] bundlePath];
     configInfo.resRootPath = [bundlPath stringByAppendingString:@"/res"];
 
     // 引擎初始化
@@ -149,8 +157,10 @@ CoreVideo.framework
         QEPixelBufferData *bufferData = [QEPixelBufferData new];
         bufferData.bufferIn = pixelBufferRef;
         bufferData.bufferOut = pixelBufferRef;
+#if kEnableCustomSettingImgAngle
         bufferData.inputAngle = self.cameraRotate; //要正确传入pixelBufferRef的方向，否则人脸识别会失败，如果不知道pixelBufferRef的方向，可参考此demo属性cameraRotate取值的方法
         bufferData.outputAngle = self.cameraRotate; //一般和inputAngle取值一样就可以了
+#endif
         // 对pixelBuffer进行图像处理，输出处理后的buffer
         kQueenResultCode resultCode = [self.beautyEngine processPixelBuffer:bufferData];//执行此方法的线程需要始终是同一条线程
         if (resultCode == kQueenResultCodeOK && bufferData.bufferOut)
@@ -181,7 +191,9 @@ CoreVideo.framework
 {
     if (self.beautyEngine)
     {
-        self.beautyEngine = nil;//释放queen，确保当前线程与执行processPixelBuffer:是同一条线程
+        //释放queen，确保当前线程与执行processPixelBuffer:是同一条线程
+        [self.beautyEngine destroyEngine];
+        self.beautyEngine = nil;
     }
 }
 ```

@@ -332,6 +332,23 @@ typedef NS_ENUM(NSInteger, kQueenResultCode) {
     kQueenResultCodeNoEffect   = 3,
 };
 
+/** 颜色格式
+ */
+typedef NS_ENUM(NSInteger, kQueenImageFormat) {
+    /** RGB
+     */
+    kQueenImageFormatRGB = 0,
+    /** NV21
+     */
+    kQueenImageFormatNV21 = 1,
+    /** NV12
+     */
+    kQueenImageFormatNV12 = 2,
+    /** RGBA
+     */
+    kQueenImageFormatRGBA = 3
+};
+
 /** Queen美颜引擎配置信息类
  */
 @interface QueenEngineConfigInfo :NSObject
@@ -350,6 +367,11 @@ typedef NS_ENUM(NSInteger, kQueenResultCode) {
  * @brief 是否要渲染到屏幕，默认为NO
  */
 @property (nonatomic, assign) BOOL toScreen;
+
+/**
+ * @brief 是否自动计算图像的inputAngle和outputAngle，默认为NO
+ */
+@property (nonatomic, assign) BOOL autoSettingImgAngle API_AVAILABLE(ios(8.0));
 
 @end
 
