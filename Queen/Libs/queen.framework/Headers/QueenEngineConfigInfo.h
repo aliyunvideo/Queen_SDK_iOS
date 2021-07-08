@@ -369,9 +369,9 @@ typedef NS_ENUM(NSInteger, kQueenImageFormat) {
 @property (nonatomic, assign) BOOL toScreen;
 
 /**
- * @brief 是否自动计算图像的inputAngle和outputAngle，默认为NO
+ * @brief 是否自动计算图像的inputAngle和outputAngle，默认为NO，API_AVAILABLE(ios(8.0))
  */
-@property (nonatomic, assign) BOOL autoSettingImgAngle API_AVAILABLE(ios(8.0));
+@property (nonatomic, assign) BOOL autoSettingImgAngle;
 
 @end
 

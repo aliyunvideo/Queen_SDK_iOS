@@ -26,12 +26,12 @@
 @property (nonatomic, assign) CVPixelBufferRef bufferOut;
 
 /**
- * @brief 输入图像的角度，值为0/90/180/270，默认值为0，注：仅当QueenEngineConfigInfo的autoSettingImgAngle设置为YES才会生效
+ * @brief 输入图像的角度，值为0/90/180/270，默认值为0，注：仅当QueenEngineConfigInfo的autoSettingImgAngle设置为NO才会生效
  */
 @property (nonatomic, assign) size_t inputAngle;
 
 /**
- * @brief 输出算法结果数据需要旋转的角度，值为0/90/180/270，默认值为0，注：仅当QueenEngineConfigInfo的autoSettingImgAngle设置为YES才会生效
+ * @brief 输出算法结果数据需要旋转的角度，值为0/90/180/270，默认值为0，注：仅当QueenEngineConfigInfo的autoSettingImgAngle设置为NO才会生效
  */
 @property (nonatomic, assign) size_t outputAngle;
 
@@ -127,7 +127,7 @@
 /**
  * @brief 设置美妆透明度，可指定性别
  * @param makeupType 美妆类型
- * @param isFeMale 是否是女性，女性:YES，男性:NO
+ * @param isFeMale 是否是女性，女性:YES，男性:NO，（男性为接口预留，这里均传女性即YES即可）
  * @param alpha 妆容透明度
  */
 - (void)setMakeupAlphaWithType:(kQueenBeautyMakeupType)makeupType female:(BOOL)isFeMale alpha:(float)alpha;
@@ -187,8 +187,8 @@
  * @param width 帧图片宽度
  * @param height 帧图片高度
  * @param stride 用于检测的图像的跨度(以像素为单位),即每行的字节数, 默认情况下设为 0
- * @param intputAngle 当前输入帧图片需旋转的角度，计算方式参考Sample工程，注：仅当QueenEngineConfigInfo的autoSettingImgAngle设置为YES才会生效
- * @param outputAngle 算法输出结果所需旋转的角度，计算方式参考Sample工程，注：仅当QueenEngineConfigInfo的autoSettingImgAngle设置为YES才会生效
+ * @param intputAngle 当前输入帧图片需旋转的角度，计算方式参考Sample工程，注：仅当QueenEngineConfigInfo的autoSettingImgAngle设置为NO才会生效
+ * @param outputAngle 算法输出结果所需旋转的角度，计算方式参考Sample工程，注：仅当QueenEngineConfigInfo的autoSettingImgAngle设置为NO才会生效
  * @param flipAxis 输出数据的xy轴翻转处理,0为不旋转,1为x轴翻转,2为y轴翻转
  */
 - (void)updateInputDataAndRunAlg:(uint8_t *)imageData withImgFormat:(kQueenImageFormat)format withWidth:(int)width withHeight:(int)height withStride:(int)stride
