@@ -1,0 +1,66 @@
+[
+  {
+    "shortDescription" : "",
+    "metadataOutputVersion" : "3.0",
+    "outputSchema" : [
+      {
+        "hasShapeFlexibility" : "0",
+        "isOptional" : "0",
+        "dataType" : "Float32",
+        "formattedType" : "MultiArray (Float32 2 × 384 × 224)",
+        "shortDescription" : "",
+        "shape" : "[2, 384, 224]",
+        "name" : "MobileNetV3_Seg__Softmax__0",
+        "type" : "MultiArray"
+      }
+    ],
+    "version" : "",
+    "modelParameters" : [
+
+    ],
+    "author" : "",
+    "specificationVersion" : 3,
+    "license" : "",
+    "isUpdatable" : "0",
+    "availability" : {
+      "macOS" : "10.14",
+      "tvOS" : "12.0",
+      "watchOS" : "5.0",
+      "iOS" : "12.0",
+      "macCatalyst" : "12.0"
+    },
+    "modelType" : {
+      "name" : "MLModelType_neuralNetwork"
+    },
+    "inputSchema" : [
+      {
+        "hasShapeFlexibility" : "0",
+        "isOptional" : "0",
+        "dataType" : "Float32",
+        "formattedType" : "MultiArray (Float32 3 × 384 × 224)",
+        "shortDescription" : "",
+        "shape" : "[3, 384, 224]",
+        "name" : "inputnode__0",
+        "type" : "MultiArray"
+      }
+    ],
+    "userDefinedMetadata" : {
+
+    },
+    "generatedClassName" : "bokeh",
+    "neuralNetworkLayerTypeHistogram" : {
+      "Concat" : 26,
+      "LoadConstant" : 2,
+      "ActivationLinear" : 6,
+      "ActivationReLU" : 42,
+      "Multiply" : 2,
+      "ResizeBilinear" : 4,
+      "Add" : 1,
+      "PoolingAverage" : 3,
+      "Softmax" : 1,
+      "BatchNorm" : 72,
+      "Convolution" : 72
+    },
+    "method" : "predict"
+  }
+]

@@ -72,6 +72,12 @@
  */
 - (void)destroyEngine;
 
+/**
+ * @brief 高性能模式，效果会稍微差点，默认为NO
+ *
+ */
+- (void)powerSavingEnabled:(BOOL)enabled;
+
 #pragma mark - "美颜类型和美颜参数API"
 
 /**
@@ -146,26 +152,32 @@
 
 #pragma mark - "贴纸相关API"
 /**
- * @brief 增加贴纸/贴图，素材统一接口，支持GLTF,TAOPAI,MEDIAAI 类型
+ * @brief 增加贴纸/贴图/实景抠图需要替换的背景，素材统一接口，支持GLTF,TAOPAI,MEDIAAI 类型
  * @param materialPath 要添加的素材的路径
  */
 - (void)addMaterialWithPath:(NSString *)materialPath;
 
 /**
- * @brief 删除贴纸/贴图
+ * @brief 删除贴纸/贴图/实景抠图需要替换的背景
  * @param materialPath 要删除的素材的路径
  */
 - (void)removeMaterialWithPath:(NSString *)materialPath;
 
 #pragma mark - "抠图相关API"
 /**
- * @brief 绿幕/蓝幕抠图
+ * @brief 绿幕/蓝幕抠图，注意：开启此抠图功能
  * @param backgroundImagePath 需要绿/蓝幕替换的背景资源路径，传空即为取消抠图功能
  * @param blueScreenEnabled 是否蓝幕抠图
  * @param threshold 幕布敏感度[1,10]，默认1
  * @param autoThresholdEnabled 是否根据环境动态计算幕布敏感度，为true时调节参数threshold失效，为false时调节参数threshold生效
  */
 - (void)setGreenScreen:(NSString *)backgroundImagePath blueScreenEnabled:(BOOL)blueScreenEnabled threshold:(float)threshold autoThresholdEnabled:(BOOL)autoThresholdEnabled;
+
+/**
+ * @brief 调整实景抠图的前景边距
+ * @param foregroundPadding 前景边距，[0,15]，默认0
+ */
+- (void)setAISegmentForegroundPadding:(int)foregroundPadding;
 
 #pragma mark - "数据处理"
 

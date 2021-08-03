@@ -15,25 +15,28 @@ NS_ASSUME_NONNULL_BEGIN
 typedef NS_ENUM(NSInteger, kQueenBeautyType) {
     /** 基础美颜（主要包括磨皮、锐化）
      */
-    kQueenBeautyTypeSkinBuffing    = 0,
+    kQueenBeautyTypeSkinBuffing    =    0,
     /** 脸部美颜（主要包括去眼袋、法令纹、白牙、口红、腮红）
      */
-    kQueenBeautyTypeFaceBuffing    = 1,
+    kQueenBeautyTypeFaceBuffing    =    1,
     /** 美妆（主要包括整妆、高光、美瞳、口红、眼妆）
      */
-    kQueenBeautyTypeMakeup         = 2,
+    kQueenBeautyTypeMakeup         =    2,
     /** 美型（主要包括瘦脸、瘦下巴、大眼、瘦鼻、美唇等）
      */
-    kQueenBeautyTypeFaceShape      = 3,
+    kQueenBeautyTypeFaceShape      =    3,
     /** 基础美颜（美白）
      */
-    kQueenBeautyTypeSkinWhiting    = 4,
+    kQueenBeautyTypeSkinWhiting    =    4,
     /** 滤镜，当设置滤镜后，可以指定一个滤镜图片
      */
-    kQueenBeautyTypeLUT            = 5,
+    kQueenBeautyTypeLUT            =    5,
+    /** 背景处理，实景抠图，使背景虚化，API_AVAILABLE(ios(12.0))
+     */
+    kQueenBeautyTypeBackgroundProcess = 6,
     /** 最大值
      */
-    kQueenBeautyTypeMax            = 6,
+    kQueenBeautyTypeMax            =    7,
 };
 
 /**美颜参数，值为float，除基础美颜外需要先将功能打开，对应参数才有效
