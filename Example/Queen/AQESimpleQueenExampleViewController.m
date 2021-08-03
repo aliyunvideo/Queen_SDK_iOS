@@ -70,7 +70,7 @@
     [self testSticker];
     [self testGreenScreenOrBlueScreenCutout];
     [self testBackgroundCutout];
-    [self testDebug];
+//    [self testDebug];
 }
 
 - (void)testBaseFaceBeauty
@@ -115,6 +115,10 @@
     [self.beautyEngine setQueenBeautyParams:kQueenBeautyParamsBrightenEye value:0.5f];
     // 设置红润系数
     [self.beautyEngine setQueenBeautyParams:kQueenBeautyParamsSkinRed value:0.5f];
+    // 设置去皱纹系数
+    [self.beautyEngine setQueenBeautyParams:kQueenBeautyParamsWrinkles value:0.2f];
+    // 设置去暗沉系数
+    [self.beautyEngine setQueenBeautyParams:kQueenBeautyParamsBrightenFace value:0.2f];
 }
 
 - (void)testFaceMakeup
@@ -122,12 +126,24 @@
     // 打开美妆功能开关
     [self.beautyEngine setQueenBeautyType:kQueenBeautyTypeMakeup enable:YES];
     
-    // 设置整妆资源，也可以是资源的绝对路径
-    [self.beautyEngine setMakeupWithType:kQueenBeautyMakeupTypeWhole paths:@[@"makeup/活力妆.png"] blendType:kQueenBeautyBlendNormal];
-    // 设置高光资源，也可以是资源的绝对路径
-    [self.beautyEngine setMakeupWithType:kQueenBeautyMakeupTypeHighlight paths:@[@"makeup/highlight.png"] blendType:kQueenBeautyBlendOverlay];
-//    // 取消设置整妆资源
-//    [self.beautyEngine setMakeupWithType:kQueenBeautyMakeupTypeWhole paths:nil blendType:kQueenBeautyBlendNormal];
+    // 设置美妆整妆效果，资源路径也可以是资源的绝对路径
+    [self.beautyEngine setMakeupWithType:kQueenBeautyMakeupTypeWhole paths:@[@"makeup/huoli.png"] blendType:kQueenBeautyBlendLabMix];
+    
+//    // 设置美妆高光效果，资源路径也可以是资源的绝对路径
+//    [self.beautyEngine setMakeupWithType:kQueenBeautyMakeupTypeHighlight paths:@[@"makeup/highlight.png"] blendType:kQueenBeautyBlendOverlay];
+//    // 设置美妆美瞳效果，资源路径也可以是资源的绝对路径
+//    [self.beautyEngine setMakeupWithType:kQueenBeautyMakeupTypeEyeball paths:@[@"makeup/eyeball.png"] blendType:kQueenBeautyBlendNormal];
+//    // 设置美妆口红效果，资源路径也可以是资源的绝对路径
+//    [self.beautyEngine setMakeupWithType:kQueenBeautyMakeupTypeMouth paths:@[@"makeup/mouth.png"] blendType:kQueenBeautyBlendNormal];
+//    // 设置美妆卧蚕效果，资源路径也可以是资源的绝对路径
+//    [self.beautyEngine setMakeupWithType:kQueenBeautyMakeupTypeWocan paths:@[@"makeup/wocan.png"] blendType:kQueenBeautyBlendCurve];
+//    // 设置美妆眼妆效果，资源路径也可以是资源的绝对路径
+//    [self.beautyEngine setMakeupWithType:kQueenBeautyMakeupTypeEyeBrow paths:@[@"makeup/eyebrow.png"] blendType:kQueenBeautyBlendNormal];
+//    // 设置美妆腮红效果，资源路径也可以是资源的绝对路径
+//    [self.beautyEngine setMakeupWithType:kQueenBeautyMakeupTypeBlush paths:@[@"makeup/blush_daizi.png"] blendType:kQueenBeautyBlendNormal];
+
+//    // 清除美妆效果
+//    [self.beautyEngine resetAllMakeupType];
 }
 
 - (void)testFaceShape
@@ -149,7 +165,7 @@
     [self.beautyEngine setQueenBeautyType:kQueenBeautyTypeLUT enable:YES];
     
     // 设置滤镜资源，也可以是资源的绝对路径
-    [self.beautyEngine setLutImagePath:@"lookups/lookup_1.png"];
+    [self.beautyEngine setLutImagePath:@"lookups/ly1.png"];
     // 设置滤镜强度
     [self.beautyEngine setQueenBeautyParams:kQueenBeautyParamsLUT value:0.8f];
 }
@@ -170,13 +186,16 @@
     // 开启绿幕抠图功能
     NSString *backgroundImgPath = @"background/red.png";//也可以是资源的绝对路径
     BOOL enableBlue = NO;
-    float threshold = 1.0f;
-    [self.beautyEngine setGreenScreen:backgroundImgPath blueScreenEnabled:enableBlue threshold:threshold autoThresholdEnabled:NO];
-    // 开启蓝幕抠图功能
-    enableBlue = YES;
-    [self.beautyEngine setGreenScreen:backgroundImgPath blueScreenEnabled:enableBlue threshold:threshold autoThresholdEnabled:NO];
-    // 取消抠图功能
-    [self.beautyEngine setGreenScreen:nil blueScreenEnabled:enableBlue threshold:threshold autoThresholdEnabled:NO];
+    float threshold = 0;
+    BOOL autoThreshold = YES;
+    [self.beautyEngine setGreenScreen:backgroundImgPath blueScreenEnabled:enableBlue threshold:threshold autoThresholdEnabled:autoThreshold];
+    
+//    // 开启蓝幕抠图功能
+//    enableBlue = YES;
+//    [self.beautyEngine setGreenScreen:backgroundImgPath blueScreenEnabled:enableBlue threshold:threshold autoThresholdEnabled:autoThreshold];
+    
+//    // 取消幕布抠图功能
+//    [self.beautyEngine setGreenScreen:nil blueScreenEnabled:enableBlue threshold:threshold autoThresholdEnabled:autoThreshold];
 }
 
 - (void)testBackgroundCutout
@@ -198,7 +217,7 @@
     // 展示人脸识别特征点
     [self.beautyEngine showFaceDetectPoint:YES];
     // 展示美妆三角剖分信息, 需要先开启美妆功能
-    [self.beautyEngine showFaceDetectPoint:YES];
+    [self.beautyEngine showMakeupLine:YES];
 }
 
 - (CVPixelBufferRef)getProcessedPixelBufferRefWithCurrentPixelBufferRef:(CVPixelBufferRef)pixelBufferRef

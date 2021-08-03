@@ -9,8 +9,8 @@
 
 ### 设备和系统版本
 
-- iOS设备：arm64的移动设备（iPad/iPhone，不包含支持arm64架构的Mac）
-- iOS系统版本：iOS 11.0及以上
+- iOS设备：armv7或arm64的移动设备（iPad/iPhone，不包含支持arm64架构的Mac）
+- iOS系统版本：iOS 9.0及以上
 
 ## 集成Queen SDK
 
@@ -18,7 +18,7 @@
 
 ### pods集成方式：
 ```ruby
-pod 'Queen', '1.2.0-official-pro'
+pod 'Queen', '1.3.0-official-pro'
 ```
 ### 本地集成方式：
 
@@ -26,9 +26,7 @@ pod 'Queen', '1.2.0-official-pro'
 ```
 queen.framework
 FaceDetection.framework
-Face3D.framework
 opencv2.framework
-pixelai.framework
 MNN.framework
 bokeh_ios.framework
 ```
@@ -48,9 +46,8 @@ Foundation.framework
 AssetsLibrary.framework
 CoreGraphics.framework
 CoreVideo.framework
-CoreML.framework
 ```
-4. 分别将获取到的queen.framework文件中的queen-ios.Bundle、Face3D.framework文件中的face3d_res.Bundle添加到工程目录中。
+4. 将获取到的queen.framework文件中的queen-ios.Bundle添加到工程目录中。
 
 ## 使用示例
 
@@ -59,21 +56,21 @@ CoreML.framework
 {
     // 初始化引擎配置信息对象
     QueenEngineConfigInfo *configInfo = [QueenEngineConfigInfo new];
-
+    
     // 设置是否自动设置图片旋转角度，如设备锁屏，并且默认图像采集来自摄像头的话可以设置自动设置图片旋转角度
 #if kEnableCustomSettingImgAngle
     configInfo.autoSettingImgAngle = NO;
 #else
     configInfo.autoSettingImgAngle = YES;
 #endif
-
+    
     // 设置资源根目录
     NSString *bundlPath = [[NSBundle mainBundle] bundlePath];
     configInfo.resRootPath = [bundlPath stringByAppendingString:@"/res"];
-
+    
     // 引擎初始化
     self.beautyEngine = [[QueenEngine alloc] initWithConfigInfo:configInfo];
-
+    
     [self testBaseFaceBeauty];
     [self testAdvancedFaceBeauty];
     [self testFaceMakeup];
@@ -82,22 +79,22 @@ CoreML.framework
     [self testSticker];
     [self testGreenScreenOrBlueScreenCutout];
     [self testBackgroundCutout];
-    [self testDebug];
+//    [self testDebug];
 }
 
 - (void)testBaseFaceBeauty
 {
     // 打开磨皮锐化功能开关
     [self.beautyEngine setQueenBeautyType:kQueenBeautyTypeSkinBuffing enable:YES];
-
+    
     // 设置磨皮系数
     [self.beautyEngine setQueenBeautyParams:kQueenBeautyParamsSkinBuffing value:0.5f];
     // 设置锐化系数
     [self.beautyEngine setQueenBeautyParams:kQueenBeautyParamsSharpen value:0.5f];
-
+    
     // 打开美白功能开关
     [self.beautyEngine setQueenBeautyType:kQueenBeautyTypeSkinWhiting enable:YES];
-
+    
     // 设置美白系数
     [self.beautyEngine setQueenBeautyParams:kQueenBeautyParamsWhitening value:0.5f];
 }
@@ -106,7 +103,7 @@ CoreML.framework
 {
     // 打开高级美颜功能开关
     [self.beautyEngine setQueenBeautyType:kQueenBeautyTypeFaceBuffing enable:YES];
-
+    
     // 设置去眼袋系数
     [self.beautyEngine setQueenBeautyParams:kQueenBeautyParamsPouch value:0.5f];
     // 设置去法令纹系数
@@ -127,27 +124,42 @@ CoreML.framework
     [self.beautyEngine setQueenBeautyParams:kQueenBeautyParamsBrightenEye value:0.5f];
     // 设置红润系数
     [self.beautyEngine setQueenBeautyParams:kQueenBeautyParamsSkinRed value:0.5f];
+    // 设置去皱纹系数
+    [self.beautyEngine setQueenBeautyParams:kQueenBeautyParamsWrinkles value:0.2f];
+    // 设置去暗沉系数
+    [self.beautyEngine setQueenBeautyParams:kQueenBeautyParamsBrightenFace value:0.2f];
 }
 
 - (void)testFaceMakeup
 {
     // 打开美妆功能开关
     [self.beautyEngine setQueenBeautyType:kQueenBeautyTypeMakeup enable:YES];
+    
+    // 设置美妆整妆效果，资源路径也可以是资源的绝对路径
+    [self.beautyEngine setMakeupWithType:kQueenBeautyMakeupTypeWhole paths:@[@"makeup/huoli.png"] blendType:kQueenBeautyBlendLabMix];
+    
+//    // 设置美妆高光效果，资源路径也可以是资源的绝对路径
+//    [self.beautyEngine setMakeupWithType:kQueenBeautyMakeupTypeHighlight paths:@[@"makeup/highlight.png"] blendType:kQueenBeautyBlendOverlay];
+//    // 设置美妆美瞳效果，资源路径也可以是资源的绝对路径
+//    [self.beautyEngine setMakeupWithType:kQueenBeautyMakeupTypeEyeball paths:@[@"makeup/eyeball.png"] blendType:kQueenBeautyBlendNormal];
+//    // 设置美妆口红效果，资源路径也可以是资源的绝对路径
+//    [self.beautyEngine setMakeupWithType:kQueenBeautyMakeupTypeMouth paths:@[@"makeup/mouth.png"] blendType:kQueenBeautyBlendNormal];
+//    // 设置美妆卧蚕效果，资源路径也可以是资源的绝对路径
+//    [self.beautyEngine setMakeupWithType:kQueenBeautyMakeupTypeWocan paths:@[@"makeup/wocan.png"] blendType:kQueenBeautyBlendCurve];
+//    // 设置美妆眼妆效果，资源路径也可以是资源的绝对路径
+//    [self.beautyEngine setMakeupWithType:kQueenBeautyMakeupTypeEyeBrow paths:@[@"makeup/eyebrow.png"] blendType:kQueenBeautyBlendNormal];
+//    // 设置美妆腮红效果，资源路径也可以是资源的绝对路径
+//    [self.beautyEngine setMakeupWithType:kQueenBeautyMakeupTypeBlush paths:@[@"makeup/blush_daizi.png"] blendType:kQueenBeautyBlendNormal];
 
-    // 设置整妆资源，也可以是资源的绝对路径
-    [self.beautyEngine setMakeupWithType:kQueenBeautyMakeupTypeWhole paths:@[@"makeup/活力妆.png"] blendType:kQueenBeautyBlendNormal];
-    // 设置高光资源，也可以是资源的绝对路径
-    [self.beautyEngine setMakeupWithType:kQueenBeautyMakeupTypeHighlight paths:@[@"makeup/highlight.png"] blendType:kQueenBeautyBlendOverlay];
-
-//    // 取消设置整妆资源
-//    [self.beautyEngine setMakeupWithType:kQueenBeautyMakeupTypeWhole paths:nil blendType:kQueenBeautyBlendNormal];
+//    // 清除美妆效果
+//    [self.beautyEngine resetAllMakeupType];
 }
 
 - (void)testFaceShape
 {
     // 打开美型功能开关
     [self.beautyEngine setQueenBeautyType:kQueenBeautyTypeFaceShape enable:YES];
-
+    
     // 设置大眼系数
     [self.beautyEngine setFaceShape:kQueenBeautyFaceShapeTypeBigEye value:1.0f];
     // 设置发际线系数
@@ -160,9 +172,9 @@ CoreML.framework
 {
     // 打开滤镜功能开关
     [self.beautyEngine setQueenBeautyType:kQueenBeautyTypeLUT enable:YES];
-
+    
     // 设置滤镜资源，也可以是资源的绝对路径
-    [self.beautyEngine setLutImagePath:@"lookups/lookup_1.png"];
+    [self.beautyEngine setLutImagePath:@"lookups/ly1.png"];
     // 设置滤镜强度
     [self.beautyEngine setQueenBeautyParams:kQueenBeautyParamsLUT value:0.8f];
 }
@@ -171,13 +183,11 @@ CoreML.framework
 {
     // 添加贴纸，也可以是资源的绝对路径
     [self.beautyEngine addMaterialWithPath:@"sticker/1"];
-
-//    // 添加贴纸，贴纸图层从下往上叠加
-//    [self.beautyEngine addMaterialWithPath:@"sticker/2"];
-
-//    // 删除贴纸
-//    [self.beautyEngine removeMaterialWithPath:@"sticker/1"];
-//    [self.beautyEngine removeMaterialWithPath:@"sticker/2"];
+//    // 添加贴纸，贴纸图层从下往上叠加
+//    [self.beautyEngine addMaterialWithPath:@"sticker/2"];
+//    // 删除贴纸
+//    [self.beautyEngine removeMaterialWithPath:@"sticker/1"];
+//    [self.beautyEngine removeMaterialWithPath:@"sticker/2"];
 }
 
 - (void)testGreenScreenOrBlueScreenCutout
@@ -185,13 +195,16 @@ CoreML.framework
     // 开启绿幕抠图功能
     NSString *backgroundImgPath = @"background/red.png";//也可以是资源的绝对路径
     BOOL enableBlue = NO;
-    float threshold = 1.0f;
-    [self.beautyEngine setGreenScreen:backgroundImgPath blueScreenEnabled:enableBlue threshold:threshold autoThresholdEnabled:NO];
-    // 开启蓝幕抠图功能
-    enableBlue = YES;
-    [self.beautyEngine setGreenScreen:backgroundImgPath blueScreenEnabled:enableBlue threshold:threshold autoThresholdEnabled:NO];
-    // 取消抠图功能
-    [self.beautyEngine setGreenScreen:nil blueScreenEnabled:enableBlue threshold:threshold autoThresholdEnabled:NO];
+    float threshold = 0;
+    BOOL autoThreshold = YES;
+    [self.beautyEngine setGreenScreen:backgroundImgPath blueScreenEnabled:enableBlue threshold:threshold autoThresholdEnabled:autoThreshold];
+    
+//    // 开启蓝幕抠图功能
+//    enableBlue = YES;
+//    [self.beautyEngine setGreenScreen:backgroundImgPath blueScreenEnabled:enableBlue threshold:threshold autoThresholdEnabled:autoThreshold];
+    
+//    // 取消幕布抠图功能
+//    [self.beautyEngine setGreenScreen:nil blueScreenEnabled:enableBlue threshold:threshold autoThresholdEnabled:autoThreshold];
 }
 
 - (void)testBackgroundCutout
@@ -204,7 +217,6 @@ CoreML.framework
     NSString *backgroundResPath = @"background/static_changlang";//也可以是资源的绝对路径
     // 替换人像背景为静态图，相同资源不能重复添加
     [self.beautyEngine addMaterialWithPath:backgroundResPath];
-
 //    // 取消人像背景设置为静态图
 //    [self.beautyEngine removeMaterialWithPath:backgroundResPath];
 }
@@ -214,7 +226,7 @@ CoreML.framework
     // 展示人脸识别特征点
     [self.beautyEngine showFaceDetectPoint:YES];
     // 展示美妆三角剖分信息, 需要先开启美妆功能
-    [self.beautyEngine showFaceDetectPoint:YES];
+    [self.beautyEngine showMakeupLine:YES];
 }
 
 - (CVPixelBufferRef)getProcessedPixelBufferRefWithCurrentPixelBufferRef:(CVPixelBufferRef)pixelBufferRef

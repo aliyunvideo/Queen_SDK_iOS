@@ -60,6 +60,11 @@
 @interface QueenEngine : NSObject
 
 /**
+ * @brief 获取版本号
+ */
++ (NSString *)getVersion;
+
+/**
  * @brief 初始化引擎
  * @param configInfo 初始化配置
  *

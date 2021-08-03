@@ -31,7 +31,7 @@ typedef NS_ENUM(NSInteger, kQueenBeautyType) {
     /** 滤镜，当设置滤镜后，可以指定一个滤镜图片
      */
     kQueenBeautyTypeLUT            =    5,
-    /** 背景处理，实景抠图，使背景虚化，API_AVAILABLE(ios(12.0))
+    /** 背景处理，实景抠图，使背景虚化
      */
     kQueenBeautyTypeBackgroundProcess = 6,
     /** 最大值
@@ -98,6 +98,14 @@ typedef NS_ENUM(NSInteger, kQueenBeautyParams) {
      红润[0,1], 默认0
     */
     kQueenBeautyParamsSkinRed             = 14,
+    /** 脸部美颜参数项，需要先打开QueenBeautyTypeFaceBuffing 项
+     祛皱纹[0,1], 默认0
+    */
+    kQueenBeautyParamsWrinkles             = 15,
+    /** 脸部美颜参数项，需要先打开QueenBeautyTypeFaceBuffing 项
+     祛暗沉[0,1], 默认0
+    */
+    kQueenBeautyParamsBrightenFace         = 16,
 };
 
 /**美妆类型，需要先打开QueenBeautyTypeMakeup 类型
@@ -115,15 +123,18 @@ typedef NS_ENUM(NSInteger, kQueenBeautyMakeupType) {
     /** 口红
      */
     kQueenBeautyMakeupTypeMouth       = 3,
+    /** 卧蚕
+     */
+    kQueenBeautyMakeupTypeWocan       = 4,
     /** 眼妆
      */
-    kQueenBeautyMakeupTypeEyeBrow     = 4,
+    kQueenBeautyMakeupTypeEyeBrow     = 5,
     /** 腮红
      */
-    kQueenBeautyMakeupTypeBlush       = 5,
+    kQueenBeautyMakeupTypeBlush       = 6,
     /** 最大值
      */
-    kQueenBeautyMakeupTypeMakeupMax   = 6
+    kQueenBeautyMakeupTypeMakeupMax   = 7
 };
 
 /**美型类型，需要先打开kQueenBeautyTypeFaceShape 类型
@@ -299,6 +310,13 @@ typedef NS_ENUM(NSInteger, kQueenBeautyBlend) {
     /** 颜色
      */
     kQueenBeautyBlendColor = 29,
+    /** 曲线
+     */
+    kQueenBeautyBlendCurve = 30,
+    /**
+     * 视觉融合模式
+     */
+    kQueenBeautyBlendLabMix = 31,
     /** 最大值
      */
     kQueenBeautyBlendMax = 999
