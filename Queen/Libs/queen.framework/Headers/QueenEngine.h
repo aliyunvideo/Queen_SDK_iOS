@@ -79,6 +79,7 @@
 
 /**
  * @brief 高性能模式，效果会稍微差点，默认为NO
+ * @param enabled YES: 打开，NO:关闭
  *
  */
 - (void)powerSavingEnabled:(BOOL)enabled;

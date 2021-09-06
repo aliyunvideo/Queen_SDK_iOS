@@ -18,7 +18,7 @@
 
 ### pods集成方式：
 ```ruby
-pod 'Queen', '1.3.0-official-pro'
+pod 'Queen', '1.3.1-official-full'
 ```
 ### 本地集成方式：
 
@@ -43,7 +43,6 @@ CoreMedia.framework
 CoreMotion.framework
 CoreImage.framework
 Foundation.framework
-AssetsLibrary.framework
 CoreGraphics.framework
 CoreVideo.framework
 ```
@@ -141,15 +140,15 @@ CoreVideo.framework
 //    // 设置美妆高光效果，资源路径也可以是资源的绝对路径
 //    [self.beautyEngine setMakeupWithType:kQueenBeautyMakeupTypeHighlight paths:@[@"makeup/highlight.png"] blendType:kQueenBeautyBlendOverlay];
 //    // 设置美妆美瞳效果，资源路径也可以是资源的绝对路径
-//    [self.beautyEngine setMakeupWithType:kQueenBeautyMakeupTypeEyeball paths:@[@"makeup/eyeball.png"] blendType:kQueenBeautyBlendNormal];
+//    [self.beautyEngine setMakeupWithType:kQueenBeautyMakeupTypeEyeball paths:@[@"makeup/eyeball.png"] blendType:kQueenBeautyBlendLabMix];
 //    // 设置美妆口红效果，资源路径也可以是资源的绝对路径
-//    [self.beautyEngine setMakeupWithType:kQueenBeautyMakeupTypeMouth paths:@[@"makeup/mouth.png"] blendType:kQueenBeautyBlendNormal];
+//    [self.beautyEngine setMakeupWithType:kQueenBeautyMakeupTypeMouth paths:@[@"makeup/mouth.png"] blendType:kQueenBeautyBlendLabMix];
 //    // 设置美妆卧蚕效果，资源路径也可以是资源的绝对路径
 //    [self.beautyEngine setMakeupWithType:kQueenBeautyMakeupTypeWocan paths:@[@"makeup/wocan.png"] blendType:kQueenBeautyBlendCurve];
 //    // 设置美妆眼妆效果，资源路径也可以是资源的绝对路径
-//    [self.beautyEngine setMakeupWithType:kQueenBeautyMakeupTypeEyeBrow paths:@[@"makeup/eyebrow.png"] blendType:kQueenBeautyBlendNormal];
+//    [self.beautyEngine setMakeupWithType:kQueenBeautyMakeupTypeEyeBrow paths:@[@"makeup/eyebrow.png"] blendType:kQueenBeautyBlendLabMix];
 //    // 设置美妆腮红效果，资源路径也可以是资源的绝对路径
-//    [self.beautyEngine setMakeupWithType:kQueenBeautyMakeupTypeBlush paths:@[@"makeup/blush_daizi.png"] blendType:kQueenBeautyBlendNormal];
+//    [self.beautyEngine setMakeupWithType:kQueenBeautyMakeupTypeBlush paths:@[@"makeup/blush_daizi.png"] blendType:kQueenBeautyBlendLabMix];
 
 //    // 清除美妆效果
 //    [self.beautyEngine resetAllMakeupType];

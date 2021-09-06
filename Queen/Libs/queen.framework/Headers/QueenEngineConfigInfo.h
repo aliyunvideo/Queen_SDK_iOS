@@ -394,6 +394,11 @@ typedef NS_ENUM(NSInteger, kQueenImageFormat) {
  */
 @property (nonatomic, assign) BOOL autoSettingImgAngle;
 
+/**
+ * @brief 是否运行在自定义线程，默认为YES
+ */
+@property (nonatomic, assign) BOOL runOnCustomThread;
+
 @end
 
 NS_ASSUME_NONNULL_END

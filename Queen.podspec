@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'Queen'
-  s.version          = '1.3.0-official-pro'
+  s.version          = '1.3.1-official-full'
   s.summary          = 'Aliyun Queen library'
   s.description      = <<-DESC
 Aliyun Render And Compute Everything Engine.
@@ -14,8 +14,8 @@ Aliyun Render And Compute Everything Engine.
   s.source_files = 'Queen/Libs/queen.framework/Headers/*'
   s.resources = 'Queen/Libs/queen.framework/queen-ios.Bundle'
   s.vendored_frameworks = 'Queen/Libs/queen.framework', 'Queen/Libs/opencv2.framework', 'Queen/Libs/FaceDetection.framework', 'Queen/Libs/MNN.framework', 'Queen/Libs/bokeh_ios.framework'
-  s.frameworks = 'Metal', 'Accelerate', 'QuartzCore', 'OpenGLES', 'CoreMedia', 'CoreMotion', 'CoreImage', 'Foundation', 'AssetsLibrary', 'CoreGraphics', 'CoreVideo'
+  s.frameworks = 'Metal', 'Accelerate', 'QuartzCore', 'OpenGLES', 'CoreMedia', 'CoreMotion', 'CoreImage', 'Foundation', 'CoreGraphics', 'CoreVideo'
   s.weak_frameworks = 'MetalPerformanceShaders'
-  s.libraries = 'c++', 'compression'
+  s.libraries = 'c++', 'compression', 'z'
   s.user_target_xcconfig = {"ENABLE_BITCODE" => "NO"}
 end
