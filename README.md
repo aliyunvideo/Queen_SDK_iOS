@@ -12,6 +12,9 @@
 - iOS设备：armv7或arm64的移动设备（iPad/iPhone，不包含支持arm64架构的Mac）
 - iOS系统版本：iOS 9.0及以上
 
+## FAQ
+### 常见问题FAQ，参见：[FAQ](https://github.com/aliyunvideo/Queen_SDK_Android/blob/main/FAQ.md "Queen使用FAQ")
+
 ## 集成Queen SDK
 
 支持pods与本地集成两种方式。
