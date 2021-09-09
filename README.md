@@ -19,11 +19,12 @@
 
 支持pods与本地集成两种方式。
 
-### pods集成方式：
+### full版本：
+#### pods集成方式：
 ```ruby
 pod 'Queen', '1.3.1-official-full'
 ```
-### 本地集成方式：
+#### 本地集成方式：
 
 1. 下载并解压Sample示例工程，获取以下framework文件:
 ```
@@ -36,9 +37,11 @@ bokeh_ios.framework
 2. 打开Xcode，在工程target的General页签下，在Frameworks, Libraries, and Embedded Content区域中添加以上framework。其中，opencv2.framework和bokeh_ios.framework的Embed属性设置成Embed & Sign，其他framework的Embed属性设置成Do Not Embed。
 3. 在Frameworks, Libraries, and Embedded Content区域中添加以下系统依赖。
 ```
+libz.tbd
 libc++.tbd
 libcompression.tbd
 Metal.framework
+MetalPerformanceShaders.framework
 Accelerate.framework
 QuartzCore.framework
 OpenGLES.framework
@@ -50,6 +53,37 @@ CoreGraphics.framework
 CoreVideo.framework
 ```
 4. 将获取到的queen.framework文件中的queen-ios.Bundle添加到工程目录中。
+5. 在工程target的Build Settings页签下，搜索找到ENABLE_BITCODE一项，将其设置成NO。
+
+### lite版本：
+#### pods集成方式：
+```ruby
+pod 'Queen', '1.3.1-official-lite'
+```
+#### 本地集成方式：
+
+1. 下载并解压Sample示例工程，获取以下framework文件:
+```
+queen.framework
+```
+2. 打开Xcode，在工程target的General页签下，在Frameworks, Libraries, and Embedded Content区域中添加以上framework。将以上添加的framework的Embed属性设置成Do Not Embed。
+3. 在Frameworks, Libraries, and Embedded Content区域中添加以下系统依赖。
+```
+libz.tbd
+libc++.tbd
+libcompression.tbd
+Accelerate.framework
+QuartzCore.framework
+OpenGLES.framework
+CoreMedia.framework
+CoreMotion.framework
+CoreImage.framework
+Foundation.framework
+CoreGraphics.framework
+CoreVideo.framework
+```
+4. 将获取到的queen.framework文件中的queen-ios.Bundle添加到工程目录中。
+5. 在工程target的Build Settings页签下，搜索找到ENABLE_BITCODE一项，将其设置成NO。
 
 ## 使用示例
 
