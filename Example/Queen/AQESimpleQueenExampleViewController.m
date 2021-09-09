@@ -69,7 +69,7 @@
     [self testFilter];
     [self testSticker];
     [self testGreenScreenOrBlueScreenCutout];
-    [self testBackgroundCutout];
+//    [self testBackgroundCutout];
 //    [self testDebug];
 }
 
