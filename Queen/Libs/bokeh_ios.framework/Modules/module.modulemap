@@ -1,0 +1,6 @@
+framework module bokeh_ios {
+  umbrella header "bokeh_ios.h"
+
+  export *
+  module * { export * }
+}

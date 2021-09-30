@@ -126,15 +126,24 @@ typedef NS_ENUM(NSInteger, kQueenBeautyMakeupType) {
     /** 卧蚕
      */
     kQueenBeautyMakeupTypeWocan       = 4,
-    /** 眼妆
+    /** 眉毛
      */
     kQueenBeautyMakeupTypeEyeBrow     = 5,
     /** 腮红
      */
     kQueenBeautyMakeupTypeBlush       = 6,
+    /** 眼影
+     */
+    kQueenBeautyMakeupTypeEyeShadow   = 7,
+    /** 眼线
+     */
+    kQueenBeautyMakeupTypeEyeliner    = 8,
+    /** 睫毛
+     */
+    kQueenBeautyMakeupTypeEyelash     = 9,
     /** 最大值
      */
-    kQueenBeautyMakeupTypeMakeupMax   = 7
+    kQueenBeautyMakeupTypeMakeupMax   = 10
 };
 
 /**美型类型，需要先打开kQueenBeautyTypeFaceShape 类型
