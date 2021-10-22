@@ -93,7 +93,7 @@ CoreVideo.framework
 ### lite版本：
 #### pods集成方式：
 ```ruby
-pod 'Queen', '1.4.0-official-lite'
+pod 'Queen', '1.4.1-official-lite'
 ```
 #### 本地集成方式：
 

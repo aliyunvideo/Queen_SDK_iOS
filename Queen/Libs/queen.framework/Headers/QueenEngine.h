@@ -187,6 +187,12 @@
 
 #pragma mark - "数据处理"
 
+/** 人脸识别信息和渲染是否翻转以Y轴方向翻转
+ * @param faceRenderFlipY 需要关键点确定位置的图像渲染时是否反转，默认NO
+ * @param faceInfoFlipY 关键点数据是否翻转，默认NO
+ */
+- (void)setSetFaceRenderY:(BOOL)faceRenderFlipY faceInfoFlipY:(BOOL)faceInfoFlipY;
+
 /** 处理PixelBuffer类型数据
  * @param pixelBufferData 需要处理的数据
  * @return 接口调用状态码

@@ -408,6 +408,11 @@ typedef NS_ENUM(NSInteger, kQueenImageFormat) {
  */
 @property (nonatomic, assign) BOOL runOnCustomThread;
 
+/**
+ * @brief 预留字段，选填
+ */
+@property (nonatomic, copy) NSString *extraInfo;
+
 @end
 
 NS_ASSUME_NONNULL_END
