@@ -12,7 +12,6 @@
 
 /** Queen美颜引擎处理Pixelbuffer数据类
  */
-
 @interface QEPixelBufferData : NSObject
 
 /**
@@ -24,6 +23,21 @@
  * @brief 处理完后的CVPixelBufferRef
  */
 @property (nonatomic, assign) CVPixelBufferRef bufferOut;
+
+/**
+ * @brief 相机感光度 ISO
+ */
+@property (nonatomic, assign) int ISO;
+
+/**
+ * @brief 环境光亮度
+ */
+@property (nonatomic, assign) float brightness;
+
+/**
+ * @brief 图像曝光时间，单位秒
+ */
+@property (nonatomic, assign) float exposureTimeInSec;
 
 /**
  * @brief 输入图像的角度，值为0/90/180/270，默认值为0，注：仅当QueenEngineConfigInfo的autoSettingImgAngle设置为NO才会生效
@@ -44,20 +58,66 @@
 
 /** Queen美颜引擎处理Texture数据类
  */
-
 @interface QETextureData : NSObject
 
+/**
+ * @brief 需要处理的纹理ID
+ */
 @property (nonatomic, assign) uint32_t inputTextureID;
+
+/**
+ * @brief 处理完后的纹理ID
+ */
 @property (nonatomic, assign) uint32_t outputTextureID;
+
+/**
+ * @brief 图像宽
+ */
 @property (nonatomic, assign) int width;
+
+/**
+ * @brief 图像高
+ */
 @property (nonatomic, assign) int height;
-@property (nonatomic, assign) bool isOes;
+
+@end
+
+/** 手势识别数据类
+ */
+@interface QEGestureData : NSObject
+
+/**
+ * @brief 手势类型
+ */
+@property (nonatomic, assign) kQueenStaticGestureType gesture;
+
+/**
+ * @brief 动作类型
+ */
+@property (nonatomic, assign) kQueenHandActionType action;
+
+@end
+
+@class QueenEngine;
+
+@protocol QueenEngineDelegate <NSObject>
+
+/**
+ * @brief 检测到手势的回调
+ * @param engine 引擎对象
+ * @param gestureData 手势数据对象
+ */
+- (void)queenEngine:(QueenEngine *)engine didDetectGesture:(QEGestureData *)gestureData;
 
 @end
 
 /** Queen美颜引擎类
  */
 @interface QueenEngine : NSObject
+
+/** Queen回调代理对象
+ */
+@property (nonatomic, weak) id <QueenEngineDelegate> delegate;
 
 /**
  * @brief 获取版本号
@@ -67,20 +127,17 @@
 /**
  * @brief 初始化引擎
  * @param configInfo 初始化配置
- *
  */
 - (instancetype)initWithConfigInfo:(QueenEngineConfigInfo *)configInfo;
 
 /**
  * @brief 销毁引擎，需要在渲染线程调用
- *
  */
 - (void)destroyEngine;
 
 /**
  * @brief 高性能模式，效果会稍微差点，默认为NO
  * @param enabled YES: 打开，NO:关闭
- *
  */
 - (void)powerSavingEnabled:(BOOL)enabled;
 
@@ -90,7 +147,6 @@
  * @brief 打开或者关闭某个美颜类型
  * @param type QueenBeautyType 类型的一个值
  * @param isOpen YES: 打开，NO:关闭
- *
  */
 - (void)setQueenBeautyType:(kQueenBeautyType)type enable:(BOOL)isOpen;
 
@@ -100,6 +156,12 @@
  * @param value 需要设置的数值，值的范围都是[0,1],小于0的置0，大于1的置1
  */
 - (void)setQueenBeautyParams:(kQueenBeautyParams)param value:(float)value;
+
+/**
+ * @brief 获取美颜参数
+ * @param param 美颜参数类型，QueenBeautyParams 中的一个
+ */
+- (float)getQueenBeautyParams:(kQueenBeautyParams)param;
 
 #pragma mark - "滤镜相关API"
 
@@ -116,6 +178,14 @@
  *  @param value 需要设置的值
  */
 - (void)setFaceShape:(kQueenBeautyFaceShapeType)faceShapeType value:(float)value;
+
+#pragma mark - "美体相关API"
+/**
+ *  @brief 设置美体类型,设置前需要将kQueenBeautyTypeBodyShape打开
+ *  @param bodyShapeType  需要设置美体的类型，参考QueenBeautyBodyShapeType
+ *  @param value 需要设置的值
+ */
+- (void)setBodyShape:(kQueenBeautyBodyShapeType)bodyShapeType value:(float)value;
 
 #pragma mark - "美妆相关api"
 
@@ -180,6 +250,12 @@
 - (void)setGreenScreen:(NSString *)backgroundImagePath blueScreenEnabled:(BOOL)blueScreenEnabled threshold:(float)threshold autoThresholdEnabled:(BOOL)autoThresholdEnabled;
 
 /**
+ * @brief 调整实景抠图的背景处理方式
+ * @param backgroundProcessType 背景处理方式，默认为背景虚化
+ */
+- (void)setSegmentBackgroundProcessType:(kQueenBackgroundProcessType) backgroundProcessType;
+
+/**
  * @brief 调整实景抠图的前景边距
  * @param foregroundPadding 前景边距，[0,15]，默认0
  */
@@ -191,7 +267,7 @@
  * @param faceRenderFlipY 需要关键点确定位置的图像渲染时是否反转，默认NO
  * @param faceInfoFlipY 关键点数据是否翻转，默认NO
  */
-- (void)setSetFaceRenderY:(BOOL)faceRenderFlipY faceInfoFlipY:(BOOL)faceInfoFlipY;
+- (void)setFaceRenderFlipY:(BOOL)faceRenderFlipY faceInfoFlipY:(BOOL)faceInfoFlipY;
 
 /** 处理PixelBuffer类型数据
  * @param pixelBufferData 需要处理的数据
@@ -225,6 +301,18 @@
  * @param show 是否展示
  */
 - (void)showFaceDetectPoint:(BOOL)show;
+
+/**
+ * @brief 展示人体识别点位
+ * @param show 是否展示
+ */
+- (void)showBodyDetectPoint:(BOOL)show;
+
+/**
+ * @brief 展示手部识别点位
+ * @param show 是否展示
+ */
+- (void)showHandDetectPoint:(BOOL)show;
 
 /**
  * @brief 展示人脸区域三角剖分线

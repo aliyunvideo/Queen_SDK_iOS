@@ -19,7 +19,11 @@
 #import <CoreMotion/CoreMotion.h>
 #endif
 
+#if kEnableQueenEngine
+@interface AQESimpleQueenExampleViewController () <QueenEngineDelegate>
+#else
 @interface AQESimpleQueenExampleViewController ()
+#endif
 
 #if kEnableQueenEngine
 @property (nonatomic, strong) QueenEngine *beautyEngine;
@@ -69,6 +73,8 @@
     [self testFilter];
     [self testSticker];
     [self testGreenScreenOrBlueScreenCutout];
+    [self testAutoFilter];
+    [self testGestureDetect];
 //    [self testBackgroundCutout];
 //    [self testDebug];
 }
@@ -147,7 +153,7 @@
         // 设置美妆美瞳效果的透明度，目前female参数的值统一传YES/true，男性妆容还在优化中
         [self.beautyEngine setMakeupAlphaWithType:kQueenBeautyMakeupTypeEyeball female:YES alpha:1.0];
         // 设置美妆口红效果，资源路径也可以是资源的绝对路径
-        [self.beautyEngine setMakeupWithType:kQueenBeautyMakeupTypeMouth paths:@[@"makeup/mouth_yaochun/doushafen.2.31.png"] blendType:kQueenBeautyBlendLabMix];
+        [self.beautyEngine setMakeupWithType:kQueenBeautyMakeupTypeMouth paths:@[@"makeup/mouth_wumian/standout.2.31.png"] blendType:kQueenBeautyBlendLabMix];
         // 设置美妆口红效果的透明度，目前female参数的值统一传YES/true，男性妆容还在优化中
         [self.beautyEngine setMakeupAlphaWithType:kQueenBeautyMakeupTypeMouth female:YES alpha:0.5];
         // 设置美妆卧蚕效果，目前采用内置素材，不支持定制
@@ -157,23 +163,23 @@
         // 设置美妆眉毛效果，资源路径也可以是资源的绝对路径
         [self.beautyEngine setMakeupWithType:kQueenBeautyMakeupTypeEyeBrow paths:@[@"makeup/eyebrow/biaozhunmei.2.31.png"] blendType:kQueenBeautyBlendLabMix];
         // 设置美妆眉毛效果的透明度，目前female参数的值统一传YES/true，男性妆容还在优化中
-        [self.beautyEngine setMakeupAlphaWithType:kQueenBeautyMakeupTypeEyeBrow female:YES alpha:1.0];
+        [self.beautyEngine setMakeupAlphaWithType:kQueenBeautyMakeupTypeEyeBrow female:YES alpha:0.6];
         // 设置美妆腮红效果，资源路径也可以是资源的绝对路径
-        [self.beautyEngine setMakeupWithType:kQueenBeautyMakeupTypeBlush paths:@[@"makeup/blush/shaonv.2.31.png"] blendType:kQueenBeautyBlendLabMix];
+        [self.beautyEngine setMakeupWithType:kQueenBeautyMakeupTypeBlush paths:@[@"makeup/blush/weixun.2.31.png"] blendType:kQueenBeautyBlendLabMix];
         // 设置美妆腮红效果的透明度，目前female参数的值统一传YES/true，男性妆容还在优化中
-        [self.beautyEngine setMakeupAlphaWithType:kQueenBeautyMakeupTypeBlush female:YES alpha:1.0];
+        [self.beautyEngine setMakeupAlphaWithType:kQueenBeautyMakeupTypeBlush female:YES alpha:0.8];
         // 设置美妆眼影效果，资源路径也可以是资源的绝对路径
-        [self.beautyEngine setMakeupWithType:kQueenBeautyMakeupTypeEyeShadow paths:@[@"makeup/eyeshadow/shaonvfen.2.31.png"] blendType:kQueenBeautyBlendLabMix];
+        [self.beautyEngine setMakeupWithType:kQueenBeautyMakeupTypeEyeShadow paths:@[@"makeup/eyeshadow/naichazong.2.31.png"] blendType:kQueenBeautyBlendLabMix];
         // 设置美妆眼影效果的透明度，目前female参数的值统一传YES/true，男性妆容还在优化中
-        [self.beautyEngine setMakeupAlphaWithType:kQueenBeautyMakeupTypeEyeShadow female:YES alpha:0.8];
+        [self.beautyEngine setMakeupAlphaWithType:kQueenBeautyMakeupTypeEyeShadow female:YES alpha:0.7];
         // 设置美妆眼线效果，资源路径也可以是资源的绝对路径
-        [self.beautyEngine setMakeupWithType:kQueenBeautyMakeupTypeEyeliner paths:@[@"makeup/eyeliner_5B443E/guima.2.31.png"] blendType:kQueenBeautyBlendLabMix];
+        [self.beautyEngine setMakeupWithType:kQueenBeautyMakeupTypeEyeliner paths:@[@"makeup/eyeliner_292929/wenrou.2.31.png"] blendType:kQueenBeautyBlendLabMix];
         // 设置美妆眼线效果的透明度，目前female参数的值统一传YES/true，男性妆容还在优化中
-        [self.beautyEngine setMakeupAlphaWithType:kQueenBeautyMakeupTypeEyeliner female:YES alpha:0.6];
+        [self.beautyEngine setMakeupAlphaWithType:kQueenBeautyMakeupTypeEyeliner female:YES alpha:0.5];
         // 设置美妆睫毛效果，资源路径也可以是资源的绝对路径
         [self.beautyEngine setMakeupWithType:kQueenBeautyMakeupTypeEyelash paths:@[@"makeup/eyelash/yesheng.2.31.png"] blendType:kQueenBeautyBlendLabMix];
         // 设置美妆睫毛效果的透明度，目前female参数的值统一传YES/true，男性妆容还在优化中
-        [self.beautyEngine setMakeupAlphaWithType:kQueenBeautyMakeupTypeEyelash female:YES alpha:0.6];
+        [self.beautyEngine setMakeupAlphaWithType:kQueenBeautyMakeupTypeEyelash female:YES alpha:0.5];
     }
     
 //    // 清除美妆效果
@@ -184,10 +190,34 @@
 
 /*
     建议采用组合妆来替换整妆的效果，可以调节各部分细节，下面提供几种组合妆的模式：
-    1、糖果妆：高光（makeup/highlight/highlight.2.12.png, 透明度：0.4）、口红（makeup/mouth_yaochun/doushafen.2.31.png 透明度：0.5）、腮红（makeup/blush/shaonv.2.31.png 透明度：1.0）、眼影（makeup/eyeshadow/shaonvfen.2.31.png 透明度：0.8）、眼线（makeup/eyeliner_5B443E/guima.2.31.png 透明度：0.6）、睫毛（makeup/eyelash/yesheng.2.31.png 透明度：0.6）
-    2、夜店妆：高光（makeup/highlight/highlight.2.12.png, 透明度：0.4）、口红（makeup/mouth_wumian/naiyoucheng.2.31.png 透明度：0.5）、腮红（makeup/blush/chulian.2.31.png 透明度：1.0）、眼影（makeup/eyeshadow/jiaotangzong.2.31.png 透明度：0.8）、眼线（makeup/eyeliner_5B443E/xiaoyemao.2.31.png 透明度：0.6）、睫毛（makeup/eyelash/huopo.2.31.png 透明度：0.6）
-    3、复古妆：高光（makeup/highlight/highlight.2.12.png, 透明度：0.4）、口红（makeup/mouth_zirun/ningxiangzi.2.31.png 透明度：0.5）、腮红（makeup/blush/suyan.2.31.png 透明度：1.0）、眼影（makeup/eyeshadow/zhuanhongse.2.31.png 透明度：0.8）、眼线（makeup/eyeliner_5B443E/lingdong.2.31.png 透明度：0.6）、睫毛（makeup/eyelash/ziran.2.31.png 透明度：0.6）
-    4、桃花妆：高光（makeup/highlight/highlight.2.12.png, 透明度：0.4）、口红（makeup/mouth_wumian/naiyoucheng.2.31.png 透明度：0.5）、腮红（makeup/blush/shaonv.2.31.png  透明度：1.0）、眼影（makeup/eyeshadow/ziranse.2.31.png 透明度：0.8）、眼线（makeup/eyeliner_5B443E/wenrou.2.31.png 透明度：0.6）、睫毛（makeup/eyelash/wugu.2.31.png 透明度：0.6）
+    1、微醺妆：
+     眼影（makeup/eyeshadow/naichazong.2.31.png 透明度：0.7）、
+     睫毛（makeup/eyelash/yesheng.2.31.png 透明度：0.5）、
+     腮红（makeup/blush/weixun.2.31.png 透明度：0.8）、
+     眼线（makeup/eyeliner_292929/wenrou.2.31.png 透明度：0.5）、
+     口红（makeup/mouth_wumian/standout.2.31.png 透明度：0.5）、
+     高光（makeup/highlight/highlight.2.12.png, 透明度：0.4）
+    2、雀斑妆：
+     眼影（makeup/eyeshadow/taohuafen.2.31.png 透明度：0.7）、
+     睫毛（makeup/eyelash/yesheng.2.31.png 透明度：0.5）、
+     腮红（makeup/blush/cool.2.31.png 透明度：0.8）、
+     眼线（makeup/eyeliner_292929/guima.2.31.png 透明度：0.5）、
+     口红（makeup/mouth_yaochun/nanguase.2.31.png 透明度：0.5）、
+     高光（makeup/highlight/highlight.2.12.png, 透明度：0.4）
+    3、活泼妆：
+     眼影（makeup/eyeshadow/tianchengse.2.31.png 透明度：0.7）、
+     睫毛（makeup/eyelash/lingdong.2.31.png 透明度：0.5）、
+     腮红（makeup/blush/luori.2.31.png 透明度：0.8）、
+     眼线（makeup/eyeliner_292929/qizhi.2.31.png 透明度：0.5）、
+     口红（makeup/mouth_yaochun/nanguase.2.31.png 透明度：0.5）、
+     高光（makeup/highlight/highlight.2.12.png, 透明度：0.4）
+    4、夜店妆：
+     眼影（makeup/eyeshadow/yeqiangwei.2.31.png 透明度：0.7）、
+     睫毛（makeup/eyelash/zhixing.2.31.png 透明度：0.5）、
+     腮红（makeup/blush/shaonv.2.31.png 透明度：0.8）、
+     眼线（makeup/eyeliner_292929/wenrou.2.31.png 透明度：0.5）、
+     口红（makeup/mouth_zirun/zhenggongse.2.31.png 透明度：0.5）、
+     高光（makeup/highlight/highlight.2.12.png, 透明度：0.4）
 */
 }
 
@@ -247,6 +277,8 @@
 {
 //    // 人像背景虚化开启
 //    [self.beautyEngine setQueenBeautyType:kQueenBeautyTypeBackgroundProcess enable:YES];
+//    // 开启后默认是背景虚化，可以通过如下API设置为背景透明，适用于将输出当做前景，自行合成背景的场合
+//    [self.beautyEngine setSegmentBackgroundProcessType:kQueenBackgroundTransparent];
 //    // 人像背景虚化关闭
 //    [self.beautyEngine setQueenBeautyType:kQueenBeautyTypeBackgroundProcess enable:NO];
 //
@@ -257,12 +289,33 @@
 //    [self.beautyEngine removeMaterialWithPath:backgroundResPath];
 }
 
+- (void)testAutoFilter
+{
+    // 开启智能动态优化：
+    [self.beautyEngine setQueenBeautyType:kQueenBeautyTypeAutoFilter enable:YES];
+//    // 关闭智能动态优化：
+//    [self.beautyEngine setQueenBeautyType:kQueenBeautyTypeAutoFilter enable:NO];
+}
+
+- (void)testGestureDetect
+{
+    // 开启手势检测
+    [self.beautyEngine setQueenBeautyType:kQueenBeautyTypeHandGestureDetect enable:YES];
+//    // 关闭手势检测
+//    [self.beautyEngine setQueenBeautyType:kQueenBeautyTypeHandGestureDetect enable:NO];
+
+    // 设置代理
+    self.beautyEngine.delegate = self;
+}
+
 - (void)testDebug
 {
     // 展示人脸识别特征点
     [self.beautyEngine showFaceDetectPoint:YES];
     // 展示美妆三角剖分信息, 需要先开启美妆功能
     [self.beautyEngine showMakeupLine:YES];
+    // 展示手部识别特征点
+    [self.beautyEngine showHandDetectPoint:YES];
 }
 
 - (CVPixelBufferRef)getProcessedPixelBufferRefWithCurrentPixelBufferRef:(CVPixelBufferRef)pixelBufferRef
@@ -324,6 +377,13 @@
 #if kEnableCustomSettingImgAngle
     [self stopRetainCameraRotate];
 #endif
+}
+
+#pragma mark - QueenEngineDelegate
+
+- (void)queenEngine:(QueenEngine *)engine didDetectGesture:(QEGestureData *)gestureData
+{
+    NSLog(@"识别到手势类型：%ld，动作类型：%ld", (long)gestureData.gesture, (long)gestureData.action);
 }
 
 #pragma mark - CameraRotate

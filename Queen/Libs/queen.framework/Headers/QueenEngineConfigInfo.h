@@ -34,9 +34,18 @@ typedef NS_ENUM(NSInteger, kQueenBeautyType) {
     /** 背景处理，实景抠图，使背景虚化
      */
     kQueenBeautyTypeBackgroundProcess = 6,
+    /** 功能类型: 智能美颜
+     */
+    kQueenBeautyTypeAutoFilter     =    7,
+    /** 功能类型: 美体
+     */
+    kQueenBeautyTypeBodyShape      =    8,
+    /** 功能类型: 手势检测
+     */
+    kQueenBeautyTypeHandGestureDetect = 9,
     /** 最大值
      */
-    kQueenBeautyTypeMax            =    7,
+    kQueenBeautyTypeMax            =    10,
 };
 
 /**美颜参数，值为float，除基础美颜外需要先将功能打开，对应参数才有效
@@ -106,6 +115,18 @@ typedef NS_ENUM(NSInteger, kQueenBeautyParams) {
      祛暗沉[0,1], 默认0
     */
     kQueenBeautyParamsBrightenFace         = 16,
+    /** 脸部美颜参数项，需要先打开 QueenBeautyTypeAutoFilter 项
+     智能美颜亮度调节比例[-1,1]
+    */
+    kQueenBeautyParamsAutoLRate            = 17,
+    /** 脸部美颜参数项，需要先打开 QueenBeautyTypeAutoFilter 项
+     智能美颜色度a调节比例[-1,1]
+    */
+    kQueenBeautyParamsAutoARate            = 18,
+    /** 脸部美颜参数项，需要先打开 QueenBeautyTypeAutoFilter 项
+     智能美颜色度b调节比例[-1,1]
+    */
+    kQueenBeautyParamsAutoBRate            = 19,
 };
 
 /**美妆类型，需要先打开QueenBeautyTypeMakeup 类型
@@ -226,6 +247,26 @@ typedef NS_ENUM(NSInteger, kQueenBeautyFaceShapeType) {
     kQueenBeautyFaceShapeTypeMAX        = 24
 };
 
+/**美体类型，需要先打开kQueenBeautyTypeBodyShape 类型
+ */
+typedef NS_ENUM(NSInteger, kQueenBeautyBodyShapeType) {
+    /** 全身，值的范围[-1,1]，默认0
+     */
+    kQueenBeautyBodyShapeTypeFullBody      = 0,
+    /** 长腿，值的范围[-1,1]，默认0
+     */
+    kQueenBeautyBodyShapeTypeLongLag       = 1,
+    /** 小头，值的范围[-1,1]，默认0
+     */
+    kQueenBeautyBodyShapeTypeSmallHead      = 2,
+    /** 瘦腿，值的范围[-1,1]，默认0
+     */
+    kQueenBeautyBodyShapeTypeThinLag      = 3,
+    /** 最大值
+     */
+    kQueenBeautyBodyShapeTypeMAX        = 4
+};
+
 /** 美妆混合模式
  */
 typedef NS_ENUM(NSInteger, kQueenBeautyBlend) {
@@ -328,7 +369,7 @@ typedef NS_ENUM(NSInteger, kQueenBeautyBlend) {
     kQueenBeautyBlendLabMix = 31,
     /** 最大值
      */
-    kQueenBeautyBlendMax = 999
+    kQueenBeautyBlendMax
 };
 
 /** 翻转类型
@@ -348,6 +389,9 @@ typedef NS_ENUM(NSInteger, kQueenBeautyFlipAxis) {
 /** 状态码
  */
 typedef NS_ENUM(NSInteger, kQueenResultCode) {
+    /** QueenEngine内部错误
+     */
+    kQueenResultCodeUnKnown   = -1,
     /** 正常
      */
     kQueenResultCodeOK       = 0,
@@ -377,6 +421,150 @@ typedef NS_ENUM(NSInteger, kQueenImageFormat) {
     /** RGBA
      */
     kQueenImageFormatRGBA = 3
+};
+
+/** 手势识别的类别
+ */
+typedef NS_ENUM(NSInteger, kQueenStaticGestureType) {
+    /** 没有识别到
+     */
+    kQueenStaticGestureTypeNone = -1,
+    /** 其他手势
+     */
+    kQueenStaticGestureTypeOther,
+    /** 数字1 / 申食指
+     */
+    kQueenStaticGestureTypeNumber1,
+    /** 数字2 / yeah / 剪刀手
+     */
+    kQueenStaticGestureTypeNumber2,
+    /** 数字3
+     */
+    kQueenStaticGestureTypeNumber3,
+    /** 数字4
+     */
+    kQueenStaticGestureTypeNumber4,
+    /** 数字5
+     */
+    kQueenStaticGestureTypeNumber5,
+    /** 数字6 / 电话
+     */
+    kQueenStaticGestureTypeNumber6,
+    /** 数字7
+     */
+    kQueenStaticGestureTypeNumber7,
+    /** 数字8 / 单指手枪
+     */
+    kQueenStaticGestureTypeNumber8,
+    /** 数字9
+     */
+    kQueenStaticGestureTypeNumber9,
+    /** 拳头
+     */
+    kQueenStaticGestureTypeFist,
+    /** OK
+     */
+    kQueenStaticGestureTypeOK,
+    /** 单手比心
+     */
+    kQueenStaticGestureTypeHeart,
+    /** 伸大拇指
+     */
+    kQueenStaticGestureTypeThumbUp,
+    /** 申小指和无名指
+     */
+    kQueenStaticGestureTypeRingPinky,
+    /** 申小指
+     */
+    kQueenStaticGestureTypePinky,
+    /** 双指手枪
+     */
+    kQueenStaticGestureTypeGun,
+    /** 摇滚 / 我爱你
+     */
+    kQueenStaticGestureTypeILoveyRock,
+    /** 爪子
+     */
+    kQueenStaticGestureTypePaw,
+    /** 中指
+     */
+    kQueenStaticGestureTypeMidFinger,
+    /** VULCAN SALUTE 星际迷航手势
+     */
+    kQueenStaticGestureTypeVulcanSalute,
+    /** 掐中指
+     */
+    kQueenStaticGestureTypeMidTip,
+    /** 掐无名指
+     */
+    kQueenStaticGestureTypeRingTip,
+    /** 杯子
+     */
+    kQueenStaticGestureTypeCup,
+    /** 蛇
+     */
+    kQueenStaticGestureTypeSnake,
+    /** 手指并拢
+     */
+    kQueenStaticGestureTypeFingersTogether,
+    /** 手势识别类型数量
+     */
+    kQueenStaticGestureTypeMax,
+};
+
+/** 手部动作识别的类别
+ */
+typedef NS_ENUM(NSInteger, kQueenHandActionType) {
+    /** 未知类型
+     */
+    kQueenHandActionTypeUnKnown = -2,
+    /** 没有识别到
+     */
+    kQueenHandActionTypeNone = -1,
+    /** 拇指指左
+     */
+    kQueenHandActionTypeLeft,
+    /** 拇指指右
+     */
+    kQueenHandActionTypeRight,
+    /** 拜拜
+     */
+    kQueenHandActionTypeGoodbye,
+    /** 左滑
+     */
+    kQueenHandActionTypeSwipLeft,
+    /** 右滑
+     */
+    kQueenHandActionTypeSwipRight,
+    /** 上滑
+     */
+    kQueenHandActionTypeSwipUp,
+    /** 下滑
+     */
+    kQueenHandActionTypeSwipDown,
+    /** 伸出大拇指
+     */
+    kQueenHandActionTypeThumbUpDynamic,
+    /** 放大
+     */
+    kQueenHandActionTypeZoomIn,
+    /** 缩小
+     */
+    kQueenHandActionTypeZoomOut,
+    /** 手部动作识别类型数量
+     */
+    kQueenHandActionTypeMax,
+};
+
+/** 智能抠图人像背景处理方式
+ */
+typedef NS_ENUM(NSInteger, kQueenBackgroundProcessType) {
+    /** 背景虚化
+     */
+    kQueenBackgroundBlur        = 0,
+    /** 背景透明
+     */
+    kQueenBackgroundTransparent = 1,
 };
 
 /** Queen美颜引擎配置信息类
