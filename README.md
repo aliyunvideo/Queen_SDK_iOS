@@ -19,7 +19,7 @@
 
 支持pods与本地集成两种方式。
 
-### full版本：
+### ultimate版本：
 #### pods集成方式：
 ```ruby
 pod 'Queen', '1.5.0-official-ultimate'
