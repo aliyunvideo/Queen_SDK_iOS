@@ -82,7 +82,8 @@
 - (void)testBaseFaceBeauty
 {
     // 打开磨皮锐化功能开关
-    [self.beautyEngine setQueenBeautyType:kQueenBeautyTypeSkinBuffing enable:YES];
+    // 第三个参数为基础美颜的模式，设置为kBMSkinBuffing_Natural，则美颜的效果更自然，细节保留更多；设置为kQueenBeautyFilterModeSkinBuffing_Strong，则效果更夸张，细节去除更多。
+    [self.beautyEngine setQueenBeautyType:kQueenBeautyTypeSkinBuffing enable:YES mode:kQueenBeautyFilterModeSkinBuffing_Natural];
     
     // 设置磨皮系数
     [self.beautyEngine setQueenBeautyParams:kQueenBeautyParamsSkinBuffing value:0.5f];
@@ -130,7 +131,8 @@
 - (void)testFaceMakeup
 {
     // 打开美妆功能开关
-    [self.beautyEngine setQueenBeautyType:kQueenBeautyTypeMakeup enable:YES];
+    // 第三个参数是美妆的模式，目前仅对眉毛有作用，设置为BeautyFilterMode.kBMFaceMakeup_High，眉毛的形变会更明显，设置为kQueenBeautyFilterModeFaceMakeup_Baseline，眉毛的形变会收敛一点
+    [self.beautyEngine setQueenBeautyType:kQueenBeautyTypeMakeup enable:YES mode:kQueenBeautyFilterModeFaceMakeup_Baseline];
     
     BOOL makeupWhole = true;
     
@@ -224,7 +226,8 @@
 - (void)testFaceShape
 {
     // 打开美型功能开关
-    [self.beautyEngine setQueenBeautyType:kQueenBeautyTypeFaceShape enable:YES];
+    // 第三个参数为美型的模式，可以设置为kQueenBeautyFilterModeFaceShape_Baseline、kQueenBeautyFilterModeFaceShape_Main、kQueenBeautyFilterModeFaceShape_High、kQueenBeautyFilterModeFaceShape_Max四种模式，形变的幅度会依次变强
+    [self.beautyEngine setQueenBeautyType:kQueenBeautyTypeFaceShape enable:YES mode:kQueenBeautyFilterModeFaceShape_Main];
     
     // 设置大眼系数
     [self.beautyEngine setFaceShape:kQueenBeautyFaceShapeTypeBigEye value:1.0f];

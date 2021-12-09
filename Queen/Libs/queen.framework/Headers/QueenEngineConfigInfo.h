@@ -48,6 +48,39 @@ typedef NS_ENUM(NSInteger, kQueenBeautyType) {
     kQueenBeautyTypeMax            =    10,
 };
 
+/** 对应美颜类型的模式
+ */
+typedef NS_ENUM(NSInteger, kQueenBeautyFilterMode) {
+    /** 默认值
+     */
+    kQueenBeautyFilterModeDefault = 0,
+    /** 磨皮-自然
+     */
+    kQueenBeautyFilterModeSkinBuffing_Natural = 1,
+    /** 磨皮-明显
+     */
+    kQueenBeautyFilterModeSkinBuffing_Strong = 2,
+    /** 美型-基准线
+     */
+    kQueenBeautyFilterModeFaceShape_Baseline = 11,
+    /** 美型-主流
+     */
+    kQueenBeautyFilterModeFaceShape_Main = 12,
+    /** 美型-偏大变化
+     */
+    kQueenBeautyFilterModeFaceShape_High = 13,
+    /** 美型-夸张
+     */
+    kQueenBeautyFilterModeFaceShape_Max = 14,
+    /** 美妆-基准线
+     */
+    kQueenBeautyFilterModeFaceMakeup_Baseline = 21,
+    /** 美妆-强烈
+     */
+    kQueenBeautyFilterModeFaceMakeup_High = 22,
+};
+
+
 /**美颜参数，值为float，除基础美颜外需要先将功能打开，对应参数才有效
  */
 typedef NS_ENUM(NSInteger, kQueenBeautyParams) {

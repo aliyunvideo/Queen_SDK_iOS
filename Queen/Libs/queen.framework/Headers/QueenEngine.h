@@ -146,9 +146,16 @@
 /**
  * @brief 打开或者关闭某个美颜类型
  * @param type QueenBeautyType 类型的一个值
- * @param isOpen YES: 打开，NO:关闭
+ * @param enabled YES: 打开，NO:关闭
  */
-- (void)setQueenBeautyType:(kQueenBeautyType)type enable:(BOOL)isOpen;
+- (void)setQueenBeautyType:(kQueenBeautyType)type enable:(BOOL)enabled;
+
+/**
+ * @brief 打开或者关闭某个美颜类型
+ * @param type QueenBeautyType 类型的一个值
+ * @param enabled YES: 打开，NO:关闭
+ */
+- (void)setQueenBeautyType:(kQueenBeautyType)type enable:(BOOL)enabled mode:(kQueenBeautyFilterMode)mode;
 
 /**
  * @brief 设置美颜参数
