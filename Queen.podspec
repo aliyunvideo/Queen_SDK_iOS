@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'Queen'
-  s.version          = '1.6.0-official-ultimate'
+  s.version          = '1.6.0-official-pro'
   s.summary          = 'Aliyun Queen library'
   s.description      = <<-DESC
 Aliyun Render And Compute Everything Engine.
