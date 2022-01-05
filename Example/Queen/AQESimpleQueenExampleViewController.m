@@ -70,6 +70,7 @@
     [self testAdvancedFaceBeauty];
     [self testFaceMakeup];
     [self testFaceShape];
+    [self testBodyShape];
     [self testFilter];
     [self testSticker];
     [self testGreenScreenOrBlueScreenCutout];
@@ -235,6 +236,17 @@
     [self.beautyEngine setFaceShape:kQueenBeautyFaceShapeTypeHairLine value:1.0f];
     // 设置嘴角上扬(微笑)系数
     [self.beautyEngine setFaceShape:kQueenBeautyFaceShapeTypeSmile value:1.0f];
+}
+
+- (void)testBodyShape
+{
+    // 打开美型功能开关
+    [self.beautyEngine setQueenBeautyType:kQueenBeautyTypeBodyShape enable:YES];
+    
+    // 设置长腿系数
+    [self.beautyEngine setFaceShape:kQueenBeautyBodyShapeTypeLongLag value:1.0f];
+    //    // 设置小头系数
+    //    [self.beautyEngine setFaceShape:kQueenBeautyBodyShapeTypeSmallHead value:1.0f];
 }
 
 - (void)testFilter

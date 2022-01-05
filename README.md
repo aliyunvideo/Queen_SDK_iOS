@@ -23,7 +23,7 @@
 #### pods集成方式：
 1. 集成SDK
 ```ruby
-pod 'Queen', '1.6.0-official-ultimate'
+pod 'Queen', '1.7.0-official-ultimate'
 ```
 2. pod集成完成，选择工程中的scheme，在弹框中单击Edit Scheme，在Options页签下，设置项GPU Frame Capture选择Disabled。
 3. 在Diagnostics页签下，设置项Metal取消勾选API Validation。
@@ -33,8 +33,10 @@ pod 'Queen', '1.6.0-official-ultimate'
 ```
 queen.framework
 opencv2.framework
+MNN.framework
+pose_ios.framework
 ```
-2. 打开Xcode，在工程target的General页签下，在Frameworks, Libraries, and Embedded Content区域中添加以上framework。其中，opencv2.framework的Embed属性设置成Embed & Sign，其他framework的Embed属性设置成Do Not Embed。
+2. 打开Xcode，在工程target的General页签下，在Frameworks, Libraries, and Embedded Content区域中添加以上framework。其中，opencv2.framework、pose_ios.framework的Embed属性设置成Embed & Sign，其他framework的Embed属性设置成Do Not Embed。
 3. 在Frameworks, Libraries, and Embedded Content区域中添加以下系统依赖。
 ```
 libz.tbd
@@ -53,14 +55,15 @@ CoreGraphics.framework
 CoreVideo.framework
 ```
 4. 将获取到的queen.framework文件中的queen-ios.Bundle添加到工程目录中。
-5. 在工程target的Build Settings页签下，搜索找到ENABLE_BITCODE一项，将其设置成NO。
-6. 选择工程中的scheme，在弹框中单击Edit Scheme，在Options页签下，设置项GPU Frame Capture选择Disabled，在Diagnostics页签下，设置项Metal取消勾选API Validation。
+5. 将获取到的MNN.framework文件中的mnn.metallib添加到工程目录中。
+6. 在工程target的Build Settings页签下，搜索找到ENABLE_BITCODE一项，将其设置成NO。
+7. 选择工程中的scheme，在弹框中单击Edit Scheme，在Options页签下，设置项GPU Frame Capture选择Disabled，在Diagnostics页签下，设置项Metal取消勾选API Validation。
 
 ### pro版本：
 #### pods集成方式：
 1. 集成SDK
 ```ruby
-pod 'Queen', '1.6.0-official-pro'
+pod 'Queen', '1.7.0-official-pro'
 ```
 2. pod集成完成，选择工程中的scheme，在弹框中单击Edit Scheme，在Options页签下，设置项GPU Frame Capture选择Disabled。
 3. 在Diagnostics页签下，设置项Metal取消勾选API Validation。
@@ -96,7 +99,7 @@ CoreVideo.framework
 ### lite版本：
 #### pods集成方式：
 ```ruby
-pod 'Queen', '1.6.0-official-lite'
+pod 'Queen', '1.7.0-official-lite'
 ```
 #### 本地集成方式：
 
