@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'Queen'
-  s.version          = '1.8.0-official-ultimate'
+  s.version          = '1.8.0-official-pro'
   s.summary          = 'Aliyun Queen library'
   s.description      = <<-DESC
 Aliyun Render And Compute Everything Engine.
@@ -12,8 +12,8 @@ Aliyun Render And Compute Everything Engine.
   s.ios.deployment_target = '9.0'
   s.requires_arc = true
   s.source_files = 'Queen/Libs/queen.framework/Headers/*'
-  s.resources = 'Queen/Libs/queen.framework/queen-ios.Bundle', 'Queen/Libs/MNN.framework/mnn.metallib'
-  s.vendored_frameworks = 'Queen/Libs/queen.framework', 'Queen/Libs/MNN.framework', 'Queen/Libs/opencv2.framework', 'Queen/Libs/pose_ios.framework'
+  s.resources = 'Queen/Libs/queen.framework/queen-ios.Bundle'
+  s.vendored_frameworks = 'Queen/Libs/queen.framework', 'Queen/Libs/opencv2.framework'
   s.frameworks = 'Accelerate', 'QuartzCore', 'OpenGLES', 'CoreMedia', 'CoreMotion', 'CoreImage', 'Foundation', 'CoreGraphics', 'CoreVideo', 'Metal'
   s.weak_frameworks = 'MetalPerformanceShaders'
   s.libraries = 'c++', 'compression', 'z'
