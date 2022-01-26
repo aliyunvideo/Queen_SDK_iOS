@@ -69,13 +69,13 @@
     [self testBaseFaceBeauty];
     [self testAdvancedFaceBeauty];
     [self testFaceMakeup];
-    [self testFaceShape];
-    [self testBodyShape];
-    [self testFilter];
+//    [self testFaceShape];
+//    [self testBodyShape];
+//    [self testFilter];
     [self testSticker];
-    [self testGreenScreenOrBlueScreenCutout];
-    [self testAutoFilter];
-    [self testGestureDetect];
+//    [self testGreenScreenOrBlueScreenCutout];
+//    [self testAutoFilter];
+//    [self testGestureDetect];
 //    [self testBackgroundCutout];
 //    [self testDebug];
 }
@@ -135,7 +135,7 @@
     // 第三个参数是美妆的模式，目前仅对眉毛有作用，设置为BeautyFilterMode.kBMFaceMakeup_High，眉毛的形变会更明显，设置为kQueenBeautyFilterModeFaceMakeup_Baseline，眉毛的形变会收敛一点
     [self.beautyEngine setQueenBeautyType:kQueenBeautyTypeMakeup enable:YES mode:kQueenBeautyFilterModeFaceMakeup_Baseline];
     
-    BOOL makeupWhole = true;
+    BOOL makeupWhole = false;
     
     if (makeupWhole)
     {
@@ -148,41 +148,37 @@
     {
         // 设置美妆局部妆效果：（注：设置局部妆后，如果之前设置了整妆，整妆会失效。即整妆和局部妆不能共存，但每个局部妆之间可以叠加使用，而整妆设置单个素材即可实现全脸上妆，但是无法调节各部位细节）
         // 设置美妆高光效果，资源路径也可以是资源的绝对路径
-        [self.beautyEngine setMakeupWithType:kQueenBeautyMakeupTypeHighlight paths:@[@"makeup/highlight/highlight.2.12.png"] blendType:kQueenBeautyBlendOverlay];
+        [self.beautyEngine setMakeupWithType:kQueenBeautyMakeupTypeHighlight paths:@[@"makeup/highlight/highlight.2.13.png"] blendType:kQueenBeautyBlendSoftLight];
         // 设置美妆高光效果的透明度，目前female参数的值统一传YES/true，男性妆容还在优化中
-        [self.beautyEngine setMakeupAlphaWithType:kQueenBeautyMakeupTypeHighlight female:YES alpha:0.4];
-        // 设置美妆美瞳效果，资源路径也可以是资源的绝对路径
-        [self.beautyEngine setMakeupWithType:kQueenBeautyMakeupTypeEyeball paths:@[@"makeup/eyeball/milanda.2.1.png"] blendType:kQueenBeautyBlendLighten];
-        // 设置美妆美瞳效果的透明度，目前female参数的值统一传YES/true，男性妆容还在优化中
-        [self.beautyEngine setMakeupAlphaWithType:kQueenBeautyMakeupTypeEyeball female:YES alpha:1.0];
+        [self.beautyEngine setMakeupAlphaWithType:kQueenBeautyMakeupTypeHighlight female:YES alpha:0.9];
         // 设置美妆口红效果，资源路径也可以是资源的绝对路径
-        [self.beautyEngine setMakeupWithType:kQueenBeautyMakeupTypeMouth paths:@[@"makeup/mouth_wumian/standout.2.31.png"] blendType:kQueenBeautyBlendLabMix];
+        [self.beautyEngine setMakeupWithType:kQueenBeautyMakeupTypeMouth paths:@[@"makeup/mouth_yaochun/shiliuhong.3.3.png"] blendType:kQueenBeautyBlendMultiply];
         // 设置美妆口红效果的透明度，目前female参数的值统一传YES/true，男性妆容还在优化中
-        [self.beautyEngine setMakeupAlphaWithType:kQueenBeautyMakeupTypeMouth female:YES alpha:0.5];
+        [self.beautyEngine setMakeupAlphaWithType:kQueenBeautyMakeupTypeMouth female:YES alpha:0.8];
         // 设置美妆卧蚕效果，目前采用内置素材，不支持定制
         [self.beautyEngine setMakeupWithType:kQueenBeautyMakeupTypeWocan paths:@[@"makeup/wocan.png"] blendType:kQueenBeautyBlendCurve];
         // 设置美妆卧蚕效果的透明度，目前female参数的值统一传YES/true，男性妆容还在优化中
         [self.beautyEngine setMakeupAlphaWithType:kQueenBeautyMakeupTypeWocan female:YES alpha:0.2];
         // 设置美妆眉毛效果，资源路径也可以是资源的绝对路径
-        [self.beautyEngine setMakeupWithType:kQueenBeautyMakeupTypeEyeBrow paths:@[@"makeup/eyebrow/biaozhunmei.2.31.png"] blendType:kQueenBeautyBlendLabMix];
+        [self.beautyEngine setMakeupWithType:kQueenBeautyMakeupTypeEyeBrow paths:@[@"makeup/eyebrow/cupingmei.2.3.png"] blendType:kQueenBeautyBlendMultiply];
         // 设置美妆眉毛效果的透明度，目前female参数的值统一传YES/true，男性妆容还在优化中
-        [self.beautyEngine setMakeupAlphaWithType:kQueenBeautyMakeupTypeEyeBrow female:YES alpha:0.6];
+        [self.beautyEngine setMakeupAlphaWithType:kQueenBeautyMakeupTypeEyeBrow female:YES alpha:0.3];
         // 设置美妆腮红效果，资源路径也可以是资源的绝对路径
-        [self.beautyEngine setMakeupWithType:kQueenBeautyMakeupTypeBlush paths:@[@"makeup/blush/weixun.2.31.png"] blendType:kQueenBeautyBlendLabMix];
+        [self.beautyEngine setMakeupWithType:kQueenBeautyMakeupTypeBlush paths:@[@"makeup/blush_color7/shaonv.2.3.png"] blendType:kQueenBeautyBlendMultiply];
         // 设置美妆腮红效果的透明度，目前female参数的值统一传YES/true，男性妆容还在优化中
-        [self.beautyEngine setMakeupAlphaWithType:kQueenBeautyMakeupTypeBlush female:YES alpha:0.8];
+        [self.beautyEngine setMakeupAlphaWithType:kQueenBeautyMakeupTypeBlush female:YES alpha:0.7];
         // 设置美妆眼影效果，资源路径也可以是资源的绝对路径
-        [self.beautyEngine setMakeupWithType:kQueenBeautyMakeupTypeEyeShadow paths:@[@"makeup/eyeshadow/naichazong.2.31.png"] blendType:kQueenBeautyBlendLabMix];
+        [self.beautyEngine setMakeupWithType:kQueenBeautyMakeupTypeEyeShadow paths:@[@"makeup/eyeshadow/pengkezong.3.3.png"] blendType:kQueenBeautyBlendMultiply];
         // 设置美妆眼影效果的透明度，目前female参数的值统一传YES/true，男性妆容还在优化中
-        [self.beautyEngine setMakeupAlphaWithType:kQueenBeautyMakeupTypeEyeShadow female:YES alpha:0.7];
+        [self.beautyEngine setMakeupAlphaWithType:kQueenBeautyMakeupTypeEyeShadow female:YES alpha:0.8];
         // 设置美妆眼线效果，资源路径也可以是资源的绝对路径
-        [self.beautyEngine setMakeupWithType:kQueenBeautyMakeupTypeEyeliner paths:@[@"makeup/eyeliner_292929/wenrou.2.31.png"] blendType:kQueenBeautyBlendLabMix];
+        [self.beautyEngine setMakeupWithType:kQueenBeautyMakeupTypeEyeliner paths:@[@"makeup/eyeliner_292929/xiaoyemao.2.3.png"] blendType:kQueenBeautyBlendMultiply];
         // 设置美妆眼线效果的透明度，目前female参数的值统一传YES/true，男性妆容还在优化中
-        [self.beautyEngine setMakeupAlphaWithType:kQueenBeautyMakeupTypeEyeliner female:YES alpha:0.5];
+        [self.beautyEngine setMakeupAlphaWithType:kQueenBeautyMakeupTypeEyeliner female:YES alpha:0.75];
         // 设置美妆睫毛效果，资源路径也可以是资源的绝对路径
-        [self.beautyEngine setMakeupWithType:kQueenBeautyMakeupTypeEyelash paths:@[@"makeup/eyelash/yesheng.2.31.png"] blendType:kQueenBeautyBlendLabMix];
+        [self.beautyEngine setMakeupWithType:kQueenBeautyMakeupTypeEyelash paths:@[@"makeup/eyelash/ziran.2.3.png"] blendType:kQueenBeautyBlendMultiply];
         // 设置美妆睫毛效果的透明度，目前female参数的值统一传YES/true，男性妆容还在优化中
-        [self.beautyEngine setMakeupAlphaWithType:kQueenBeautyMakeupTypeEyelash female:YES alpha:0.5];
+        [self.beautyEngine setMakeupAlphaWithType:kQueenBeautyMakeupTypeEyelash female:YES alpha:0.75];
     }
     
 //    // 清除美妆效果
@@ -193,34 +189,38 @@
 
 /*
     建议采用组合妆来替换整妆的效果，可以调节各部分细节，下面提供几种组合妆的模式：
-    1、微醺妆：
-     眼影（makeup/eyeshadow/naichazong.2.31.png 透明度：0.7）、
-     睫毛（makeup/eyelash/yesheng.2.31.png 透明度：0.5）、
-     腮红（makeup/blush/weixun.2.31.png 透明度：0.8）、
-     眼线（makeup/eyeliner_292929/wenrou.2.31.png 透明度：0.5）、
-     口红（makeup/mouth_wumian/standout.2.31.png 透明度：0.5）、
-     高光（makeup/highlight/highlight.2.12.png, 透明度：0.4）
-    2、雀斑妆：
-     眼影（makeup/eyeshadow/taohuafen.2.31.png 透明度：0.7）、
-     睫毛（makeup/eyelash/yesheng.2.31.png 透明度：0.5）、
-     腮红（makeup/blush/cool.2.31.png 透明度：0.8）、
-     眼线（makeup/eyeliner_292929/guima.2.31.png 透明度：0.5）、
-     口红（makeup/mouth_yaochun/nanguase.2.31.png 透明度：0.5）、
-     高光（makeup/highlight/highlight.2.12.png, 透明度：0.4）
-    3、活泼妆：
-     眼影（makeup/eyeshadow/tianchengse.2.31.png 透明度：0.7）、
-     睫毛（makeup/eyelash/lingdong.2.31.png 透明度：0.5）、
-     腮红（makeup/blush/luori.2.31.png 透明度：0.8）、
-     眼线（makeup/eyeliner_292929/qizhi.2.31.png 透明度：0.5）、
-     口红（makeup/mouth_yaochun/nanguase.2.31.png 透明度：0.5）、
-     高光（makeup/highlight/highlight.2.12.png, 透明度：0.4）
-    4、夜店妆：
-     眼影（makeup/eyeshadow/yeqiangwei.2.31.png 透明度：0.7）、
-     睫毛（makeup/eyelash/zhixing.2.31.png 透明度：0.5）、
-     腮红（makeup/blush/shaonv.2.31.png 透明度：0.8）、
-     眼线（makeup/eyeliner_292929/wenrou.2.31.png 透明度：0.5）、
-     口红（makeup/mouth_zirun/zhenggongse.2.31.png 透明度：0.5）、
-     高光（makeup/highlight/highlight.2.12.png, 透明度：0.4）
+    1、素颜妆：
+     睫毛（makeup/eyelash/ziran.2.3.png 透明度：0.75）、
+     眼线（makeup/eyeliner_292929/xiaoyemao.2.3.png 透明度：0.75）、
+     眼影（makeup/eyeshadow/pengkezong.3.3.png 透明度：0.8）、
+     腮红（makeup/blush_color7/shaonv.2.3.png 透明度：0.7）、
+     眉毛（makeup/eyebrow/cupingmei.2.3.png 透明度：0.3）、
+     口红（makeup/mouth_yaochun/shiliuhong.3.3.png 透明度：0.8）、
+     高光（makeup/highlight/highlight.2.13.png, 透明度：0.9）
+    2、清纯妆：
+     睫毛（makeup/eyelash/lingdong.2.3.png 透明度：0.75）、
+     眼线（makeup/eyeliner_292929/juanqiao.2.3.png 透明度：0.75）、
+     眼影（makeup/eyeshadow/fangtangfen.3.3.png 透明度：0.8）、
+     腮红（makeup/blush_color4/chayi.2.3.png 透明度：0.7）、
+     眉毛（makeup/eyebrow/biaozhunmei.2.3.png 透明度：0.3）、
+     口红（makeup/mouth_wumian/chidousha.3.3.png 透明度：0.8）、
+     高光（makeup/highlight/highlight.2.13.png, 透明度：0.9）
+    3、复古妆：
+     睫毛（makeup/eyelash/jichu.2.3.png 透明度：0.75）、
+     眼线（makeup/eyeliner_292929/wenrou.2.3.png 透明度：0.75）、
+     眼影（makeup/eyeshadow/yuanqicheng.3.3.png 透明度：0.8）、
+     腮红（makeup/blush_color7/chunqing.2.3.png 透明度：0.7）、
+     眉毛（makeup/eyebrow/juanyanmei.2.3.png 透明度：0.3）、
+     口红（makeup/mouth_wumian/jiangguose.3.3.png 透明度：0.8）、
+     高光（makeup/highlight/highlight.2.13.png, 透明度：0.9）
+    4、熟女妆：
+     睫毛（makeup/eyelash/wugu.2.3.png 透明度：0.75）、
+     眼线（makeup/eyeliner_292929/qizhi.2.3.png 透明度：0.75）、
+     眼影（makeup/eyeshadow/yanfense.3.3.png 透明度：0.8）、
+     腮红（makeup/blush_color5/shaonv.2.3.png 透明度：0.7）、
+     眉毛（makeup/eyebrow/wanyuemei.2.3.png 透明度：0.3）、
+     口红（makeup/mouth_yaochun/standout.3.3.png 透明度：0.8）、
+     高光（makeup/highlight/highlight.2.13.png, 透明度：0.9）
 */
 }
 
@@ -244,9 +244,9 @@
     [self.beautyEngine setQueenBeautyType:kQueenBeautyTypeBodyShape enable:YES];
     
     // 设置长腿系数
-    [self.beautyEngine setFaceShape:kQueenBeautyBodyShapeTypeLongLag value:1.0f];
+    [self.beautyEngine setBodyShape:kQueenBeautyBodyShapeTypeLongLag value:1.0f];
     //    // 设置小头系数
-    //    [self.beautyEngine setFaceShape:kQueenBeautyBodyShapeTypeSmallHead value:1.0f];
+    //    [self.beautyEngine setBodyShape:kQueenBeautyBodyShapeTypeSmallHead value:1.0f];
 }
 
 - (void)testFilter

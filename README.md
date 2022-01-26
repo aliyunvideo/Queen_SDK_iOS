@@ -23,7 +23,7 @@
 #### pods集成方式：
 1. 集成SDK
 ```ruby
-pod 'Queen', '1.7.0-official-ultimate'
+pod 'Queen', '1.8.0-official-ultimate'
 ```
 2. pod集成完成，选择工程中的scheme，在弹框中单击Edit Scheme，在Options页签下，设置项GPU Frame Capture选择Disabled。
 3. 在Diagnostics页签下，设置项Metal取消勾选API Validation。
@@ -63,7 +63,7 @@ CoreVideo.framework
 #### pods集成方式：
 1. 集成SDK
 ```ruby
-pod 'Queen', '1.7.0-official-pro'
+pod 'Queen', '1.8.0-official-pro'
 ```
 2. pod集成完成，选择工程中的scheme，在弹框中单击Edit Scheme，在Options页签下，设置项GPU Frame Capture选择Disabled。
 3. 在Diagnostics页签下，设置项Metal取消勾选API Validation。
@@ -99,7 +99,7 @@ CoreVideo.framework
 ### lite版本：
 #### pods集成方式：
 ```ruby
-pod 'Queen', '1.7.0-official-lite'
+pod 'Queen', '1.8.0-official-lite'
 ```
 #### 本地集成方式：
 
