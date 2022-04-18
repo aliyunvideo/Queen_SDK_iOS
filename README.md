@@ -26,7 +26,7 @@ pod 'Queen', '1.9.1-official-lite'
 ```
 #### pro版本：
 ```ruby
-pod 'Queen', '1.9.0-official-pro'
+pod 'Queen', '1.9.1-official-pro'
 ```
 #### ultimate版本：
 ```ruby
