@@ -45,6 +45,7 @@ opencv2.framework (lite版本不需要)
 ```
 2. 打开Xcode，在工程target的General页签下，在Frameworks, Libraries, and Embedded Content区域中添加以上framework，并将以上添加的framework的Embed属性设置成Embed & Sign。
 3. 在工程target的Build Settings页签下，搜索找到ENABLE_BITCODE一项，将其设置成NO。
+4. 将获取到的queen.framework文件中的mnn.metallib添加到工程目录中。(只有full版本和ultimate版本需要)
 
 ## 使用示例
 ### 1. 初始化引擎
