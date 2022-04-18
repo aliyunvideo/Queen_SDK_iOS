@@ -437,6 +437,9 @@ typedef NS_ENUM(NSInteger, kQueenResultCode) {
     /** 没有应用任何Queen的特效处理
      */
     kQueenResultCodeNoEffect   = 3,
+    /** 引擎没有配置信息
+     */
+    kQueenResultCodeNoConfigInfo   = 4
 };
 
 /** 颜色格式
@@ -598,6 +601,29 @@ typedef NS_ENUM(NSInteger, kQueenBackgroundProcessType) {
     /** 背景透明
      */
     kQueenBackgroundTransparent = 1,
+};
+
+/** 颜色类型
+ */
+typedef NS_ENUM(NSInteger, kQueenBeautyBgColorType) {
+    /** 绿色
+     */
+    kQueenBeautyBgColorTypeGreen = 0,
+    /** 蓝色
+     */
+    kQueenBeautyBgColorTypeBlue = 1,
+    /** 青色
+     */
+    kQueenBeautyBgColorTypeCyan = 2,
+    /** 紫色
+     */
+    kQueenBeautyBgColorTypePurple = 3,
+    /** 黄色
+     */
+    kQueenBeautyBgColorTypeYellow = 4,
+    /** 红色
+     */
+    kQueenBeautyBgColorTypeRed = 5,
 };
 
 /** Queen美颜引擎配置信息类

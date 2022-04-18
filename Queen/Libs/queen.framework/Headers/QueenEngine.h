@@ -131,6 +131,12 @@
 - (instancetype)initWithConfigInfo:(QueenEngineConfigInfo *)configInfo;
 
 /**
+ * @brief 更新配置参数（仅当initWithConfigInfo的时候，configInfo为nil的时候此接口才生效，而且仅可设置一次有效值）
+ * @param configInfo 引擎配置参数
+ */
+- (void)updateConfigInfo:(QueenEngineConfigInfo *)configInfo;
+
+/**
  * @brief 销毁引擎，需要在渲染线程调用
  */
 - (void)destroyEngine;
@@ -248,7 +254,7 @@
 
 #pragma mark - "抠图相关API"
 /**
- * @brief 绿幕/蓝幕抠图，注意：开启此抠图功能
+ * @brief 绿幕/蓝幕抠图，注意：开启此抠图功能，纯色背景抠图（setPureColorToBackground）会关闭
  * @param backgroundImagePath 需要绿/蓝幕替换的背景资源路径，传空即为取消抠图功能
  * @param blueScreenEnabled 是否蓝幕抠图
  * @param threshold 幕布敏感度[1,10]，默认1
@@ -261,6 +267,14 @@
  * @param backgroundProcessType 背景处理方式，默认为背景虚化
  */
 - (void)setSegmentBackgroundProcessType:(kQueenBackgroundProcessType) backgroundProcessType;
+
+/**
+ * @brief 纯色背景抠图，注意：开启此抠图功能，绿幕抠图（setGreenScreen）会关闭
+ * @param backgroundImagePath 需要纯色背景替换的背景资源路径，传空即为取消抠图功能
+ * @param colorType 需要被替换的颜色类型，0绿色(green)，1蓝色(blue)，2青色(cyan)，3紫色(purple)，4黄色(yellow)，5红色(red)，默认0
+ * @param threshold 颜色敏感度[-1, 1], 默认0
+ */
+- (void)setPureColorToBackground:(NSString *)backgroundImagePath colorType:(kQueenBeautyBgColorType)colorType threshold:(float)threshold;
 
 /**
  * @brief 调整实景抠图的前景边距

@@ -19,112 +19,32 @@
 
 支持pods与本地集成两种方式。
 
-### ultimate版本：
-#### pods集成方式：
-1. 集成SDK
+### pods集成方式：
+#### lite版本：
 ```ruby
-pod 'Queen', '1.8.0-official-ultimate'
+pod 'Queen', '1.9.0-official-lite'
 ```
-2. pod集成完成，选择工程中的scheme，在弹框中单击Edit Scheme，在Options页签下，设置项GPU Frame Capture选择Disabled。
-3. 在Diagnostics页签下，设置项Metal取消勾选API Validation。
-#### 本地集成方式：
+#### pro版本：
+```ruby
+pod 'Queen', '1.9.0-official-pro'
+```
+#### ultimate版本：
+```ruby
+pod 'Queen', '1.9.0-official-ultimate'
+```
+#### full版本：
+```ruby
+pod 'Queen', '1.9.0-official-full'
+```
 
+### 本地集成方式：
 1. 下载并解压Sample示例工程，获取以下framework文件:
 ```
 queen.framework
-opencv2.framework
-MNN.framework
-pose_ios.framework
+opencv2.framework (lite版本不需要)
 ```
-2. 打开Xcode，在工程target的General页签下，在Frameworks, Libraries, and Embedded Content区域中添加以上framework。其中，opencv2.framework、pose_ios.framework的Embed属性设置成Embed & Sign，其他framework的Embed属性设置成Do Not Embed。
-3. 在Frameworks, Libraries, and Embedded Content区域中添加以下系统依赖。
-```
-libz.tbd
-libc++.tbd
-libcompression.tbd
-Metal.framework
-MetalPerformanceShaders.framework
-Accelerate.framework
-QuartzCore.framework
-OpenGLES.framework
-CoreMedia.framework
-CoreMotion.framework
-CoreImage.framework
-Foundation.framework
-CoreGraphics.framework
-CoreVideo.framework
-```
-4. 将获取到的queen.framework文件中的queen-ios.Bundle添加到工程目录中。
-5. 将获取到的MNN.framework文件中的mnn.metallib添加到工程目录中。
-6. 在工程target的Build Settings页签下，搜索找到ENABLE_BITCODE一项，将其设置成NO。
-7. 选择工程中的scheme，在弹框中单击Edit Scheme，在Options页签下，设置项GPU Frame Capture选择Disabled，在Diagnostics页签下，设置项Metal取消勾选API Validation。
-
-### pro版本：
-#### pods集成方式：
-1. 集成SDK
-```ruby
-pod 'Queen', '1.8.0-official-pro'
-```
-2. pod集成完成，选择工程中的scheme，在弹框中单击Edit Scheme，在Options页签下，设置项GPU Frame Capture选择Disabled。
-3. 在Diagnostics页签下，设置项Metal取消勾选API Validation。
-#### 本地集成方式：
-
-1. 下载并解压Sample示例工程，获取以下framework文件:
-```
-queen.framework
-opencv2.framework
-```
-2. 打开Xcode，在工程target的General页签下，在Frameworks, Libraries, and Embedded Content区域中添加以上framework。其中，opencv2.framework的Embed属性设置成Embed & Sign，其他framework的Embed属性设置成Do Not Embed。
-3. 在Frameworks, Libraries, and Embedded Content区域中添加以下系统依赖。
-```
-libz.tbd
-libc++.tbd
-libcompression.tbd
-Metal.framework
-MetalPerformanceShaders.framework
-Accelerate.framework
-QuartzCore.framework
-OpenGLES.framework
-CoreMedia.framework
-CoreMotion.framework
-CoreImage.framework
-Foundation.framework
-CoreGraphics.framework
-CoreVideo.framework
-```
-4. 将获取到的queen.framework文件中的queen-ios.Bundle添加到工程目录中。
-5. 在工程target的Build Settings页签下，搜索找到ENABLE_BITCODE一项，将其设置成NO。
-6. 选择工程中的scheme，在弹框中单击Edit Scheme，在Options页签下，设置项GPU Frame Capture选择Disabled，在Diagnostics页签下，设置项Metal取消勾选API Validation。
-
-### lite版本：
-#### pods集成方式：
-```ruby
-pod 'Queen', '1.8.0-official-lite'
-```
-#### 本地集成方式：
-
-1. 下载并解压Sample示例工程，获取以下framework文件:
-```
-queen.framework
-```
-2. 打开Xcode，在工程target的General页签下，在Frameworks, Libraries, and Embedded Content区域中添加以上framework。将以上添加的framework的Embed属性设置成Do Not Embed。
-3. 在Frameworks, Libraries, and Embedded Content区域中添加以下系统依赖。
-```
-libz.tbd
-libc++.tbd
-libcompression.tbd
-Accelerate.framework
-QuartzCore.framework
-OpenGLES.framework
-CoreMedia.framework
-CoreMotion.framework
-CoreImage.framework
-Foundation.framework
-CoreGraphics.framework
-CoreVideo.framework
-```
-4. 将获取到的queen.framework文件中的queen-ios.Bundle添加到工程目录中。
-5. 在工程target的Build Settings页签下，搜索找到ENABLE_BITCODE一项，将其设置成NO。
+2. 打开Xcode，在工程target的General页签下，在Frameworks, Libraries, and Embedded Content区域中添加以上framework，并将以上添加的framework的Embed属性设置成Embed & Sign。
+3. 在工程target的Build Settings页签下，搜索找到ENABLE_BITCODE一项，将其设置成NO。
 
 ## 使用示例
 ### 1. 初始化引擎
