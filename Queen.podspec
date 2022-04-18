@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'Queen'
-  s.version          = '1.9.0-official-lite'
+  s.version          = '1.9.0-official-pro'
   s.summary          = 'Aliyun Queen library'
   s.description      = <<-DESC
 Aliyun Render And Compute Everything Engine.
@@ -12,6 +12,6 @@ Aliyun Render And Compute Everything Engine.
   s.ios.deployment_target = '9.0'
   s.requires_arc = true
   s.source_files = 'Queen/Libs/queen.framework/Headers/*'
-  s.vendored_frameworks = 'Queen/Libs/queen.framework'
+  s.vendored_frameworks = 'Queen/Libs/queen.framework', 'Queen/Libs/opencv2.framework'
   s.user_target_xcconfig = {"ENABLE_BITCODE" => "NO"}
 end
