@@ -656,7 +656,12 @@ typedef NS_ENUM(NSInteger, kQueenBeautyBgColorType) {
 @property (nonatomic, assign) BOOL runOnCustomThread;
 
 /**
- * @brief 预留字段，选填
+ * 是否允许数据统计，默认为YES
+ */
+@property (nonatomic, assign) BOOL enableStats;
+
+/**
+ * 预留字段，选填
  */
 @property (nonatomic, copy) NSString *extraInfo;
 
