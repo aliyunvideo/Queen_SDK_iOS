@@ -22,19 +22,19 @@
 ### pods集成方式：
 #### lite版本：
 ```ruby
-pod 'Queen', '1.9.1-official-lite'
+pod 'Queen', '2.0.0-official-lite'
 ```
 #### pro版本：
 ```ruby
-pod 'Queen', '1.9.2-official-pro'
+pod 'Queen', '2.0.0-official-pro'
 ```
 #### ultimate版本：
 ```ruby
-pod 'Queen', '1.9.0-official-ultimate'
+pod 'Queen', '2.0.0-official-ultimate'
 ```
 #### full版本：
 ```ruby
-pod 'Queen', '1.9.0-official-full'
+pod 'Queen', '2.0.0-official-full'
 ```
 
 ### 本地集成方式：

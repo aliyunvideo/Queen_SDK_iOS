@@ -51,6 +51,10 @@
 {
     // 初始化引擎配置信息对象
     QueenEngineConfigInfo *configInfo = [QueenEngineConfigInfo new];
+    // 填写licenseKey和licenseFile，也可以在应用的Info.plist文件加入AlivcLicenseKey字段和AlivcLicenseFile字段，内容类型为字符串，填入相应值即可。优先级：configInfo指定>Info.plist指定
+    configInfo.licenseKey = @"xoQuEoYgOHs225cwh634fa27df8d3490e88337161a4d5ee92";
+    // 相当于mainBundlePath的文件路径，示例工程的crt文件放在跟目录，所以直接填写文件名即可。
+    configInfo.licenseFile = @"AliVideoCert_1649317505780.crt";
     
     // 设置是否自动设置图片旋转角度，如设备锁屏，并且默认图像采集来自摄像头的话可以设置自动设置图片旋转角度
 #if kEnableCustomSettingImgAngle
@@ -77,6 +81,8 @@
 //    [self testAutoFilter];
 //    [self testGestureDetect];
 //    [self testBackgroundCutout];
+    [self testReHairColor];
+//    [self testARWriting];
 //    [self testDebug];
 }
 
@@ -321,6 +327,33 @@
 
     // 设置代理
     self.beautyEngine.delegate = self;
+}
+
+- (void)testReHairColor
+{
+    // 打开换发色功能开关
+    [self.beautyEngine setQueenBeautyType:kQueenBeautyTypeHairColor enable:YES];
+    
+    // 设置头发颜色
+    [self.beautyEngine setHairColorWithRed:0.3137254901960784
+                                 withGreen:0.3137254901960784
+                                  withBlue:0.6274509803921569];
+/*
+ * 参考颜色：
+ * ('blue', [0.3137254901960784, 0.3137254901960784, 0.6274509803921569])
+ * ('purple', [0.6078431372549019, 0.35294117647058826, 0.6274509803921569])
+ * ('sky', [0.3333333333333333, 0.5490196078431373, 0.5490196078431373])
+ * ('yellow', [0.6470588235294118, 0.5294117647058824, 0.35294117647058826])
+ * ('green', [0.37254901960784315, 0.5882352941176471, 0.3137254901960784])
+ * ('original', [0.39215686274509803, 0.3333333333333333, 0.3137254901960784])
+ * ('red', [0.5098039215686274, 0.27450980392156865, 0.27450980392156865])
+ */
+}
+
+-(void)testARWriting
+{
+    // 打开AR隔空写字功能开关
+    [self.beautyEngine setARWriting:YES mode:0];
 }
 
 - (void)testDebug

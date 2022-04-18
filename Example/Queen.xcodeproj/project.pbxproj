@@ -27,6 +27,7 @@
 		8D27037F2665D5E500D1F15E /* AQEDisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D27037D2665D5E500D1F15E /* AQEDisplayView.m */; };
 		8D2703822665E26800D1F15E /* AQESimpleQueenExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D2703812665E26800D1F15E /* AQESimpleQueenExampleViewController.m */; };
 		8D27039D2666451900D1F15E /* AQESimpleCaptureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D27039C2666451900D1F15E /* AQESimpleCaptureViewController.m */; };
+		8DAFE573280943800001DF88 /* AliVideoCert_1649317505780.crt in Resources */ = {isa = PBXBuildFile; fileRef = 8DAFE5722809437F0001DF88 /* AliVideoCert_1649317505780.crt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		8D2703812665E26800D1F15E /* AQESimpleQueenExampleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AQESimpleQueenExampleViewController.m; sourceTree = "<group>"; };
 		8D27039B2666451900D1F15E /* AQESimpleCaptureViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AQESimpleCaptureViewController.h; sourceTree = "<group>"; };
 		8D27039C2666451900D1F15E /* AQESimpleCaptureViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AQESimpleCaptureViewController.m; sourceTree = "<group>"; };
+		8DAFE5722809437F0001DF88 /* AliVideoCert_1649317505780.crt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AliVideoCert_1649317505780.crt; sourceTree = "<group>"; };
 		B60A1DA2B165741B2E9FF347 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		FF456131A0354DC517C108CA /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -144,6 +146,7 @@
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
+				8DAFE5722809437F0001DF88 /* AliVideoCert_1649317505780.crt */,
 				6003F594195388D20070C39A /* Supporting Files */,
 			);
 			name = "Example for Queen";
@@ -284,6 +287,7 @@
 				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
 				71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
+				8DAFE573280943800001DF88 /* AliVideoCert_1649317505780.crt in Resources */,
 				8D2703722665CC9E00D1F15E /* res in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
 			);
