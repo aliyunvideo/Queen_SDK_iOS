@@ -74,6 +74,10 @@
 		88FC7854268C8C2D00768C53 /* RTCPushAndPlayAnchorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88FC7852268C8C2D00768C53 /* RTCPushAndPlayAnchorViewController.xib */; };
 		88FC7859268C8F6E00768C53 /* RTCPushAndPlayAudienceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88FC7857268C8F6E00768C53 /* RTCPushAndPlayAudienceViewController.m */; };
 		88FC785A268C8F6E00768C53 /* RTCPushAndPlayAudienceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88FC7858268C8F6E00768C53 /* RTCPushAndPlayAudienceViewController.xib */; };
+		8D13B9D52817E6D400C400F1 /* ThirdBeautyEntranceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D13B9D22817E6D400C400F1 /* ThirdBeautyEntranceViewController.m */; };
+		8D13B9D62817E6D400C400F1 /* ThirdBeautyEntranceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D13B9D32817E6D400C400F1 /* ThirdBeautyEntranceViewController.xib */; };
+		8D13B9D92817E76B00C400F1 /* ThirdBeautyAliQueenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D13B9D82817E76B00C400F1 /* ThirdBeautyAliQueenViewController.m */; };
+		8D13B9DB2817E79C00C400F1 /* ThirdBeautyAliQueenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D13B9DA2817E79C00C400F1 /* ThirdBeautyAliQueenViewController.xib */; };
 		959F44559C0D4A535AB073DA /* TXLiteAVSDK_Smart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4AD8FCEBE46892C1C2C2EA0 /* TXLiteAVSDK_Smart.framework */; };
 		C1937C64274F75F700F19E99 /* LivePkUserInputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1937C63274F75F700F19E99 /* LivePkUserInputViewController.m */; };
 		C1937C93274F799200F19E99 /* LiveLinkOrPkStreamInputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1937C84274F799200F19E99 /* LiveLinkOrPkStreamInputViewController.m */; };
@@ -216,6 +220,12 @@
 		88FC7856268C8F6E00768C53 /* RTCPushAndPlayAudienceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RTCPushAndPlayAudienceViewController.h; sourceTree = "<group>"; };
 		88FC7857268C8F6E00768C53 /* RTCPushAndPlayAudienceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RTCPushAndPlayAudienceViewController.m; sourceTree = "<group>"; };
 		88FC7858268C8F6E00768C53 /* RTCPushAndPlayAudienceViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RTCPushAndPlayAudienceViewController.xib; sourceTree = "<group>"; };
+		8D13B9D22817E6D400C400F1 /* ThirdBeautyEntranceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdBeautyEntranceViewController.m; sourceTree = "<group>"; };
+		8D13B9D32817E6D400C400F1 /* ThirdBeautyEntranceViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThirdBeautyEntranceViewController.xib; sourceTree = "<group>"; };
+		8D13B9D42817E6D400C400F1 /* ThirdBeautyEntranceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdBeautyEntranceViewController.h; sourceTree = "<group>"; };
+		8D13B9D72817E76B00C400F1 /* ThirdBeautyAliQueenViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThirdBeautyAliQueenViewController.h; sourceTree = "<group>"; };
+		8D13B9D82817E76B00C400F1 /* ThirdBeautyAliQueenViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThirdBeautyAliQueenViewController.m; sourceTree = "<group>"; };
+		8D13B9DA2817E79C00C400F1 /* ThirdBeautyAliQueenViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThirdBeautyAliQueenViewController.xib; sourceTree = "<group>"; };
 		C1937C62274F75F700F19E99 /* LivePkUserInputViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LivePkUserInputViewController.h; sourceTree = "<group>"; };
 		C1937C63274F75F700F19E99 /* LivePkUserInputViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LivePkUserInputViewController.m; sourceTree = "<group>"; };
 		C1937C83274F799100F19E99 /* LiveLinkAnchorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiveLinkAnchorViewController.h; sourceTree = "<group>"; };
@@ -401,12 +411,25 @@
 		47E072AD2636A6C80027D05E /* ThirdBeauty */ = {
 			isa = PBXGroup;
 			children = (
+				8D13B9D42817E6D400C400F1 /* ThirdBeautyEntranceViewController.h */,
+				8D13B9D22817E6D400C400F1 /* ThirdBeautyEntranceViewController.m */,
+				8D13B9D32817E6D400C400F1 /* ThirdBeautyEntranceViewController.xib */,
 				47E072CC2636A6C80027D05E /* ThirdBeautyViewController.h */,
 				47E072AF2636A6C80027D05E /* ThirdBeautyViewController.m */,
 				47E072AE2636A6C80027D05E /* ThirdBeautyViewController.xib */,
 				88FC77AD268C625300768C53 /* README.md */,
+				8D13B9D72817E76B00C400F1 /* ThirdBeautyAliQueenViewController.h */,
+				8D13B9D82817E76B00C400F1 /* ThirdBeautyAliQueenViewController.m */,
+				8D13B9DA2817E79C00C400F1 /* ThirdBeautyAliQueenViewController.xib */,
 			);
 			path = ThirdBeauty;
+			sourceTree = "<group>";
+		};
+		4C654CAE041F4C7F83855F24 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		880B3C472624411B002683FB /* Debug */ = {
@@ -471,6 +494,7 @@
 				880B3C472624411B002683FB /* Debug */,
 				8887C55B262151200035C0B9 /* Products */,
 				88ED6FE02624364700C75B9D /* Frameworks */,
+				4C654CAE041F4C7F83855F24 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -662,11 +686,13 @@
 			files = (
 				C1937C95274F799200F19E99 /* LiveLinkOrPkSwitchRoleViewController.xib in Resources */,
 				8839C3D62689BEF5000FF58C /* LivePlayViewController.xib in Resources */,
+				8D13B9D62817E6D400C400F1 /* ThirdBeautyEntranceViewController.xib in Resources */,
 				88FC784B268C678A00768C53 /* RTCPushAndPlayEnterViewController.xib in Resources */,
 				C1937C97274F799200F19E99 /* LiveInputBaseViewController.xib in Resources */,
 				88A1A88B268DA81A007F630D /* LivePkAudienceViewController.xib in Resources */,
 				8839C3BB2689AE29000FF58C /* LivePushScreenViewController.xib in Resources */,
 				885A56482689ABB500D9D55F /* LivePushScreenEnterViewController.xib in Resources */,
+				8D13B9DB2817E79C00C400F1 /* ThirdBeautyAliQueenViewController.xib in Resources */,
 				477EC97A26268B0A007AAC4F /* Assets.xcassets in Resources */,
 				88FC77AE268C625300768C53 /* README.md in Resources */,
 				477EC97D26268B0A007AAC4F /* Main.storyboard in Resources */,
@@ -703,6 +729,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				477EC9A226268CB9007AAC4F /* ViewController.m in Sources */,
+				8D13B9D92817E76B00C400F1 /* ThirdBeautyAliQueenViewController.m in Sources */,
 				C1937C94274F799200F19E99 /* LiveLinkOrPkSwitchRoleViewController.m in Sources */,
 				C1937C64274F75F700F19E99 /* LivePkUserInputViewController.m in Sources */,
 				88A1A88A268DA81A007F630D /* LivePkAudienceViewController.m in Sources */,
@@ -716,6 +743,7 @@
 				88167CB3268488C2001D99DC /* LivePushCameraEnterViewController.m in Sources */,
 				88FC784A268C678A00768C53 /* RTCPushAndPlayEnterViewController.m in Sources */,
 				88AB3E51268A008C00A75212 /* URLUtils.m in Sources */,
+				8D13B9D52817E6D400C400F1 /* ThirdBeautyEntranceViewController.m in Sources */,
 				880B3C4A2624411B002683FB /* GenerateTestUserSig.m in Sources */,
 				885A56472689ABB500D9D55F /* LivePushScreenEnterViewController.m in Sources */,
 				C1937C99274F799200F19E99 /* LiveLinkUserInputViewController.m in Sources */,
