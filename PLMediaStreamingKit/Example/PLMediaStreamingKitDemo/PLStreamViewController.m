@@ -6,6 +6,12 @@
 //  Copyright © 2020 Pili. All rights reserved.
 //
 
+#define ENABLE_ALIYUN_QUEEN_BEAUTY 0
+
+#if ENABLE_ALIYUN_QUEEN_BEAUTY
+#import <queen/queen.h>
+#endif
+
 #import "PLStreamViewController.h"
 #import "PLButtonControlsView.h"
 #import "PLShowDetailView.h"
@@ -110,6 +116,10 @@ PLInputTextViewDelegate
 
 @property (nonatomic, strong) NSString *systemVersion;
 
+#if ENABLE_ALIYUN_QUEEN_BEAUTY
+@property (nonatomic, strong) QueenEngine *beautyEngine;
+#endif
+
 @end
 
 @implementation PLStreamViewController
@@ -134,6 +144,8 @@ PLInputTextViewDelegate
         _streamSession.delegate = nil;
         _streamSession = nil;
     }
+    
+    [self releaseQueenEngine];
     // 打印代表 PLStreamViewController 成功释放
     NSLog(@"[PLStreamViewController] dealloc !");
 }
@@ -171,6 +183,9 @@ PLInputTextViewDelegate
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self setupQueenEngine];
+    [self enableQueenFeatures];
     
     [self setupStreamSession];
     
@@ -457,6 +472,7 @@ PLInputTextViewDelegate
     }
     CVPixelBufferUnlockBaseAddress(pixelBuffer, 0);
      */
+    [self processVideoFrameByQueen:pixelBuffer];
     return pixelBuffer;
 }
 
@@ -1486,5 +1502,58 @@ PLInputTextViewDelegate
     // Pass the selected object to the new view controller.
 }
 */
+
+#pragma mark - Queen
+
+- (void)setupQueenEngine
+{
+#if ENABLE_ALIYUN_QUEEN_BEAUTY
+    if (self.beautyEngine)
+    {
+        return;
+    }
+    
+    NSString *bundlPath = [[NSBundle mainBundle] bundlePath];
+    QueenEngineConfigInfo *configInfo = [QueenEngineConfigInfo new];
+    configInfo.resRootPath = [bundlPath stringByAppendingString:@"/res"];
+    configInfo.runOnCustomThread = NO;
+#error please input licenseKey and licenseFile for your bundleID 
+    configInfo.licenseKey = @"";
+    configInfo.licenseFile = @"";
+    self.beautyEngine = [[QueenEngine alloc] initWithConfigInfo:configInfo];
+#endif    
+}
+
+- (void)enableQueenFeatures
+{
+#if ENABLE_ALIYUN_QUEEN_BEAUTY
+    [self.beautyEngine setQueenBeautyType:kQueenBeautyTypeSkinWhiting enable:YES];
+    [self.beautyEngine setQueenBeautyParams:kQueenBeautyParamsWhitening value:1.0f];
+    [self.beautyEngine setQueenBeautyType:kQueenBeautyTypeSkinBuffing enable:YES];
+    [self.beautyEngine setQueenBeautyParams:kQueenBeautyParamsSkinBuffing value:1.0f];
+    [self.beautyEngine setQueenBeautyType:kQueenBeautyTypeFaceShape enable:YES];
+    [self.beautyEngine setFaceShape:kQueenBeautyFaceShapeTypeThinFace value:0.5f];
+    [self.beautyEngine showFaceDetectPoint:YES];
+#endif    
+}
+
+- (void)processVideoFrameByQueen:(CVPixelBufferRef)pixelBufferRef
+{
+#if ENABLE_ALIYUN_QUEEN_BEAUTY
+    QEPixelBufferData *bufferData = [QEPixelBufferData new];
+    bufferData.bufferIn = pixelBufferRef;
+    bufferData.bufferOut = pixelBufferRef;    
+    [self.beautyEngine processPixelBuffer:bufferData];
+#endif    
+}
+
+- (void)releaseQueenEngine
+{
+#if ENABLE_ALIYUN_QUEEN_BEAUTY
+    [self.beautyEngine destroyEngine];
+    self.beautyEngine = nil;
+#endif
+}
+
 
 @end
