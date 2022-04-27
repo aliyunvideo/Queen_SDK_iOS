@@ -1,5 +1,6 @@
 # OS X
 .DS_Store
+*/.DS_Store
 
 # Xcode
 build/
@@ -18,6 +19,9 @@ profile
 DerivedData
 *.hmap
 *.ipa
+
+#CocoaPods
+Pods
 
 # Bundler
 .bundle
