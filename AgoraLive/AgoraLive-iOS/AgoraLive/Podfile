@@ -1,0 +1,27 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'AgoraLive' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for AgoraLive
+  platform :ios, '9.0'
+  
+  pod 'RxSwift', '~> 5.0.1'
+  pod 'RxCocoa'
+  pod 'RxDataSources'
+  pod 'MJRefresh', '~> 3.3.1'
+  pod 'AGEVideoLayout'
+  pod 'FLAnimatedImage'
+  pod 'MBProgressHUD', '~> 1.1.0'
+  pod 'AgoraRtm_iOS', '~> 1.2.2'
+  pod 'AgoraRtcEngine_iOS', '~> 3.0.1'
+  pod 'AGECamera', '~> 1.0.3'
+  pod 'Nama-lite', '~> 6.4.0'
+  pod 'AlamoClient', '~> 1.0.2'
+  pod 'AliyunOSSiOS'
+  pod 'Bugly'
+
+  source 'https://github.com/CocoaPods/Specs.git'
+end
