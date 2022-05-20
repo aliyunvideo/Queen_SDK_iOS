@@ -21,7 +21,7 @@ target 'AgoraLive' do
   pod 'Nama-lite', '~> 6.4.0'
   pod 'AlamoClient', '~> 1.0.2'
   pod 'AliyunOSSiOS'
-  pod 'Bugly'
-
+  pod 'Bugly', :git => 'https://github.com/BuglyDevTeam/Bugly-iOS.git'
+  pod 'Queen', '2.0.0-official-pro'
   source 'https://github.com/CocoaPods/Specs.git'
 end
