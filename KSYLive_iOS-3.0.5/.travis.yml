@@ -1,0 +1,33 @@
+language: objective-c
+osx_image: xcode9
+xcode_workspace: demo/KSYLiveDemo.xcworkspace
+xcode_scheme: KSYLiveDemo
+script:
+- echo "release to framework_${TRAVIS_TAG}.zip - $TRAVIS_TAG"
+- mkdir -p framework/static
+- wget https://github.com/ksvc/KSYLive_iOS/releases/download/v2.0.0/staticGPUImage.zip
+- unzip -q staticGPUImage.zip -d framework/static/
+- wget https://github.com/ksvc/KSYLive_iOS/releases/download/v2.0.0/Bugly.zip
+- unzip -q Bugly.zip -d framework/
+- cd releaseFramework
+- "./release-libKSYLive.sh libksygpulive lite"
+- cd ../
+- zip -q --symlinks -r framework_${TRAVIS_TAG}.zip framework/*
+- rm -rf framework/static/*
+- wget https://github.com/ksvc/KSYLive_iOS/releases/download/v2.0.0/dynamicGPUImage.zip
+- unzip -q dynamicGPUImage.zip -d framework/dynamic/
+- cd releaseFramework
+- "./release-libKSYLive.sh libksygpulive lite dy"
+- cd ../
+- zip -q --symlinks -r framework_dy_${TRAVIS_TAG}.zip framework/*
+deploy:
+  provider: releases
+  api_key:
+    secure: Q3YNqhY0z4Tzl9N2PUnGHXOOBZYM15vMJn6XZxpXi5soQueok8ko+V+bTFVCUDn5JvESorCqGLjUybK5kZCGLSC+BtwXGeCdzz1qnlxp11D35BSQHTvS0httKqPNaE5Zft/8LANF0oYDvPtHUzJgX2Br0FLyWRAoWKTkKqk04zf95mfHBPC81EFXq+K49UTNIIFJTr4YbfMNlfYhIW+jqGecXaiH9jPZ7J++i0oJnHszAyWIedygjGhNfORBbz60vA8roenkkQuHTAHF6sKtvrzDYKCw40+M7q45ZkHJRL5rpryDino9hVxGnmTME+BHpXmYIBFDIXxv234NkuKTITf4BAhFir4n/3FWVtLP+2f35jG2gQib58B9ub52zfUMi6PHUKFDm7czc4BofmXhrMtiNPtwUq2iKea4UHCHon+DaUQ+xFfZwvzNBZwwrs+pHLeYXPrAEBgjDpZJxnJ2i1NGxSCnJ1TnBqa31AqLjOR8QQ4IfEjamM2S+btgQOHVW2A7NPj1+ve5cyn05zHpyGk9SzaAJhHXttAZWn70YEbF3Uk4ol8bSzb7mpzbK8Q6QZ3j4pHPoo0kPBSuTXAw8vhmlMuyCtGiY/T0L1dVcAhB7tDhijyr8FY9FqpmIOIvneAeAmb6SmxdPby6aHQJsfLAj66/ZoeKfF+FQPAb8dk=
+  file: 
+    - framework_${TRAVIS_TAG}.zip
+    - framework_dy_${TRAVIS_TAG}.zip
+  skip_cleanup: true
+  on:
+    repo: ksvc/KSYLive_iOS
+    tags: true

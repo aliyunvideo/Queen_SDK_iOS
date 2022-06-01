@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Constants/KSYGPUPicPlayerState.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/c/tdef/KSYGPUPicPlayerState</TokenIdentifier>
+			<Abstract type="html">图片播放器状态</Abstract>
+			<DeclaredIn>KSYGPUPicPlayer.h</DeclaredIn>
+            
+			
+			<NodeRef refid="70"/>
+		</Token>
+		
+		
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/KSYGPUPicPlayerState_Idle</TokenIdentifier>
+            <Abstract type="html">空闲状态</Abstract>
+            <Declaration>KSYGPUPicPlayerState_Idle</Declaration>
+            
+            <DeclaredIn>KSYGPUPicPlayer.h</DeclaredIn>
+            
+            <NodeRef refid="70"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/KSYGPUPicPlayerState_Play</TokenIdentifier>
+            <Abstract type="html">播放状态</Abstract>
+            <Declaration>KSYGPUPicPlayerState_Play</Declaration>
+            
+            <DeclaredIn>KSYGPUPicPlayer.h</DeclaredIn>
+            
+            <NodeRef refid="70"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/KSYGPUPicPlayerState_Pause</TokenIdentifier>
+            <Abstract type="html">暂停状态</Abstract>
+            <Declaration>KSYGPUPicPlayerState_Pause</Declaration>
+            
+            <DeclaredIn>KSYGPUPicPlayer.h</DeclaredIn>
+            
+            <NodeRef refid="70"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/KSYGPUPicPlayerState_Finished</TokenIdentifier>
+            <Abstract type="html">结束状态</Abstract>
+            <Declaration>KSYGPUPicPlayerState_Finished</Declaration>
+            
+            <DeclaredIn>KSYGPUPicPlayer.h</DeclaredIn>
+            
+            <NodeRef refid="70"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/KSYGPUPicPlayerState_Error</TokenIdentifier>
+            <Abstract type="html">错误状态</Abstract>
+            <Declaration>KSYGPUPicPlayerState_Error</Declaration>
+            
+            <DeclaredIn>KSYGPUPicPlayer.h</DeclaredIn>
+            
+            <NodeRef refid="70"/>
+        </Token>
+        
+        
+	</File>
+</Tokens>

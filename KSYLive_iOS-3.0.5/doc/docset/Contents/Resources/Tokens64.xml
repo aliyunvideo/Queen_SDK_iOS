@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Constants/KSYAudioNoiseSuppress.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/c/tdef/KSYAudioNoiseSuppress</TokenIdentifier>
+			<Abstract type="html">噪声抑制等级</Abstract>
+			<DeclaredIn>KSYAUAudioCapture.h</DeclaredIn>
+            
+			
+			<NodeRef refid="64"/>
+		</Token>
+		
+		
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/KSYAudioNoiseSuppress_OFF</TokenIdentifier>
+            <Abstract type="html">关闭</Abstract>
+            <Declaration>KSYAudioNoiseSuppress_OFF</Declaration>
+            
+            <DeclaredIn>KSYAUAudioCapture.h</DeclaredIn>
+            
+            <NodeRef refid="64"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/KSYAudioNoiseSuppress_LOW</TokenIdentifier>
+            <Abstract type="html">温和</Abstract>
+            <Declaration>KSYAudioNoiseSuppress_LOW</Declaration>
+            
+            <DeclaredIn>KSYAUAudioCapture.h</DeclaredIn>
+            
+            <NodeRef refid="64"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/KSYAudioNoiseSuppress_MEDIUM</TokenIdentifier>
+            <Abstract type="html">中等</Abstract>
+            <Declaration>KSYAudioNoiseSuppress_MEDIUM</Declaration>
+            
+            <DeclaredIn>KSYAUAudioCapture.h</DeclaredIn>
+            
+            <NodeRef refid="64"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/KSYAudioNoiseSuppress_HIGH</TokenIdentifier>
+            <Abstract type="html">激进</Abstract>
+            <Declaration>KSYAudioNoiseSuppress_HIGH</Declaration>
+            
+            <DeclaredIn>KSYAUAudioCapture.h</DeclaredIn>
+            
+            <NodeRef refid="64"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/KSYAudioNoiseSuppress_VERYHIGH</TokenIdentifier>
+            <Abstract type="html">非常激进</Abstract>
+            <Declaration>KSYAudioNoiseSuppress_VERYHIGH</Declaration>
+            
+            <DeclaredIn>KSYAUAudioCapture.h</DeclaredIn>
+            
+            <NodeRef refid="64"/>
+        </Token>
+        
+        
+	</File>
+</Tokens>

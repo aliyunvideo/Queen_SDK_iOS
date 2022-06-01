@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/KSYGPUPicture.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/KSYGPUPicture</TokenIdentifier>
+			<Abstract type="html">图片读入类</Abstract>
+			<DeclaredIn>KSYGPUPicture.h</DeclaredIn>
+            
+			
+			<NodeRef refid="28"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/KSYGPUPicture/initWithImageName:</TokenIdentifier>
+			<Abstract type="html">通过指定图片名称载入图片</Abstract>
+			<DeclaredIn>KSYGPUPicture.h</DeclaredIn>
+			
+			<Declaration>- (id)initWithImageName:(NSString *)name</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>name</Name>
+					<Abstract type="html">图片的名称</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">载入图片后的实例</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithImageName:</Anchor>
+            <NodeRef refid="28"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/KSYGPUPicture/initWithImage:andOutputSize:</TokenIdentifier>
+			<Abstract type="html">指定载入图片后输出的尺寸</Abstract>
+			<DeclaredIn>KSYGPUPicture.h</DeclaredIn>
+			
+			<Declaration>- (id)initWithImage:(UIImage *)img andOutputSize:(CGSize)size</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>img</Name>
+					<Abstract type="html">图片</Abstract>
+				</Parameter><Parameter>
+					<Name>size</Name>
+					<Abstract type="html">尺寸</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">构造的实例</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithImage:andOutputSize:</Anchor>
+            <NodeRef refid="28"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

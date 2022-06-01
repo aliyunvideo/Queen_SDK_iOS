@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Protocols/KSYTransition.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intf/KSYTransition</TokenIdentifier>
+			<Abstract type="html">Protocol for setting duration for each transition filter</Abstract>
+			<DeclaredIn>KSYTransitionFilter.h</DeclaredIn>
+            
+			
+			<NodeRef refid="60"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/KSYTransition/setDuration:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>KSYTransitionFilter.h</DeclaredIn>
+			
+			<Declaration>- (void)setDuration:(int)dur</Declaration>
+			
+			
+			<Anchor>//api/name/setDuration:</Anchor>
+            <NodeRef refid="60"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/KSYWeakProxy.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/KSYWeakProxy</TokenIdentifier>
+			<Abstract type="html">A proxy used to hold a weak object.
+It can be used to avoid retain cycles, such as the target in NSTimer or CADisplayLink.</Abstract>
+			<DeclaredIn>KSYWeakProxy.h</DeclaredIn>
+            
+			
+			<NodeRef refid="57"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/KSYWeakProxy/setTarget:</TokenIdentifier>
+			<Abstract type="html">The proxy target.</Abstract>
+			<DeclaredIn>KSYWeakProxy.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, weak, readonly) id target</Declaration>
+			
+			
+			<Anchor>//api/name/target</Anchor>
+            <NodeRef refid="57"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/KSYWeakProxy/target</TokenIdentifier>
+			<Abstract type="html">The proxy target.</Abstract>
+			<DeclaredIn>KSYWeakProxy.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, weak, readonly) id target</Declaration>
+			
+			
+			<Anchor>//api/name/target</Anchor>
+            <NodeRef refid="57"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/KSYWeakProxy/target</TokenIdentifier>
+			<Abstract type="html">The proxy target.</Abstract>
+			<DeclaredIn>KSYWeakProxy.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, weak, readonly) id target</Declaration>
+			
+			
+			<Anchor>//api/name/target</Anchor>
+            <NodeRef refid="57"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/KSYWeakProxy/initWithTarget:</TokenIdentifier>
+			<Abstract type="html">Creates a new weak proxy for target.</Abstract>
+			<DeclaredIn>KSYWeakProxy.h</DeclaredIn>
+			
+			<Declaration>- (instancetype)initWithTarget:(id)target</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>target</Name>
+					<Abstract type="html">Target object.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A new proxy object.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithTarget:</Anchor>
+            <NodeRef refid="57"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/KSYWeakProxy/proxyWithTarget:</TokenIdentifier>
+			<Abstract type="html">Creates a new weak proxy for target.</Abstract>
+			<DeclaredIn>KSYWeakProxy.h</DeclaredIn>
+			
+			<Declaration>+ (instancetype)proxyWithTarget:(id)target</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>target</Name>
+					<Abstract type="html">Target object.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A new proxy object.</Abstract></ReturnValue>
+			<Anchor>//api/name/proxyWithTarget:</Anchor>
+            <NodeRef refid="57"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

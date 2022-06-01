@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/KSYMvFilter.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/KSYMvFilter</TokenIdentifier>
+			<Abstract type="html">KSYMvFilter MV效果类</Abstract>
+			<DeclaredIn>KSYMvFilter.h</DeclaredIn>
+            
+			
+			<NodeRef refid="41"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/KSYMvFilter/initWithPath:shouldRepeat:</TokenIdentifier>
+			<Abstract type="html">单个mp4 filter</Abstract>
+			<DeclaredIn>KSYMvFilter.h</DeclaredIn>
+			
+			<Declaration>- (id)initWithPath:(NSURL *)mp4URL shouldRepeat:(BOOL)bRepeat</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>mp4URL</Name>
+					<Abstract type="html">指定mp4路径</Abstract>
+				</Parameter><Parameter>
+					<Name>shouldRepeat</Name>
+					<Abstract type="html">mp4是否循环播放</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">mp4 filter</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithPath:shouldRepeat:</Anchor>
+            <NodeRef refid="41"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/KSYMvFilter/MvPause</TokenIdentifier>
+			<Abstract type="html">mv 播放暂停</Abstract>
+			<DeclaredIn>KSYMvFilter.h</DeclaredIn>
+			
+			<Declaration>- (void)MvPause</Declaration>
+			
+			
+			<Anchor>//api/name/MvPause</Anchor>
+            <NodeRef refid="41"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/KSYMvFilter/MvResume</TokenIdentifier>
+			<Abstract type="html">mv 播放暂停恢复</Abstract>
+			<DeclaredIn>KSYMvFilter.h</DeclaredIn>
+			
+			<Declaration>- (void)MvResume</Declaration>
+			
+			
+			<Anchor>//api/name/MvResume</Anchor>
+            <NodeRef refid="41"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/KSYMvFilter/closeMvFilter</TokenIdentifier>
+			<Abstract type="html">关闭mv filter</Abstract>
+			<DeclaredIn>KSYMvFilter.h</DeclaredIn>
+			
+			<Declaration>- (void)closeMvFilter</Declaration>
+			
+			
+			<Anchor>//api/name/closeMvFilter</Anchor>
+            <NodeRef refid="41"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

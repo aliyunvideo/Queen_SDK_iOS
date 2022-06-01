@@ -1,0 +1,653 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/KSYAUAudioCapture.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/KSYAUAudioCapture</TokenIdentifier>
+			<Abstract type="html">音频采集模块</Abstract>
+			<DeclaredIn>KSYAUAudioCapture.h</DeclaredIn>
+            
+			
+			<NodeRef refid="2"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/KSYAUAudioCapture/initWithSampleRate:</TokenIdentifier>
+			<Abstract type="html">指定采集音频的采样率</Abstract>
+			<DeclaredIn>KSYAUAudioCapture.h</DeclaredIn>
+			
+			<Declaration>- (id)initWithSampleRate:(double)sampleRate</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>sampleRate</Name>
+					<Abstract type="html">指定的采样率 , 默认为44100Hz</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">采集设备实例</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithSampleRate:</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/KSYAUAudioCapture/startCapture</TokenIdentifier>
+			<Abstract type="html">启动音频采集, 占据麦克风资源</Abstract>
+			<DeclaredIn>KSYAUAudioCapture.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)startCapture</Declaration>
+			
+			<ReturnValue><Abstract type="html">是否启动采集成功</Abstract></ReturnValue>
+			<Anchor>//api/name/startCapture</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/KSYAUAudioCapture/stopCapture</TokenIdentifier>
+			<Abstract type="html">停止音频采集, 释放麦克风资源</Abstract>
+			<DeclaredIn>KSYAUAudioCapture.h</DeclaredIn>
+			
+			<Declaration>- (void)stopCapture</Declaration>
+			
+			
+			<Anchor>//api/name/stopCapture</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/KSYAUAudioCapture/pauseCapture</TokenIdentifier>
+			<Abstract type="html">暂停音频采集(仍然占用麦克风资源) 停止回调音频数据</Abstract>
+			<DeclaredIn>KSYAUAudioCapture.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)pauseCapture</Declaration>
+			
+			
+			<Anchor>//api/name/pauseCapture</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/KSYAUAudioCapture/pauseWithMuteData</TokenIdentifier>
+			<Abstract type="html">暂停音频采集(仍然占用麦克风资源), 回调静音音频数据</Abstract>
+			<DeclaredIn>KSYAUAudioCapture.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)pauseWithMuteData</Declaration>
+			
+			
+			<Anchor>//api/name/pauseWithMuteData</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/KSYAUAudioCapture/resumeCapture</TokenIdentifier>
+			<Abstract type="html">恢复正常音频采集和回调</Abstract>
+			<DeclaredIn>KSYAUAudioCapture.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)resumeCapture</Declaration>
+			
+			
+			<Anchor>//api/name/resumeCapture</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/KSYAUAudioCapture/setBPlayCapturedAudio:</TokenIdentifier>
+			<Abstract type="html">是否播放采集的声音 (又称&quot;耳返&quot;)</Abstract>
+			<DeclaredIn>KSYAUAudioCapture.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) BOOL bPlayCapturedAudio</Declaration>
+			
+			
+			<Anchor>//api/name/bPlayCapturedAudio</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/KSYAUAudioCapture/bPlayCapturedAudio</TokenIdentifier>
+			<Abstract type="html">是否播放采集的声音 (又称&quot;耳返&quot;)</Abstract>
+			<DeclaredIn>KSYAUAudioCapture.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) BOOL bPlayCapturedAudio</Declaration>
+			
+			
+			<Anchor>//api/name/bPlayCapturedAudio</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/KSYAUAudioCapture/bPlayCapturedAudio</TokenIdentifier>
+			<Abstract type="html">是否播放采集的声音 (又称&quot;耳返&quot;)</Abstract>
+			<DeclaredIn>KSYAUAudioCapture.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) BOOL bPlayCapturedAudio</Declaration>
+			
+			
+			<Anchor>//api/name/bPlayCapturedAudio</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/KSYAUAudioCapture/setEnableVoiceProcess:</TokenIdentifier>
+			<Abstract type="html">是否使用带回声消除的采集模块(默认为NO)</Abstract>
+			<DeclaredIn>KSYAUAudioCapture.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) BOOL enableVoiceProcess</Declaration>
+			
+			
+			<Anchor>//api/name/enableVoiceProcess</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/KSYAUAudioCapture/enableVoiceProcess</TokenIdentifier>
+			<Abstract type="html">是否使用带回声消除的采集模块(默认为NO)</Abstract>
+			<DeclaredIn>KSYAUAudioCapture.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) BOOL enableVoiceProcess</Declaration>
+			
+			
+			<Anchor>//api/name/enableVoiceProcess</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/KSYAUAudioCapture/enableVoiceProcess</TokenIdentifier>
+			<Abstract type="html">是否使用带回声消除的采集模块(默认为NO)</Abstract>
+			<DeclaredIn>KSYAUAudioCapture.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) BOOL enableVoiceProcess</Declaration>
+			
+			
+			<Anchor>//api/name/enableVoiceProcess</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/KSYAUAudioCapture/setNoiseSuppressionLevel:</TokenIdentifier>
+			<Abstract type="html">噪声抑制处理的等级(默认为KSYAudioNoiseSuppress_OFF)</Abstract>
+			<DeclaredIn>KSYAUAudioCapture.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) KSYAudioNoiseSuppress noiseSuppressionLevel</Declaration>
+			
+			
+			<Anchor>//api/name/noiseSuppressionLevel</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/KSYAUAudioCapture/noiseSuppressionLevel</TokenIdentifier>
+			<Abstract type="html">噪声抑制处理的等级(默认为KSYAudioNoiseSuppress_OFF)</Abstract>
+			<DeclaredIn>KSYAUAudioCapture.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) KSYAudioNoiseSuppress noiseSuppressionLevel</Declaration>
+			
+			
+			<Anchor>//api/name/noiseSuppressionLevel</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/KSYAUAudioCapture/noiseSuppressionLevel</TokenIdentifier>
+			<Abstract type="html">噪声抑制处理的等级(默认为KSYAudioNoiseSuppress_OFF)</Abstract>
+			<DeclaredIn>KSYAUAudioCapture.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) KSYAudioNoiseSuppress noiseSuppressionLevel</Declaration>
+			
+			
+			<Anchor>//api/name/noiseSuppressionLevel</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/KSYAUAudioCapture/setBForceAudioSessionCatogary:</TokenIdentifier>
+			<Abstract type="html">是否强制设置AVAudioSession的类别为PlayAndRecord(默认为YES)</Abstract>
+			<DeclaredIn>KSYAUAudioCapture.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) BOOL bForceAudioSessionCatogary</Declaration>
+			
+			
+			<Anchor>//api/name/bForceAudioSessionCatogary</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/KSYAUAudioCapture/bForceAudioSessionCatogary</TokenIdentifier>
+			<Abstract type="html">是否强制设置AVAudioSession的类别为PlayAndRecord(默认为YES)</Abstract>
+			<DeclaredIn>KSYAUAudioCapture.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) BOOL bForceAudioSessionCatogary</Declaration>
+			
+			
+			<Anchor>//api/name/bForceAudioSessionCatogary</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/KSYAUAudioCapture/bForceAudioSessionCatogary</TokenIdentifier>
+			<Abstract type="html">是否强制设置AVAudioSession的类别为PlayAndRecord(默认为YES)</Abstract>
+			<DeclaredIn>KSYAUAudioCapture.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) BOOL bForceAudioSessionCatogary</Declaration>
+			
+			
+			<Anchor>//api/name/bForceAudioSessionCatogary</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/KSYAUAudioCapture/setMicVolume:</TokenIdentifier>
+			<Abstract type="html">设置mic采集的声音音量</Abstract>
+			<DeclaredIn>KSYAUAudioCapture.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) Float32 micVolume</Declaration>
+			
+			
+			<Anchor>//api/name/micVolume</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/KSYAUAudioCapture/micVolume</TokenIdentifier>
+			<Abstract type="html">设置mic采集的声音音量</Abstract>
+			<DeclaredIn>KSYAUAudioCapture.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) Float32 micVolume</Declaration>
+			
+			
+			<Anchor>//api/name/micVolume</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/KSYAUAudioCapture/micVolume</TokenIdentifier>
+			<Abstract type="html">设置mic采集的声音音量</Abstract>
+			<DeclaredIn>KSYAUAudioCapture.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) Float32 micVolume</Declaration>
+			
+			
+			<Anchor>//api/name/micVolume</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/KSYAUAudioCapture/setOutputPts:</TokenIdentifier>
+			<Abstract type="html">最近一次输出的音频包的时间戳</Abstract>
+			<DeclaredIn>KSYAUAudioCapture.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) CMTime outputPts</Declaration>
+			
+			
+			<Anchor>//api/name/outputPts</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/KSYAUAudioCapture/outputPts</TokenIdentifier>
+			<Abstract type="html">最近一次输出的音频包的时间戳</Abstract>
+			<DeclaredIn>KSYAUAudioCapture.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) CMTime outputPts</Declaration>
+			
+			
+			<Anchor>//api/name/outputPts</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/KSYAUAudioCapture/outputPts</TokenIdentifier>
+			<Abstract type="html">最近一次输出的音频包的时间戳</Abstract>
+			<DeclaredIn>KSYAUAudioCapture.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) CMTime outputPts</Declaration>
+			
+			
+			<Anchor>//api/name/outputPts</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/KSYAUAudioCapture/setReverbType:</TokenIdentifier>
+			<Abstract type="html">混响类型</Abstract>
+			<DeclaredIn>KSYAUAudioCapture.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) int reverbType</Declaration>
+			
+			
+			<Anchor>//api/name/reverbType</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/KSYAUAudioCapture/reverbType</TokenIdentifier>
+			<Abstract type="html">混响类型</Abstract>
+			<DeclaredIn>KSYAUAudioCapture.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) int reverbType</Declaration>
+			
+			
+			<Anchor>//api/name/reverbType</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/KSYAUAudioCapture/reverbType</TokenIdentifier>
+			<Abstract type="html">混响类型</Abstract>
+			<DeclaredIn>KSYAUAudioCapture.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) int reverbType</Declaration>
+			
+			
+			<Anchor>//api/name/reverbType</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/KSYAUAudioCapture/setEffectType:</TokenIdentifier>
+			<Abstract type="html">音效类型</Abstract>
+			<DeclaredIn>KSYAUAudioCapture.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) KSYAudioEffectType effectType</Declaration>
+			
+			
+			<Anchor>//api/name/effectType</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/KSYAUAudioCapture/effectType</TokenIdentifier>
+			<Abstract type="html">音效类型</Abstract>
+			<DeclaredIn>KSYAUAudioCapture.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) KSYAudioEffectType effectType</Declaration>
+			
+			
+			<Anchor>//api/name/effectType</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/KSYAUAudioCapture/effectType</TokenIdentifier>
+			<Abstract type="html">音效类型</Abstract>
+			<DeclaredIn>KSYAUAudioCapture.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) KSYAudioEffectType effectType</Declaration>
+			
+			
+			<Anchor>//api/name/effectType</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/KSYAUAudioCapture/setAudioProcessingCallback:</TokenIdentifier>
+			<Abstract type="html">采集数据输出回调函数</Abstract>
+			<DeclaredIn>KSYAUAudioCapture.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy) void ( ^ ) ( CMSampleBufferRef sampleBuffer ) audioProcessingCallback</Declaration>
+			
+			
+			<Anchor>//api/name/audioProcessingCallback</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/KSYAUAudioCapture/audioProcessingCallback</TokenIdentifier>
+			<Abstract type="html">采集数据输出回调函数</Abstract>
+			<DeclaredIn>KSYAUAudioCapture.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy) void ( ^ ) ( CMSampleBufferRef sampleBuffer ) audioProcessingCallback</Declaration>
+			
+			
+			<Anchor>//api/name/audioProcessingCallback</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/KSYAUAudioCapture/audioProcessingCallback</TokenIdentifier>
+			<Abstract type="html">采集数据输出回调函数</Abstract>
+			<DeclaredIn>KSYAUAudioCapture.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy) void ( ^ ) ( CMSampleBufferRef sampleBuffer ) audioProcessingCallback</Declaration>
+			
+			
+			<Anchor>//api/name/audioProcessingCallback</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/KSYAUAudioCapture/setPcmProcessingCallback:</TokenIdentifier>
+			<Abstract type="html">采集数据输出回调函数</Abstract>
+			<DeclaredIn>KSYAUAudioCapture.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy) void ( ^ ) ( uint8_t **pData , int len , const AudioStreamBasicDescription *fmt , CMTime timeInfo ) pcmProcessingCallback</Declaration>
+			
+			
+			<Anchor>//api/name/pcmProcessingCallback</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/KSYAUAudioCapture/pcmProcessingCallback</TokenIdentifier>
+			<Abstract type="html">采集数据输出回调函数</Abstract>
+			<DeclaredIn>KSYAUAudioCapture.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy) void ( ^ ) ( uint8_t **pData , int len , const AudioStreamBasicDescription *fmt , CMTime timeInfo ) pcmProcessingCallback</Declaration>
+			
+			
+			<Anchor>//api/name/pcmProcessingCallback</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/KSYAUAudioCapture/pcmProcessingCallback</TokenIdentifier>
+			<Abstract type="html">采集数据输出回调函数</Abstract>
+			<DeclaredIn>KSYAUAudioCapture.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy) void ( ^ ) ( uint8_t **pData , int len , const AudioStreamBasicDescription *fmt , CMTime timeInfo ) pcmProcessingCallback</Declaration>
+			
+			
+			<Anchor>//api/name/pcmProcessingCallback</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/KSYAUAudioCapture/setCustomPlayCallback:</TokenIdentifier>
+			<Abstract type="html">用户可以自定义播放的内容，直接把数据填入ioData</Abstract>
+			<DeclaredIn>KSYAUAudioCapture.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy) void ( ^ ) ( AudioBufferList *ioData , UInt32 inumber ) customPlayCallback</Declaration>
+			
+			
+			<Anchor>//api/name/customPlayCallback</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/KSYAUAudioCapture/customPlayCallback</TokenIdentifier>
+			<Abstract type="html">用户可以自定义播放的内容，直接把数据填入ioData</Abstract>
+			<DeclaredIn>KSYAUAudioCapture.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy) void ( ^ ) ( AudioBufferList *ioData , UInt32 inumber ) customPlayCallback</Declaration>
+			
+			
+			<Anchor>//api/name/customPlayCallback</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/KSYAUAudioCapture/customPlayCallback</TokenIdentifier>
+			<Abstract type="html">用户可以自定义播放的内容，直接把数据填入ioData</Abstract>
+			<DeclaredIn>KSYAUAudioCapture.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy) void ( ^ ) ( AudioBufferList *ioData , UInt32 inumber ) customPlayCallback</Declaration>
+			
+			
+			<Anchor>//api/name/customPlayCallback</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/KSYAUAudioCapture/isHeadsetPluggedIn</TokenIdentifier>
+			<Abstract type="html">是否有耳机麦克风可用</Abstract>
+			<DeclaredIn>KSYAUAudioCapture.h</DeclaredIn>
+			
+			<Declaration>+ (BOOL)isHeadsetPluggedIn</Declaration>
+			
+			<ReturnValue><Abstract type="html">是/否有耳机麦克风</Abstract></ReturnValue>
+			<Anchor>//api/name/isHeadsetPluggedIn</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/KSYAUAudioCapture/setIsRunning:</TokenIdentifier>
+			<Abstract type="html">设备是否正在采集音频数据</Abstract>
+			<DeclaredIn>KSYAUAudioCapture.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isRunning</Declaration>
+			
+			
+			<Anchor>//api/name/isRunning</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/KSYAUAudioCapture/isRunning</TokenIdentifier>
+			<Abstract type="html">设备是否正在采集音频数据</Abstract>
+			<DeclaredIn>KSYAUAudioCapture.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isRunning</Declaration>
+			
+			
+			<Anchor>//api/name/isRunning</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/KSYAUAudioCapture/isRunning</TokenIdentifier>
+			<Abstract type="html">设备是否正在采集音频数据</Abstract>
+			<DeclaredIn>KSYAUAudioCapture.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isRunning</Declaration>
+			
+			
+			<Anchor>//api/name/isRunning</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/KSYAUAudioCapture/setEffectTypeFlag:</TokenIdentifier>
+			<Abstract type="html">变调组合类型</Abstract>
+			<DeclaredIn>KSYAUAudioCapture.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) int effectTypeFlag</Declaration>
+			
+			
+			<Anchor>//api/name/effectTypeFlag</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/KSYAUAudioCapture/effectTypeFlag</TokenIdentifier>
+			<Abstract type="html">变调组合类型</Abstract>
+			<DeclaredIn>KSYAUAudioCapture.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) int effectTypeFlag</Declaration>
+			
+			
+			<Anchor>//api/name/effectTypeFlag</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/KSYAUAudioCapture/effectTypeFlag</TokenIdentifier>
+			<Abstract type="html">变调组合类型</Abstract>
+			<DeclaredIn>KSYAUAudioCapture.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) int effectTypeFlag</Declaration>
+			
+			
+			<Anchor>//api/name/effectTypeFlag</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/KSYAUAudioCapture/setReverbParamID:withInValue:</TokenIdentifier>
+			<Abstract type="html">自定义混响参数接口</Abstract>
+			<DeclaredIn>KSYAUAudioCapture.h</DeclaredIn>
+			
+			<Declaration>- (void)setReverbParamID:(AudioUnitParameterID)inID withInValue:(AudioUnitParameterValue)inValue</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>inID</Name>
+					<Abstract type="html">混响参数(0~6), 对应关系如下
+- 0 kReverb2Param_DryWetMix
+- 1 kReverb2Param_Gain
+- 2 kReverb2Param_MinDelayTime
+- 3 kReverb2Param_MaxDelayTime
+- 4 kReverb2Param_DecayTimeAt0Hz
+- 5 kReverb2Param_DecayTimeAtNyquist
+- 6 kReverb2Param_RandomizeReflections
+*</Abstract>
+				</Parameter><Parameter>
+					<Name>inValue</Name>
+					<Abstract type="html">混响参数对应的值</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setReverbParamID:withInValue:</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/KSYAUAudioCapture/setPitchParamID:withInValue:</TokenIdentifier>
+			<Abstract type="html">自定义pitchShift参数接口</Abstract>
+			<DeclaredIn>KSYAUAudioCapture.h</DeclaredIn>
+			
+			<Declaration>- (void)setPitchParamID:(AudioUnitParameterID)inID withInValue:(AudioUnitParameterValue)inValue</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>inID</Name>
+					<Abstract type="html">pitchShift参数,对应关系如下
+- 0 kNewTimePitchParam_Rate
+- 1 kNewTimePitchParam_Pitch (SDK中变调主要是调这个参数)
+- 4 kNewTimePitchParam_Overlap
+- 6 kNewTimePitchParam_EnablePeakLocking
+*</Abstract>
+				</Parameter><Parameter>
+					<Name>inValue</Name>
+					<Abstract type="html">pitchShift参数对应的值</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setPitchParamID:withInValue:</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/KSYAUAudioCapture/setDelayParamID:withInValue:</TokenIdentifier>
+			<Abstract type="html">自定义delay参数接口</Abstract>
+			<DeclaredIn>KSYAUAudioCapture.h</DeclaredIn>
+			
+			<Declaration>- (void)setDelayParamID:(AudioUnitParameterID)inID withInValue:(AudioUnitParameterValue)inValue</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>inID</Name>
+					<Abstract type="html">delay参数(0~3),对应关系如下
+- 0 kDelayParam_WetDryMix
+- 1 kDelayParam_DelayTime
+- 2 kDelayParam_Feedback
+- 3 kDelayParam_LopassCutoff
+*</Abstract>
+				</Parameter><Parameter>
+					<Name>inValue</Name>
+					<Abstract type="html">delay参数对应的值</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setDelayParamID:withInValue:</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

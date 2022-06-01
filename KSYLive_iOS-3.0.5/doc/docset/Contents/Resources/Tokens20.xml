@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/KSYGPUBrushStreamerKit.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/KSYGPUBrushStreamerKit</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>KSYGPUBrushStreamerKit.h</DeclaredIn>
+            
+			
+			<NodeRef refid="20"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/KSYGPUBrushStreamerKit/setDrawPicRect:</TokenIdentifier>
+			<Abstract type="html">绘制图片的位置和大小</Abstract>
+			<DeclaredIn>KSYGPUBrushStreamerKit.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readwrite) CGRect drawPicRect</Declaration>
+			
+			
+			<Anchor>//api/name/drawPicRect</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/KSYGPUBrushStreamerKit/drawPicRect</TokenIdentifier>
+			<Abstract type="html">绘制图片的位置和大小</Abstract>
+			<DeclaredIn>KSYGPUBrushStreamerKit.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readwrite) CGRect drawPicRect</Declaration>
+			
+			
+			<Anchor>//api/name/drawPicRect</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/KSYGPUBrushStreamerKit/drawPicRect</TokenIdentifier>
+			<Abstract type="html">绘制图片的位置和大小</Abstract>
+			<DeclaredIn>KSYGPUBrushStreamerKit.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readwrite) CGRect drawPicRect</Declaration>
+			
+			
+			<Anchor>//api/name/drawPicRect</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/KSYGPUBrushStreamerKit/setDrawLayer:</TokenIdentifier>
+			<Abstract type="html">画笔图层</Abstract>
+			<DeclaredIn>KSYGPUBrushStreamerKit.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSInteger drawLayer</Declaration>
+			
+			
+			<Anchor>//api/name/drawLayer</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/KSYGPUBrushStreamerKit/drawLayer</TokenIdentifier>
+			<Abstract type="html">画笔图层</Abstract>
+			<DeclaredIn>KSYGPUBrushStreamerKit.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSInteger drawLayer</Declaration>
+			
+			
+			<Anchor>//api/name/drawLayer</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/KSYGPUBrushStreamerKit/drawLayer</TokenIdentifier>
+			<Abstract type="html">画笔图层</Abstract>
+			<DeclaredIn>KSYGPUBrushStreamerKit.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSInteger drawLayer</Declaration>
+			
+			
+			<Anchor>//api/name/drawLayer</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/KSYGPUBrushStreamerKit/setDrawPic:</TokenIdentifier>
+			<Abstract type="html">绘制的图片</Abstract>
+			<DeclaredIn>KSYGPUBrushStreamerKit.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readwrite) KSYGPUViewCapture *drawPic</Declaration>
+			
+			
+			<Anchor>//api/name/drawPic</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/KSYGPUBrushStreamerKit/drawPic</TokenIdentifier>
+			<Abstract type="html">绘制的图片</Abstract>
+			<DeclaredIn>KSYGPUBrushStreamerKit.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readwrite) KSYGPUViewCapture *drawPic</Declaration>
+			
+			
+			<Anchor>//api/name/drawPic</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/KSYGPUBrushStreamerKit/drawPic</TokenIdentifier>
+			<Abstract type="html">绘制的图片</Abstract>
+			<DeclaredIn>KSYGPUBrushStreamerKit.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readwrite) KSYGPUViewCapture *drawPic</Declaration>
+			
+			
+			<Anchor>//api/name/drawPic</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/KSYGPUBrushStreamerKit/removeDrawLayer</TokenIdentifier>
+			<Abstract type="html">去掉画笔图层</Abstract>
+			<DeclaredIn>KSYGPUBrushStreamerKit.h</DeclaredIn>
+			
+			<Declaration>- (void)removeDrawLayer</Declaration>
+			
+			
+			<Anchor>//api/name/removeDrawLayer</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>
