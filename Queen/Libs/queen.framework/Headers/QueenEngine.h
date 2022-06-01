@@ -171,9 +171,51 @@
 
 @end
 
+@interface QEFaceInfoItem : NSObject
+
+/**
+ * 人脸框坐标
+ */
+/****
+ * Face Rect.
+ */
+@property (nonatomic, assign) CGRect faceRect;
+
+/**
+ * 人脸欧拉角.
+ */
+/****
+ * Euler angle.
+ */
+@property (nonatomic, assign) QEYawPitchRoll faceYPR;
+
+@end
+
+@interface QEFaceInfoData : NSObject
+
+/**
+ * 监测到人脸的个数
+ */
+/****
+ * Face Count.
+ */
+@property (nonatomic, assign) int faceCount;
+
+/**
+ * 每个人脸的相关信息
+ */
+/****
+ * Face Info.
+ */
+@property (nonatomic, strong) NSArray<QEFaceInfoItem *> *faceInfoItems;
+
+@end
+
 @class QueenEngine;
 
 @protocol QueenEngineDelegate <NSObject>
+
+@optional
 
 /**
  * 检测到手势的回调。
@@ -198,6 +240,18 @@
  * @param faceExpressionData The detected face expression data.
  */
 - (void)queenEngine:(QueenEngine *)engine didDetectFaceExpression:(QEFaceExpressionData *)faceExpressionData;
+
+/**
+ * 检测到人脸信息的回调
+ * @param engine 引擎对象
+ * @param faceInfoData 人脸信息对象
+ */
+/****
+ * Called when face is detected.
+ * @param engine The engine object.
+ * @param faceInfoData The detected face data.
+ */
+- (void)queenEngine:(QueenEngine *)engine didDetectFaceInfo:(QEFaceInfoData *)faceInfoData;
 
 /**
  * 智能美型状态回调。
@@ -359,6 +413,16 @@
  * @param param kQueenBeautyParams
  */
 - (float)getQueenBeautyParams:(kQueenBeautyParams)param;
+
+/**
+ * 获取功能开启状态。
+ * @param beautyType 功能类型，kQueenBeautyType 中的一个。
+ */
+/****
+ * Get enabled state of a specified feature.
+ * @param beautyType kQueenBeautyType
+ */
+- (BOOL)getQueenBeautyEnabledState:(kQueenBeautyType)beautyType;
 
 #pragma mark - "滤镜相关API"
 

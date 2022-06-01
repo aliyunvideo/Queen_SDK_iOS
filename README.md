@@ -20,28 +20,24 @@
 支持pods与本地集成两种方式。
 
 ### pods集成方式：
-#### lite版本：
-```ruby
-pod 'Queen', '2.0.0-official-lite'
-```
 #### pro版本：
 ```ruby
-pod 'Queen', '2.0.0-official-pro'
+pod 'Queen', '2.1.0-official-pro'
 ```
 #### ultimate版本：
 ```ruby
-pod 'Queen', '2.0.0-official-ultimate'
+pod 'Queen', '2.1.0-official-ultimate'
 ```
 #### full版本：
 ```ruby
-pod 'Queen', '2.0.0-official-full'
+pod 'Queen', '2.1.0-official-full'
 ```
 
 ### 本地集成方式：
 1. 下载并解压Sample示例工程，获取以下framework文件:
 ```
 queen.framework
-opencv2.framework (lite版本不需要)
+opencv2.framework
 ```
 2. 打开Xcode，在工程target的General页签下，在Frameworks, Libraries, and Embedded Content区域中添加以上framework，并将以上添加的framework的Embed属性设置成Embed & Sign。
 3. 在工程target的Build Settings页签下，搜索找到ENABLE_BITCODE一项，将其设置成NO。
@@ -52,6 +48,10 @@ opencv2.framework (lite版本不需要)
 ```
 // 初始化引擎配置信息对象
 QueenEngineConfigInfo *configInfo = [QueenEngineConfigInfo new];
+// 填写licenseKey和licenseFile，也可以在应用的Info.plist文件加入AlivcLicenseKey字段和AlivcLicenseFile字段，内容类型为字符串，填入相应值即可。优先级：configInfo指定>Info.plist指定
+configInfo.licenseKey = @"xoQuEoYgOHs225cwh634fa27df8d3490e88337161a4d5ee92";
+// 相当于mainBundlePath的文件路径，示例工程的crt文件放在跟目录，所以直接填写文件名即可。
+configInfo.licenseFile = @"AliVideoCert_1649317505780.crt";
 // 设置资源根目录
 NSString *bundlPath = [[NSBundle mainBundle] bundlePath];
 configInfo.resRootPath = [bundlPath stringByAppendingString:@"/res"];
@@ -80,6 +80,7 @@ bufferData.bufferOut = pixelBufferRef;
 ```
 // 释放引擎，确保当前线程与执行processPixelBuffer:是同一条线程
 [self.beautyEngine destroyEngine];
+self.beautyEngine = nil;
 ```
 ### 更多功能使用示例可参考本项目目录下的Example/Queen/AQESimpleQueenExampleViewController.m文件
 

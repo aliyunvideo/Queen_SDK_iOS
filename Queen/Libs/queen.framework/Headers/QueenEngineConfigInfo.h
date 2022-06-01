@@ -94,13 +94,19 @@ typedef NS_ENUM(NSInteger, kQueenBeautyType) {
     /****
      * Feature: Auto Face Shaping
      */
-    kQueenBeautyTypeAutoFaceShape  =    12,
+    kQueenBeautyTypeAutoFaceShape = 12,
+    /** 功能类型: 人脸检测
+     */
+    /****
+     * Feature: Face Detecting
+     */
+    kQueenBeautyTypeFaceDetect = 13,
     /** 最大值
      */
     /****
      * Beauty type count.
      */
-    kQueenBeautyTypeMax            =    13
+    kQueenBeautyTypeMax = 14
 };
 
 /** 对应美颜类型的模式
@@ -1377,6 +1383,53 @@ typedef NS_ENUM(NSInteger, kQueenAutoFaceShapeStatus) {
     kQueenAutoFSDeActivated = 3
 };
 
+/** 算法参数输入模式
+ */
+/****
+ * Algorithm parameter input mode.
+ */
+typedef NS_ENUM(NSInteger, kQueenAlgInputMode) {
+    /** 算法参数输入模式: 半自动。仅需要输入旋转角度
+     */
+    /****
+     * Algorithm parameter input mode: semi automatic. Only need input rotation angle.
+     */
+    kQueenAlgInputModeSemiAutomatic = 0,
+    /** 算法参数输入模式: 全自动。无需提供其他角度参数
+     */
+    /****
+     * Algorithm parameter input mode: fully automatic. No need to provide other angle parameters.
+     */
+    kQueenAlgInputModeAutomatic = 1,
+    /** 算法参数输入模式: 手动。需提供输入旋转角度、输出旋转角度、翻转参数等
+     */
+    /****
+     * Algorithm parameter input mode: manual. Input rotation angle, output rotation angle, turnover parameters shall be provided.
+     */
+    kQueenAlgInputModeManual = 2
+};
+
+typedef struct{
+    /** 俯仰角, 围绕X轴旋转
+     */
+    /****
+     * Rotation around the vertical axis is called yaw.
+     */
+    float yaw;
+    /** 偏航角, 围绕Y轴旋转
+     */
+    /****
+     * Rotation around the side-to-side axis is called pitch.
+     */
+    float pitch;
+    /** 翻滚角, 围绕Z轴旋转
+     */
+    /****
+     * Rotation around the front-to-back axis is called roll.
+     */
+    float roll;
+}QEYawPitchRoll;
+
 @interface QueenEngineConfigInfo :NSObject
 
 /**
@@ -1434,6 +1487,14 @@ typedef NS_ENUM(NSInteger, kQueenAutoFaceShapeStatus) {
  * Whether to set the inputAngle and outputAngle of the image automatically, the default is NO.
  */
 @property (nonatomic, assign) BOOL autoSettingImgAngle;
+
+/**
+ * 算法参数输入模式
+ */
+/****
+ * Algorithm parameter input mode, the default is kQueenAlgInputModeSemiAutomatic.
+ */
+@property (nonatomic, assign) kQueenAlgInputMode algInputMode;
 
 /**
  * 是否运行在自定义线程，默认为YES
