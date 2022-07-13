@@ -101,12 +101,18 @@ typedef NS_ENUM(NSInteger, kQueenBeautyType) {
      * Feature: Face Detecting
      */
     kQueenBeautyTypeFaceDetect = 13,
+    /** 功能类型: 人体检测
+     */
+    /****
+     * Feature: Body Detecting
+     */
+    kQueenBeautyTypeBodyDetect = 14,
     /** 最大值
      */
     /****
      * Beauty type count.
      */
-    kQueenBeautyTypeMax = 14
+    kQueenBeautyTypeMax = 15
 };
 
 /** 对应美颜类型的模式
@@ -305,7 +311,24 @@ typedef NS_ENUM(NSInteger, kQueenBeautyParams) {
      * Feature: Brighten Face
      * Parameter Range:[0,1]
      */
-    kQueenBeautyParamsBrightenFace         = 16
+    kQueenBeautyParamsBrightenFace         = 16,
+    /** 脸部美颜参数项，需要先打开QueenBeautyTypeFaceBuffing 项
+     祛脖颈纹[0,1], 默认0
+    */
+    /****
+     * Feature: Neck
+     * Parameter Range:[0,1]
+     */
+    kQueenBeautyParamsNeck       = 20,
+    /** 脸部美颜参数项，需要先打开QueenBeautyTypeFaceBuffing 项
+     祛额头纹[0,1], 默认0
+    */
+    /****
+     * Feature: Forehead
+     * Parameter Range:[0,1]
+     */
+    kQueenBeautyParamsForehead      = 21
+
 };
 
 /**美妆类型，需要先打开QueenBeautyTypeMakeup 类型

@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreVideo/CoreVideo.h>
-#import <queen/QueenEngineConfigInfo.h>
+#import "QueenEngineConfigInfo.h"
 #import <CoreMedia/CoreMedia.h>
 
 @interface QEPixelBufferData : NSObject
@@ -211,6 +211,14 @@
 
 @end
 
+@interface QEBodyInfoData : NSObject
+
+@property (nonatomic, assign) int bodyPoseType;
+@property (nonatomic, assign) int bodySportType;
+@property (nonatomic, assign) int sportCount;
+
+@end
+
 @class QueenEngine;
 
 @protocol QueenEngineDelegate <NSObject>
@@ -264,6 +272,18 @@
  * @param autoFaceShapeData The face shaping data.
  */
 - (void)queenEngine:(QueenEngine *)engine didChangeAutoFaceShapingStatus:(QEAutoFaceShapeData *)autoFaceShapeData;
+
+/**
+ * 检测到人体的回调。
+ * @param engine 引擎对象。
+ * @param bodyInfoData 人体数据对象。
+ */
+/****
+ * Called when body is detected.
+ * @param engine The engine object.
+ * @param bodyInfoData The detected body data.
+ */
+- (void)queenEngine:(QueenEngine *)engine didDetectBodyInfo:(QEBodyInfoData *)bodyInfoData;
 
 @end
 
@@ -470,6 +490,10 @@
  */
 - (void)setBodyShape:(kQueenBeautyBodyShapeType)bodyShapeType value:(float)value;
 
+- (void)setBodyDetectSportType:(int)bodyDetectSportType;
+
+- (void)clearBodySportCount;
+
 #pragma mark - "美妆相关api"
 
 /**
@@ -615,6 +639,20 @@
  * @param threshold Specifies the closeness of color, [-1, 1], default is 0.
  */
 - (void)setPureColorToBackground:(NSString *)backgroundImagePath colorType:(kQueenBeautyBgColorType)colorType threshold:(float)threshold;
+
+/**
+ * 实景抠像。
+ * @param backgroundImagePath 需要替换的背景资源路径，传空即为取消抠图功能。
+ * @param flipX 背景左右翻转。
+ * @param flipY 背景上下翻转。
+ */
+/****
+ * AI background segment.
+ * @param backgroundImagePath Specifies the background resource file path that needs to be replaced. nil is disabled.
+ * @param flipX Set the background to flip horizontally.
+ * @param flipY Set the background to flip vertically.
+ */
+- (void)setSegmentBackground:(NSString *)backgroundImagePath flipX:(BOOL)flipX flipY:(BOOL)flipY;
 
 /**
  * 调整实景抠图的背景处理方式
