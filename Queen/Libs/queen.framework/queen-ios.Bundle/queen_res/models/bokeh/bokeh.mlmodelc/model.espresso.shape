@@ -1,0 +1,1024 @@
+{
+  "layer_shapes" : {
+    "MobileNetV3_Seg\/se_stage3\/squeeze\/Relu:0" : {
+      "k" : 36,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "MobileNetV3_Seg\/stage4_ghost\/se\/squeeze\/Relu:0" : {
+      "k" : 60,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "relu_MobileNetV3_Seg\/stage4_ghost\/se\/excite\/Relu6:0_clip" : {
+      "k" : 240,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "MobileNetV3_Seg\/stage2\/proj\/BatchNorm\/FusedBatchNorm:0" : {
+      "k" : 16,
+      "w" : 48,
+      "n" : 1,
+      "h" : 84
+    },
+    "MobileNetV3_Seg\/encodeHard4\/dw1\/BatchNorm\/FusedBatchNorm:0" : {
+      "k" : 36,
+      "w" : 12,
+      "n" : 1,
+      "h" : 21
+    },
+    "MobileNetV3_Seg\/encodeHard3\/pt5\/Relu:0" : {
+      "k" : 28,
+      "w" : 24,
+      "n" : 1,
+      "h" : 42
+    },
+    "MobileNetV3_Seg\/encodeHard3\/pt2\/Relu:0" : {
+      "k" : 18,
+      "w" : 24,
+      "n" : 1,
+      "h" : 42
+    },
+    "MobileNetV3_Seg\/encodeHard2\/concat:0" : {
+      "k" : 28,
+      "w" : 48,
+      "n" : 1,
+      "h" : 84
+    },
+    "MobileNetV3_Seg\/stage4_ghost\/primary_conv1\/Relu:0" : {
+      "k" : 120,
+      "w" : 12,
+      "n" : 1,
+      "h" : 21
+    },
+    "MobileNetV3_Seg\/decodeHard3\/dw1\/BatchNorm\/FusedBatchNorm:0" : {
+      "k" : 20,
+      "w" : 24,
+      "n" : 1,
+      "h" : 42
+    },
+    "relu_MobileNetV3_Seg\/se_stage3\/excite\/Relu6:0" : {
+      "k" : 146,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "MobileNetV3_Seg\/encodeHard2\/dw3\/BatchNorm\/FusedBatchNorm:0" : {
+      "k" : 30,
+      "w" : 48,
+      "n" : 1,
+      "h" : 84
+    },
+    "MobileNetV3_Seg\/encodeHard3\/dw6\/BatchNorm\/FusedBatchNorm:0" : {
+      "k" : 18,
+      "w" : 24,
+      "n" : 1,
+      "h" : 42
+    },
+    "MobileNetV3_Seg\/encodeHard2\/concat_3:0" : {
+      "k" : 56,
+      "w" : 48,
+      "n" : 1,
+      "h" : 84
+    },
+    "MobileNetV3_Seg\/encodeHard3\/concat:0" : {
+      "k" : 66,
+      "w" : 24,
+      "n" : 1,
+      "h" : 42
+    },
+    "MobileNetV3_Seg\/stage4_ghost\/se\/mul:0" : {
+      "k" : 240,
+      "w" : 12,
+      "n" : 1,
+      "h" : 21
+    },
+    "MobileNetV3_Seg\/sub:0" : {
+      "k" : 3,
+      "w" : 192,
+      "n" : 1,
+      "h" : 336
+    },
+    "MobileNetV3_Seg\/stage2\/depthwise_conv\/Relu:0" : {
+      "k" : 16,
+      "w" : 48,
+      "n" : 1,
+      "h" : 84
+    },
+    "MobileNetV3_Seg\/conv1_2\/cheap_operation1\/Relu:0" : {
+      "k" : 8,
+      "w" : 96,
+      "n" : 1,
+      "h" : 168
+    },
+    "MobileNetV3_Seg\/decodeHard2_1\/concat_1:0" : {
+      "k" : 32,
+      "w" : 48,
+      "n" : 1,
+      "h" : 84
+    },
+    "MobileNetV3_Seg\/truediv:0" : {
+      "k" : 3,
+      "w" : 192,
+      "n" : 1,
+      "h" : 336
+    },
+    "MobileNetV3_Seg\/encodeHard2\/pt5\/Relu:0" : {
+      "k" : 20,
+      "w" : 48,
+      "n" : 1,
+      "h" : 84
+    },
+    "MobileNetV3_Seg\/decodeHard3\/concat_2:0" : {
+      "k" : 42,
+      "w" : 24,
+      "n" : 1,
+      "h" : 42
+    },
+    "MobileNetV3_Seg\/encodeHard2\/dw0\/BatchNorm\/FusedBatchNorm:0" : {
+      "k" : 12,
+      "w" : 48,
+      "n" : 1,
+      "h" : 84
+    },
+    "MobileNetV3_Seg\/encodeHard2\/pt2\/Relu:0" : {
+      "k" : 12,
+      "w" : 48,
+      "n" : 1,
+      "h" : 84
+    },
+    "MobileNetV3_Seg\/encodeHard4\/concat:0" : {
+      "k" : 102,
+      "w" : 12,
+      "n" : 1,
+      "h" : 21
+    },
+    "MobileNetV3_Seg\/AvgPool2D\/AvgPool:0" : {
+      "k" : 48,
+      "w" : 24,
+      "n" : 1,
+      "h" : 42
+    },
+    "MobileNetV3_Seg\/conv1_2\/primary_conv2\/BatchNorm\/FusedBatchNorm:0" : {
+      "k" : 8,
+      "w" : 96,
+      "n" : 1,
+      "h" : 168
+    },
+    "MobileNetV3_Seg\/decodeHard1\/dw0\/BatchNorm\/FusedBatchNorm:0" : {
+      "k" : 6,
+      "w" : 96,
+      "n" : 1,
+      "h" : 168
+    },
+    "MobileNetV3_Seg\/decodeHard2_0\/primary_conv2\/BatchNorm\/FusedBatchNorm:0" : {
+      "k" : 16,
+      "w" : 48,
+      "n" : 1,
+      "h" : 84
+    },
+    "MobileNetV3_Seg\/resize_2\/ResizeBilinear:0" : {
+      "k" : 32,
+      "w" : 96,
+      "n" : 1,
+      "h" : 168
+    },
+    "MobileNetV3_Seg\/decodeHard3\/pt5\/Relu:0" : {
+      "k" : 20,
+      "w" : 24,
+      "n" : 1,
+      "h" : 42
+    },
+    "MobileNetV3_Seg\/decodeHard3\/pt2\/Relu:0" : {
+      "k" : 12,
+      "w" : 24,
+      "n" : 1,
+      "h" : 42
+    },
+    "MobileNetV3_Seg\/encodeHard2\/dw1\/BatchNorm\/FusedBatchNorm:0" : {
+      "k" : 20,
+      "w" : 48,
+      "n" : 1,
+      "h" : 84
+    },
+    "MobileNetV3_Seg\/encodeHard4\/concat_3:0" : {
+      "k" : 194,
+      "w" : 12,
+      "n" : 1,
+      "h" : 21
+    },
+    "MobileNetV3_Seg\/stage4_ghost\/se\/excite\/BatchNorm\/FusedBatchNorm:0" : {
+      "k" : 240,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "MobileNetV3_Seg\/encodeHard3\/dw4\/BatchNorm\/FusedBatchNorm:0" : {
+      "k" : 18,
+      "w" : 24,
+      "n" : 1,
+      "h" : 42
+    },
+    "MobileNetV3_Seg\/encodeHard4\/dw7\/BatchNorm\/FusedBatchNorm:0" : {
+      "k" : 90,
+      "w" : 12,
+      "n" : 1,
+      "h" : 21
+    },
+    "relu_MobileNetV3_Seg\/se_stage4\/excite\/Relu6:0_clip" : {
+      "k" : 178,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "MobileNetV3_Seg\/AvgPool2D_1\/AvgPool:0__linear_activation" : {
+      "k" : 80,
+      "w" : 12,
+      "n" : 1,
+      "h" : 21
+    },
+    "MobileNetV3_Seg\/decode3_conv\/Relu:0" : {
+      "k" : 56,
+      "w" : 24,
+      "n" : 1,
+      "h" : 42
+    },
+    "MobileNetV3_Seg\/decodeHard2_1\/cheap_operation2\/BatchNorm\/FusedBatchNorm:0" : {
+      "k" : 16,
+      "w" : 48,
+      "n" : 1,
+      "h" : 84
+    },
+    "MobileNetV3_Seg\/decodeHard2_1\/concat:0" : {
+      "k" : 32,
+      "w" : 48,
+      "n" : 1,
+      "h" : 84
+    },
+    "MobileNetV3_Seg\/stage4_ghost\/concat_1:0" : {
+      "k" : 96,
+      "w" : 12,
+      "n" : 1,
+      "h" : 21
+    },
+    "MobileNetV3_Seg\/encodeHard4\/pt5\/Relu:0" : {
+      "k" : 36,
+      "w" : 12,
+      "n" : 1,
+      "h" : 21
+    },
+    "MobileNetV3_Seg\/resize\/ResizeBilinear:0" : {
+      "k" : 96,
+      "w" : 24,
+      "n" : 1,
+      "h" : 42
+    },
+    "MobileNetV3_Seg\/encodeHard4\/pt2\/Relu:0" : {
+      "k" : 22,
+      "w" : 12,
+      "n" : 1,
+      "h" : 21
+    },
+    "MobileNetV3_Seg\/conv1_2\/concat:0" : {
+      "k" : 16,
+      "w" : 96,
+      "n" : 1,
+      "h" : 168
+    },
+    "MobileNetV3_Seg\/encodeHard3\/dw1\/BatchNorm\/FusedBatchNorm:0" : {
+      "k" : 28,
+      "w" : 24,
+      "n" : 1,
+      "h" : 42
+    },
+    "MobileNetV3_Seg\/decodeHard2_1\/cheap_operation1\/Relu:0" : {
+      "k" : 16,
+      "w" : 48,
+      "n" : 1,
+      "h" : 84
+    },
+    "MobileNetV3_Seg\/se_stage4\/excite\/add:0" : {
+      "k" : 178,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "MobileNetV3_Seg\/encodeHard3\/concat_3:0" : {
+      "k" : 140,
+      "w" : 24,
+      "n" : 1,
+      "h" : 42
+    },
+    "MobileNetV3_Seg\/trans3branch_0_1\/BatchNorm\/FusedBatchNorm:0" : {
+      "k" : 16,
+      "w" : 48,
+      "n" : 1,
+      "h" : 84
+    },
+    "MobileNetV3_Seg\/decodeHard3\/dw4\/BatchNorm\/FusedBatchNorm:0" : {
+      "k" : 12,
+      "w" : 24,
+      "n" : 1,
+      "h" : 42
+    },
+    "MobileNetV3_Seg\/concat:0" : {
+      "k" : 242,
+      "w" : 24,
+      "n" : 1,
+      "h" : 42
+    },
+    "MobileNetV3_Seg\/stage4_ghost\/cheap_operation2\/BatchNorm\/FusedBatchNorm:0" : {
+      "k" : 48,
+      "w" : 12,
+      "n" : 1,
+      "h" : 21
+    },
+    "MobileNetV3_Seg\/stage3_conv\/Relu:0" : {
+      "k" : 80,
+      "w" : 24,
+      "n" : 1,
+      "h" : 42
+    },
+    "MobileNetV3_Seg\/encodeHard3\/pt7\/Relu:0" : {
+      "k" : 74,
+      "w" : 24,
+      "n" : 1,
+      "h" : 42
+    },
+    "MobileNetV3_Seg\/decodeHard2_1\/primary_conv2\/BatchNorm\/FusedBatchNorm:0" : {
+      "k" : 16,
+      "w" : 48,
+      "n" : 1,
+      "h" : 84
+    },
+    "MobileNetV3_Seg\/encodeHard3\/pt4\/Relu:0" : {
+      "k" : 18,
+      "w" : 24,
+      "n" : 1,
+      "h" : 42
+    },
+    "relu_MobileNetV3_Seg\/se_stage3\/excite\/Relu6:0_clip" : {
+      "k" : 146,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "MobileNetV3_Seg\/encodeHard2\/concat_1:0" : {
+      "k" : 48,
+      "w" : 48,
+      "n" : 1,
+      "h" : 84
+    },
+    "MobileNetV3_Seg\/encodeHard4\/dw5\/BatchNorm\/FusedBatchNorm:0" : {
+      "k" : 36,
+      "w" : 12,
+      "n" : 1,
+      "h" : 21
+    },
+    "MobileNetV3_Seg\/encodeHard3\/pt1\/Relu:0" : {
+      "k" : 28,
+      "w" : 24,
+      "n" : 1,
+      "h" : 42
+    },
+    "MobileNetV3_Seg\/stage4_ghost\/primary_conv2\/BatchNorm\/FusedBatchNorm:0" : {
+      "k" : 48,
+      "w" : 12,
+      "n" : 1,
+      "h" : 21
+    },
+    "MobileNetV3_Seg\/se_stage3\/mul:0" : {
+      "k" : 146,
+      "w" : 24,
+      "n" : 1,
+      "h" : 42
+    },
+    "MobileNetV3_Seg\/decodeHard3\/dw5\/BatchNorm\/FusedBatchNorm:0" : {
+      "k" : 20,
+      "w" : 24,
+      "n" : 1,
+      "h" : 42
+    },
+    "MobileNetV3_Seg\/AvgPool2D_1\/AvgPool:0" : {
+      "k" : 80,
+      "w" : 12,
+      "n" : 1,
+      "h" : 21
+    },
+    "MobileNetV3_Seg\/decodeHard1\/pt1\/Relu:0" : {
+      "k" : 10,
+      "w" : 96,
+      "n" : 1,
+      "h" : 168
+    },
+    "MobileNetV3_Seg\/se_stage4\/excite\/mul:0" : {
+      "k" : 178,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "MobileNetV3_Seg\/decode1_conv\/Relu:0" : {
+      "k" : 16,
+      "w" : 96,
+      "n" : 1,
+      "h" : 168
+    },
+    "MobileNetV3_Seg\/head\/conv_logits\/BiasAdd:0" : {
+      "k" : 2,
+      "w" : 96,
+      "n" : 1,
+      "h" : 168
+    },
+    "MobileNetV3_Seg\/se_stage4\/squeeze\/Relu:0" : {
+      "k" : 44,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "MobileNetV3_Seg\/encodeHard4\/dw2\/BatchNorm\/FusedBatchNorm:0" : {
+      "k" : 22,
+      "w" : 12,
+      "n" : 1,
+      "h" : 21
+    },
+    "MobileNetV3_Seg\/stage4_ghost\/downsampe_proj\/BatchNorm\/FusedBatchNorm:0" : {
+      "k" : 96,
+      "w" : 12,
+      "n" : 1,
+      "h" : 21
+    },
+    "relu_MobileNetV3_Seg\/se_stage4\/excite\/Relu6:0" : {
+      "k" : 178,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "MobileNetV3_Seg\/concat_2:0" : {
+      "k" : 48,
+      "w" : 96,
+      "n" : 1,
+      "h" : 168
+    },
+    "MobileNetV3_Seg\/stage4_ghost\/cheap_operation1\/Relu:0" : {
+      "k" : 120,
+      "w" : 12,
+      "n" : 1,
+      "h" : 21
+    },
+    "MobileNetV3_Seg\/decodeHard3\/dw2\/BatchNorm\/FusedBatchNorm:0" : {
+      "k" : 12,
+      "w" : 24,
+      "n" : 1,
+      "h" : 42
+    },
+    "MobileNetV3_Seg\/conv1_2\/cheap_operation2\/BatchNorm\/FusedBatchNorm:0" : {
+      "k" : 8,
+      "w" : 96,
+      "n" : 1,
+      "h" : 168
+    },
+    "MobileNetV3_Seg\/encodeHard2\/pt4\/Relu:0" : {
+      "k" : 12,
+      "w" : 48,
+      "n" : 1,
+      "h" : 84
+    },
+    "MobileNetV3_Seg\/encodeHard4\/concat_1:0" : {
+      "k" : 138,
+      "w" : 12,
+      "n" : 1,
+      "h" : 21
+    },
+    "MobileNetV3_Seg\/encodeHard2\/pt1\/Relu:0" : {
+      "k" : 20,
+      "w" : 48,
+      "n" : 1,
+      "h" : 84
+    },
+    "MobileNetV3_Seg\/conv1_2\/primary_conv1\/Relu:0" : {
+      "k" : 8,
+      "w" : 96,
+      "n" : 1,
+      "h" : 168
+    },
+    "MobileNetV3_Seg\/stage4_ghost\/se\/excite\/Relu6:0" : {
+      "k" : 240,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "MobileNetV3_Seg\/encodeHard2\/dw4\/BatchNorm\/FusedBatchNorm:0" : {
+      "k" : 12,
+      "w" : 48,
+      "n" : 1,
+      "h" : 84
+    },
+    "MobileNetV3_Seg\/encodeHard3\/dw7\/BatchNorm\/FusedBatchNorm:0" : {
+      "k" : 74,
+      "w" : 24,
+      "n" : 1,
+      "h" : 42
+    },
+    "MobileNetV3_Seg\/se_stage4\/mul:0" : {
+      "k" : 178,
+      "w" : 12,
+      "n" : 1,
+      "h" : 21
+    },
+    "MobileNetV3_Seg\/decodeHard3\/concat_3:0" : {
+      "k" : 56,
+      "w" : 24,
+      "n" : 1,
+      "h" : 42
+    },
+    "MobileNetV3_Seg\/decodeHard3\/pt4\/Relu:0" : {
+      "k" : 12,
+      "w" : 24,
+      "n" : 1,
+      "h" : 42
+    },
+    "MobileNetV3_Seg\/stage4_ghost\/downsample_conv\/BatchNorm\/FusedBatchNorm:0" : {
+      "k" : 178,
+      "w" : 12,
+      "n" : 1,
+      "h" : 21
+    },
+    "MobileNetV3_Seg\/decodeHard3\/pt1\/Relu:0" : {
+      "k" : 20,
+      "w" : 24,
+      "n" : 1,
+      "h" : 42
+    },
+    "MobileNetV3_Seg\/se_stage4\/excite\/Relu6:0" : {
+      "k" : 178,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "relu_MobileNetV3_Seg\/se_stage3\/excite\/Relu6:0_neg" : {
+      "k" : 146,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "MobileNetV3_Seg\/encodeHard4\/concat_4:0" : {
+      "k" : 178,
+      "w" : 12,
+      "n" : 1,
+      "h" : 21
+    },
+    "MobileNetV3_Seg\/decodeHard2_1\/add:0" : {
+      "k" : 32,
+      "w" : 48,
+      "n" : 1,
+      "h" : 84
+    },
+    "MobileNetV3_Seg\/encodeHard4\/dw0\/BatchNorm\/FusedBatchNorm:0" : {
+      "k" : 22,
+      "w" : 12,
+      "n" : 1,
+      "h" : 21
+    },
+    "relu_MobileNetV3_Seg\/stage4_ghost\/se\/excite\/Relu6:0_neg" : {
+      "k" : 240,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "MobileNetV3_Seg\/encodeHard4\/pt7\/Relu:0" : {
+      "k" : 90,
+      "w" : 12,
+      "n" : 1,
+      "h" : 21
+    },
+    "MobileNetV3_Seg\/encodeHard4\/pt4\/Relu:0" : {
+      "k" : 22,
+      "w" : 12,
+      "n" : 1,
+      "h" : 21
+    },
+    "MobileNetV3_Seg\/encodeHard3\/concat_1:0" : {
+      "k" : 94,
+      "w" : 24,
+      "n" : 1,
+      "h" : 42
+    },
+    "MobileNetV3_Seg\/stage4_ghost\/se\/excite\/add:0" : {
+      "k" : 240,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "MobileNetV3_Seg\/decodeHard3\/concat:0" : {
+      "k" : 68,
+      "w" : 24,
+      "n" : 1,
+      "h" : 42
+    },
+    "MobileNetV3_Seg\/decodeHard2_0\/cheap_operation2\/BatchNorm\/FusedBatchNorm:0" : {
+      "k" : 16,
+      "w" : 48,
+      "n" : 1,
+      "h" : 84
+    },
+    "MobileNetV3_Seg\/encodeHard4\/pt1\/Relu:0" : {
+      "k" : 36,
+      "w" : 12,
+      "n" : 1,
+      "h" : 21
+    },
+    "MobileNetV3_Seg\/decodeHard3\/dw0\/BatchNorm\/FusedBatchNorm:0" : {
+      "k" : 12,
+      "w" : 24,
+      "n" : 1,
+      "h" : 42
+    },
+    "MobileNetV3_Seg\/decodeHard1\/dw1\/BatchNorm\/FusedBatchNorm:0" : {
+      "k" : 10,
+      "w" : 96,
+      "n" : 1,
+      "h" : 168
+    },
+    "MobileNetV3_Seg\/encodeHard2\/dw2\/BatchNorm\/FusedBatchNorm:0" : {
+      "k" : 12,
+      "w" : 48,
+      "n" : 1,
+      "h" : 84
+    },
+    "inputnode__0" : {
+      "k" : 3,
+      "w" : 192,
+      "n" : 1,
+      "h" : 336
+    },
+    "MobileNetV3_Seg\/encodeHard3\/dw5\/BatchNorm\/FusedBatchNorm:0" : {
+      "k" : 28,
+      "w" : 24,
+      "n" : 1,
+      "h" : 42
+    },
+    "MobileNetV3_Seg\/AvgPool2D\/AvgPool:0__linear_activation" : {
+      "k" : 48,
+      "w" : 24,
+      "n" : 1,
+      "h" : 42
+    },
+    "MobileNetV3_Seg\/decodeHard1\/concat_1:0" : {
+      "k" : 16,
+      "w" : 96,
+      "n" : 1,
+      "h" : 168
+    },
+    "MobileNetV3_Seg\/se_stage4\/excite\/BatchNorm\/FusedBatchNorm:0" : {
+      "k" : 178,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "MobileNetV3_Seg\/decodeHard2_1\/primary_conv1\/Relu:0" : {
+      "k" : 16,
+      "w" : 48,
+      "n" : 1,
+      "h" : 84
+    },
+    "MobileNetV3_Seg\/encodeHard3\/pt6\/Relu:0" : {
+      "k" : 18,
+      "w" : 24,
+      "n" : 1,
+      "h" : 42
+    },
+    "MobileNetV3_Seg\/se_stage3\/excite\/add:0" : {
+      "k" : 146,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "MobileNetV3_Seg\/encodeHard3\/concat_4:0" : {
+      "k" : 146,
+      "w" : 24,
+      "n" : 1,
+      "h" : 42
+    },
+    "MobileNetV3_Seg\/encodeHard3\/pt3\/Relu:0" : {
+      "k" : 46,
+      "w" : 24,
+      "n" : 1,
+      "h" : 42
+    },
+    "MobileNetV3_Seg\/truediv_1:0" : {
+      "k" : 3,
+      "w" : 192,
+      "n" : 1,
+      "h" : 336
+    },
+    "MobileNetV3_Seg\/stage4_ghost\/se\/Mean:0" : {
+      "k" : 240,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "MobileNetV3_Seg\/encodeHard3\/pt0\/Relu:0" : {
+      "k" : 18,
+      "w" : 24,
+      "n" : 1,
+      "h" : 42
+    },
+    "MobileNetV3_Seg\/stage4_ghost\/concat:0" : {
+      "k" : 240,
+      "w" : 12,
+      "n" : 1,
+      "h" : 21
+    },
+    "MobileNetV3_Seg\/encodeHard2\/concat_2:0" : {
+      "k" : 42,
+      "w" : 48,
+      "n" : 1,
+      "h" : 84
+    },
+    "MobileNetV3_Seg\/se_stage3\/excite\/Relu6:0" : {
+      "k" : 146,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "MobileNetV3_Seg\/encodeHard3\/dw2\/BatchNorm\/FusedBatchNorm:0" : {
+      "k" : 18,
+      "w" : 24,
+      "n" : 1,
+      "h" : 42
+    },
+    "inversed_MobileNetV3_Seg\/rgb_std:0_MobileNetV3_Seg\/truediv_1:0" : {
+      "k" : 3,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "MobileNetV3_Seg\/se_stage4\/Mean:0" : {
+      "k" : 178,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "MobileNetV3_Seg\/stage4_ghost\/se\/excite\/mul:0" : {
+      "k" : 240,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "MobileNetV3_Seg\/decodeHard1\/pt0\/Relu:0" : {
+      "k" : 6,
+      "w" : 96,
+      "n" : 1,
+      "h" : 168
+    },
+    "MobileNetV3_Seg\/stage2_conv\/Relu:0" : {
+      "k" : 48,
+      "w" : 48,
+      "n" : 1,
+      "h" : 84
+    },
+    "MobileNetV3_Seg\/decodeHard2_0\/concat_1:0" : {
+      "k" : 32,
+      "w" : 48,
+      "n" : 1,
+      "h" : 84
+    },
+    "MobileNetV3_Seg\/encodeHard3\/dw3\/BatchNorm\/FusedBatchNorm:0" : {
+      "k" : 46,
+      "w" : 24,
+      "n" : 1,
+      "h" : 42
+    },
+    "MobileNetV3_Seg\/decodeHard3\/concat_1:0" : {
+      "k" : 88,
+      "w" : 24,
+      "n" : 1,
+      "h" : 42
+    },
+    "MobileNetV3_Seg\/se_stage3\/excite\/mul:0" : {
+      "k" : 146,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "MobileNetV3_Seg\/encodeHard4\/dw6\/BatchNorm\/FusedBatchNorm:0" : {
+      "k" : 22,
+      "w" : 12,
+      "n" : 1,
+      "h" : 21
+    },
+    "relu_MobileNetV3_Seg\/se_stage4\/excite\/Relu6:0_neg" : {
+      "k" : 178,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "MobileNetV3_Seg\/encodeHard2\/pt3\/Relu:0" : {
+      "k" : 30,
+      "w" : 48,
+      "n" : 1,
+      "h" : 84
+    },
+    "MobileNetV3_Seg\/resize_1\/ResizeBilinear:0" : {
+      "k" : 56,
+      "w" : 48,
+      "n" : 1,
+      "h" : 84
+    },
+    "negated_MobileNetV3_Seg\/rgb_mean:0_MobileNetV3_Seg\/sub:0" : {
+      "k" : 3,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "relu_MobileNetV3_Seg\/stage4_ghost\/se\/excite\/Relu6:0" : {
+      "k" : 240,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "MobileNetV3_Seg\/encodeHard2\/pt0\/Relu:0" : {
+      "k" : 12,
+      "w" : 48,
+      "n" : 1,
+      "h" : 84
+    },
+    "MobileNetV3_Seg\/head\/last_fea\/Relu:0" : {
+      "k" : 12,
+      "w" : 96,
+      "n" : 1,
+      "h" : 168
+    },
+    "MobileNetV3_Seg\/decode2_conv\/Relu:0" : {
+      "k" : 32,
+      "w" : 48,
+      "n" : 1,
+      "h" : 84
+    },
+    "MobileNetV3_Seg\/encodeHard4\/concat_2:0" : {
+      "k" : 78,
+      "w" : 12,
+      "n" : 1,
+      "h" : 21
+    },
+    "MobileNetV3_Seg\/decodeHard2_0\/concat:0" : {
+      "k" : 32,
+      "w" : 48,
+      "n" : 1,
+      "h" : 84
+    },
+    "MobileNetV3_Seg\/conv1_2\/concat_1:0" : {
+      "k" : 16,
+      "w" : 96,
+      "n" : 1,
+      "h" : 168
+    },
+    "MobileNetV3_Seg\/decodeHard1\/concat:0" : {
+      "k" : 22,
+      "w" : 96,
+      "n" : 1,
+      "h" : 168
+    },
+    "MobileNetV3_Seg\/conv1\/Relu:0" : {
+      "k" : 16,
+      "w" : 96,
+      "n" : 1,
+      "h" : 168
+    },
+    "MobileNetV3_Seg\/encodeHard3\/dw0\/BatchNorm\/FusedBatchNorm:0" : {
+      "k" : 18,
+      "w" : 24,
+      "n" : 1,
+      "h" : 42
+    },
+    "MobileNetV3_Seg\/decodeHard3\/pt3\/Relu:0" : {
+      "k" : 30,
+      "w" : 24,
+      "n" : 1,
+      "h" : 42
+    },
+    "MobileNetV3_Seg\/encodeHard4\/dw3\/BatchNorm\/FusedBatchNorm:0" : {
+      "k" : 56,
+      "w" : 12,
+      "n" : 1,
+      "h" : 21
+    },
+    "MobileNetV3_Seg\/concat_1:0" : {
+      "k" : 128,
+      "w" : 48,
+      "n" : 1,
+      "h" : 84
+    },
+    "MobileNetV3_Seg\/decodeHard3\/pt0\/Relu:0" : {
+      "k" : 12,
+      "w" : 24,
+      "n" : 1,
+      "h" : 42
+    },
+    "MobileNetV3_Seg\/se_stage3\/Mean:0" : {
+      "k" : 146,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "MobileNetV3_Seg\/encodeHard2\/concat_3:0__linear_activation" : {
+      "k" : 56,
+      "w" : 48,
+      "n" : 1,
+      "h" : 84
+    },
+    "MobileNetV3_Seg\/conv1_2\/add:0" : {
+      "k" : 16,
+      "w" : 96,
+      "n" : 1,
+      "h" : 168
+    },
+    "MobileNetV3_Seg\/decodeHard2_0\/primary_conv1\/Relu:0" : {
+      "k" : 16,
+      "w" : 48,
+      "n" : 1,
+      "h" : 84
+    },
+    "MobileNetV3_Seg\/se_stage3\/excite\/BatchNorm\/FusedBatchNorm:0" : {
+      "k" : 146,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "MobileNetV3_Seg\/decodeHard3\/dw3\/BatchNorm\/FusedBatchNorm:0" : {
+      "k" : 30,
+      "w" : 24,
+      "n" : 1,
+      "h" : 42
+    },
+    "MobileNetV3_Seg__Softmax__0" : {
+      "k" : 2,
+      "w" : 192,
+      "n" : 1,
+      "h" : 336
+    },
+    "MobileNetV3_Seg\/encodeHard2\/dw5\/BatchNorm\/FusedBatchNorm:0" : {
+      "k" : 20,
+      "w" : 48,
+      "n" : 1,
+      "h" : 84
+    },
+    "MobileNetV3_Seg\/stage4_ghost\/add:0" : {
+      "k" : 96,
+      "w" : 12,
+      "n" : 1,
+      "h" : 21
+    },
+    "MobileNetV3_Seg\/encodeHard4\/pt6\/Relu:0" : {
+      "k" : 22,
+      "w" : 12,
+      "n" : 1,
+      "h" : 21
+    },
+    "MobileNetV3_Seg\/encodeHard4\/dw4\/BatchNorm\/FusedBatchNorm:0" : {
+      "k" : 22,
+      "w" : 12,
+      "n" : 1,
+      "h" : 21
+    },
+    "MobileNetV3_Seg\/decodeHard2_0\/cheap_operation1\/Relu:0" : {
+      "k" : 16,
+      "w" : 48,
+      "n" : 1,
+      "h" : 84
+    },
+    "MobileNetV3_Seg\/encodeHard4\/pt3\/Relu:0" : {
+      "k" : 56,
+      "w" : 12,
+      "n" : 1,
+      "h" : 21
+    },
+    "MobileNetV3_Seg\/encodeHard4\/pt0\/Relu:0" : {
+      "k" : 22,
+      "w" : 12,
+      "n" : 1,
+      "h" : 21
+    },
+    "MobileNetV3_Seg\/head\/resize\/ResizeBilinear:0" : {
+      "k" : 2,
+      "w" : 192,
+      "n" : 1,
+      "h" : 336
+    },
+    "MobileNetV3_Seg\/encodeHard3\/concat_2:0" : {
+      "k" : 64,
+      "w" : 24,
+      "n" : 1,
+      "h" : 42
+    },
+    "MobileNetV3_Seg\/decodeHard2_0\/add:0" : {
+      "k" : 32,
+      "w" : 48,
+      "n" : 1,
+      "h" : 84
+    }
+  }
+}
