@@ -71,18 +71,20 @@
     self.beautyEngine = [[QueenEngine alloc] initWithConfigInfo:configInfo];
     
     [self testBaseFaceBeauty];
-    [self testAdvancedFaceBeauty];
-    [self testFaceMakeup];
+//    [self testAdvancedFaceBeauty];
+//    [self testFaceMakeup];
 //    [self testFaceShape];
 //    [self testBodyShape];
 //    [self testFilter];
-    [self testSticker];
+//    [self testSticker];
 //    [self testGreenScreenOrBlueScreenCutout];
 //    [self testAutoFilter];
 //    [self testGestureDetect];
 //    [self testBackgroundCutout];
-    [self testReHairColor];
+//    [self testReHairColor];
 //    [self testARWriting];
+//    [self testSkinHSV];
+//    [self testFaceMosaicing];
 //    [self testDebug];
 }
 
@@ -354,6 +356,26 @@
 {
     // 打开AR隔空写字功能开关
     [self.beautyEngine setARWriting:YES mode:0];
+}
+
+- (void)testSkinHSV
+{
+    // 打开HSV调节功能开关
+    [self.beautyEngine setQueenBeautyType:kQueenBeautyTypeHSV enable:YES];
+
+    // 设置饱和度系数
+    [self.beautyEngine setQueenBeautyParams:kQueenBeautyParamsHSVSaturation value:0.2f];
+    // 设置对比度系数
+    [self.beautyEngine setQueenBeautyParams:kQueenBeautyParamsHSVContrast value:0.2f];
+}
+
+- (void)testFaceMosaicing
+{
+    // 打开脸部马赛克功能开关
+    [self.beautyEngine setQueenBeautyType:kQueenBeautyTypeFaceMosaicing enable:YES];
+
+    // 设置马赛克大小系数
+    [self.beautyEngine setQueenBeautyParams:kQueenBeautyParamsFaceMosaicing value:0.2f];
 }
 
 - (void)testDebug

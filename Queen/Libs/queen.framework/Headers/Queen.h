@@ -15,6 +15,6 @@ FOUNDATION_EXPORT double QueenVersionNumber;
 FOUNDATION_EXPORT const unsigned char QueenVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <Queen/PublicHeader.h>
-#import <queen/QueenEngine.h>
-#import <queen/QueenEngineConfigInfo.h>
-#import <queen/QueenMaterial.h>
+#import "QueenEngine.h"
+#import "QueenEngineConfigInfo.h"
+#import "QueenMaterial.h"

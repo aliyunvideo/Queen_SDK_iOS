@@ -107,12 +107,24 @@ typedef NS_ENUM(NSInteger, kQueenBeautyType) {
      * Feature: Body Detecting
      */
     kQueenBeautyTypeBodyDetect = 14,
+    /** 功能类型: 色相饱和度明度
+     */
+    /****
+     * Feature: HSV
+     */
+    kQueenBeautyTypeHSV = 15,
+    /** 功能类型: 人脸打马赛克
+     */
+    /****
+     * Feature: FaceMosaicing
+     */
+    kQueenBeautyTypeFaceMosaicing = 16,
     /** 最大值
      */
     /****
      * Beauty type count.
      */
-    kQueenBeautyTypeMax = 15
+    kQueenBeautyTypeMax = 17
 };
 
 /** 对应美颜类型的模式
@@ -327,7 +339,31 @@ typedef NS_ENUM(NSInteger, kQueenBeautyParams) {
      * Feature: Forehead
      * Parameter Range:[0,1]
      */
-    kQueenBeautyParamsForehead      = 21
+    kQueenBeautyParamsForehead      = 21,
+    /** 需要先打开QueenBeautyTypeHSV 项
+     饱和度[-1,1], 默认0
+     */
+    /****
+     * Feature: Saturation
+     * Parameter Range:[-1,1]
+     */
+    kQueenBeautyParamsHSVSaturation      = 22,
+    /** 需要先打开QueenBeautyTypeHSV 项
+     对比度[-1,1], 默认0
+     */
+    /****
+     * Feature: Contrast
+     * Parameter Range:[-1,1]
+     */
+    kQueenBeautyParamsHSVContrast      = 23,
+    /** 需要先打开QueenBeautyTypeFaceMosaicing 项
+     人脸马赛克[0,1], 默认0
+     */
+    /****
+     * Feature: FaceMosaicing
+     * Parameter Range:[0,1]
+     */
+    kQueenBeautyParamsFaceMosaicing      = 24
 
 };
 
