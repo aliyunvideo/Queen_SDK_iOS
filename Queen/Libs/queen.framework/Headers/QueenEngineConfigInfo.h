@@ -1489,6 +1489,26 @@ typedef struct{
     float roll;
 }QEYawPitchRoll;
 
+/** 授权版本
+ */
+/****
+ * License versions.
+ */
+typedef NS_ENUM(NSInteger, kQueenLicenseVer) {
+    /** 默认版本
+     */
+    /****
+     * Default version.
+     */
+    kQueenLicenseVerDefault        = 0,
+    /** 版本1
+     */
+    /****
+     * Version 1.
+     */
+    kQueenLicenseVer1 = 1,
+};
+
 @interface QueenEngineConfigInfo :NSObject
 
 /**
@@ -1506,6 +1526,14 @@ typedef struct{
  * Built-in certificate file path.
  */
 @property (nonatomic, copy) NSString *licenseFile;
+
+/**
+ * 授权版本
+ */
+/****
+ * License version.
+ */
+@property (nonatomic, assign) kQueenLicenseVer licenseVer;
 
 /**
  * Queen使用到的资源根目录，保持不变请为nil
