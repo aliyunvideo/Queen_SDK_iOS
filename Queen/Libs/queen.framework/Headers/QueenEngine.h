@@ -613,6 +613,7 @@
  * @param blueScreenEnabled 是否蓝幕抠图。
  * @param threshold 幕布敏感度[1,10]，默认1。
  * @param autoThresholdEnabled 是否根据环境动态计算幕布敏感度，为true时调节参数threshold失效，为false时调节参数threshold生效。
+ * @param backgroundProcessType 背景处理方式。
  */
 /****
  * Green/Blue Screen matting.
@@ -621,8 +622,9 @@
  * @param blueScreenEnabled Set if blue screen matting.
  * @param threshold Specifies the green/blue screen sensitivity, default is 1. Only takes effect when autoThresholdEnabled is NO.
  * @param autoThresholdEnabled Whether to dynamically calculate the screen sensitivity based on the environment.
+ * @param backgroundProcessType Specifies the background process type.
  */
-- (void)setGreenScreen:(NSString *)backgroundImagePath blueScreenEnabled:(BOOL)blueScreenEnabled threshold:(float)threshold autoThresholdEnabled:(BOOL)autoThresholdEnabled;
+- (void)setGreenScreen:(NSString *)backgroundImagePath blueScreenEnabled:(BOOL)blueScreenEnabled threshold:(float)threshold autoThresholdEnabled:(BOOL)autoThresholdEnabled backgroundProcessType:(kQueenBackgroundProcessType)backgroundProcessType;
 
 /**
  * 纯色背景抠图。

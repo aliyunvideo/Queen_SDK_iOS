@@ -22,15 +22,15 @@
 ### pods集成方式：
 #### pro版本：
 ```ruby
-pod 'Queen', '2.3.3-official-pro'
+pod 'Queen', '2.4.0-official-pro'
 ```
 #### ultimate版本：
 ```ruby
-pod 'Queen', '2.3.3-official-ultimate'
+pod 'Queen', '2.4.0-official-ultimate'
 ```
 #### full版本：
 ```ruby
-pod 'Queen', '2.3.3-official-full'
+pod 'Queen', '2.4.0-official-full'
 ```
 
 ### 本地集成方式：

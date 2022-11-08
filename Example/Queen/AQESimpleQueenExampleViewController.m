@@ -286,14 +286,14 @@
     BOOL enableBlue = NO;
     float threshold = 0;
     BOOL autoThreshold = YES;
-    [self.beautyEngine setGreenScreen:backgroundImgPath blueScreenEnabled:enableBlue threshold:threshold autoThresholdEnabled:autoThreshold];
+    [self.beautyEngine setGreenScreen:backgroundImgPath blueScreenEnabled:enableBlue threshold:threshold autoThresholdEnabled:autoThreshold backgroundProcessType:kQueenBackgroundNormal];
     
 //    // 开启蓝幕抠图功能
 //    enableBlue = YES;
-//    [self.beautyEngine setGreenScreen:backgroundImgPath blueScreenEnabled:enableBlue threshold:threshold autoThresholdEnabled:autoThreshold];
+//    [self.beautyEngine setGreenScreen:backgroundImgPath blueScreenEnabled:enableBlue threshold:threshold autoThresholdEnabled:autoThreshold backgroundProcessType:kQueenBackgroundNormal];
     
 //    // 取消幕布抠图功能
-//    [self.beautyEngine setGreenScreen:nil blueScreenEnabled:enableBlue threshold:threshold autoThresholdEnabled:autoThreshold];
+//    [self.beautyEngine setGreenScreen:nil blueScreenEnabled:enableBlue threshold:threshold autoThresholdEnabled:autoThreshold backgroundProcessType:kQueenBackgroundNormal];
 }
 
 - (void)testBackgroundCutout

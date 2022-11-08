@@ -1323,15 +1323,22 @@ typedef NS_ENUM(NSInteger, kQueenBackgroundProcessType) {
     /** 背景虚化
      */
     /****
-     * Background Process Type For AI Segment: Blur
+     * Background Process Type: Blur
      */
     kQueenBackgroundBlur        = 0,
     /** 背景透明
      */
     /****
-     * Background Process Type For AI Segment: Transparent
+     * Background Process Type: Transparent
      */
     kQueenBackgroundTransparent = 1,
+    /** 背景正常替换
+     */
+    /****
+     * Background Process Type: Normal
+     */
+    kQueenBackgroundNormal = 2,
+
 };
 
 /** 实景抠像性能模式
