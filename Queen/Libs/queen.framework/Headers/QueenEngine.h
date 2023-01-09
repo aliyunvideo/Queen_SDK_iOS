@@ -613,6 +613,24 @@
  * @param blueScreenEnabled 是否蓝幕抠图。
  * @param threshold 幕布敏感度[1,10]，默认1。
  * @param autoThresholdEnabled 是否根据环境动态计算幕布敏感度，为true时调节参数threshold失效，为false时调节参数threshold生效。
+ */
+/****
+ * Green/Blue Screen matting.
+ * Note: When this is turned on, the pure color background matting (setPureColorToBackground) will be disabled.
+ * @param backgroundImagePath Specifies the background resource file path that needs to be replaced by green/blue screen. nil is disabled.
+ * @param blueScreenEnabled Set if blue screen matting.
+ * @param threshold Specifies the green/blue screen sensitivity, default is 1. Only takes effect when autoThresholdEnabled is NO.
+ * @param autoThresholdEnabled Whether to dynamically calculate the screen sensitivity based on the environment.
+ */
+- (void)setGreenScreen:(NSString *)backgroundImagePath blueScreenEnabled:(BOOL)blueScreenEnabled threshold:(float)threshold autoThresholdEnabled:(BOOL)autoThresholdEnabled;
+
+/**
+ * 绿幕/蓝幕抠图。
+ * 注意：开启此抠图功能，纯色背景抠图（setPureColorToBackground）会关闭。
+ * @param backgroundImagePath 需要绿/蓝幕替换的背景资源路径，传空即为取消抠图功能。
+ * @param blueScreenEnabled 是否蓝幕抠图。
+ * @param threshold 幕布敏感度[1,10]，默认1。
+ * @param autoThresholdEnabled 是否根据环境动态计算幕布敏感度，为true时调节参数threshold失效，为false时调节参数threshold生效。
  * @param backgroundProcessType 背景处理方式。
  */
 /****
