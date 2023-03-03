@@ -1607,6 +1607,14 @@ typedef NS_ENUM(NSInteger, kQueenLicenseVer) {
 @property (nonatomic, assign) BOOL enableStats;
 
 /**
+ * 是否允许 SDK 往 控制台 输出详细日志，建议只在 Debug 包开启，避免日志输出过多影响性能，默认为NO
+ */
+/****
+ * Whether to allow print more debug information , the default is NO.
+ */
+@property (nonatomic, assign) BOOL enableDebugLog;
+
+/**
  * 预留字段，选填
  */
 /****
