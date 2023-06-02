@@ -119,12 +119,25 @@ typedef NS_ENUM(NSInteger, kQueenBeautyType) {
      * Feature: FaceMosaicing
      */
     kQueenBeautyTypeFaceMosaicing = 16,
+    /**
+     * 功能类型：隔空写字特效
+     */
+    /****
+     * Feature: 隔空写字 Effects
+     */
+    kQueenBeautyTypeARWriting = 17,
+    /** 功能类型: 专注度检测
+     */
+    /****
+     * Feature: Concentration Detect
+     */
+    kQueenBeautyTypedConcentrationDetect = 18,
     /** 最大值
      */
     /****
      * Beauty type count.
      */
-    kQueenBeautyTypeMax = 17
+    kQueenBeautyTypeMax = 19
 };
 
 /** 对应美颜类型的模式
@@ -187,6 +200,21 @@ typedef NS_ENUM(NSInteger, kQueenBeautyFilterMode) {
      * Function Mode: Makeup Mode, High
      */
     kQueenBeautyFilterModeFaceMakeup_High = 22,
+    /**
+    * 功能类型: AR隔空写字-写字模式
+    */
+    /****
+     * Function Mode: AR_Writing Mode-Writer
+     */
+    kQueenBeautyFilterModeArWriting_Writer = 31,
+    /**
+     * 功能类型: AR隔空写字-绘画模式
+     */
+    /****
+     * Function Mode: AR_Writing Mode-Drawer
+     */
+    kQueenBeautyFilterModeArWriting_Drawer = 32
+
 };
 
 

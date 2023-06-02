@@ -20,17 +20,8 @@
 支持pods与本地集成两种方式。
 
 ### pods集成方式：
-#### pro版本：
 ```ruby
-pod 'Queen', '2.6.0-official-pro'
-```
-#### ultimate版本：
-```ruby
-pod 'Queen', '2.6.0-official-ultimate'
-```
-#### full版本：
-```ruby
-pod 'Queen', '2.6.0-official-full'
+pod 'Queen', '6.1.0-official-pro'
 ```
 
 ### 本地集成方式：
@@ -40,7 +31,7 @@ queen.framework
 opencv2.framework
 ```
 2. 打开Xcode，在工程target的General页签下，在Frameworks, Libraries, and Embedded Content区域中添加以上framework，并将以上添加的framework的Embed属性设置成Embed & Sign。
-3. 将获取到的queen.framework文件中的mnn.metallib添加到工程目录中。(只有full版本和ultimate版本需要)
+3. 将获取到的queen.framework文件中的mnn.metallib添加到工程目录中。
 
 ## 使用示例
 ### 1. 初始化引擎

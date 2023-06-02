@@ -219,6 +219,14 @@
 
 @end
 
+@interface QEConcentrationInfoData : NSObject
+
+@property (nonatomic, assign) float score;
+@property (nonatomic, strong) NSArray<NSNumber *> *scoreList;
+@property (nonatomic, assign) int faceNum;
+
+@end
+
 @class QueenEngine;
 
 @protocol QueenEngineDelegate <NSObject>
@@ -284,6 +292,18 @@
  * @param bodyInfoData The detected body data.
  */
 - (void)queenEngine:(QueenEngine *)engine didDetectBodyInfo:(QEBodyInfoData *)bodyInfoData;
+
+/**
+ * 检测到人体的回调。
+ * @param engine 引擎对象。
+ * @param bodyInfoData 人体数据对象。
+ */
+/****
+ * Called when body is detected.
+ * @param engine The engine object.
+ * @param bodyInfoData The detected body data.
+ */
+- (void)queenEngine:(QueenEngine *)engine didDetectConcentrationInfo:(QEConcentrationInfoData *)concentrationInfoData;
 
 @end
 
@@ -595,6 +615,18 @@
 - (void)addMaterialWithPath:(NSString *)materialPath;
 
 /**
+ * 增加贴纸/贴图/实景抠图需要替换的背景，素材统一接口，支持GLTF,TAOPAI,MEDIAAI 类型。
+ * @param materialPath 要添加的素材的路径。
+ * @param zorder 贴纸顺序
+ */
+/****
+ * Add sticker.
+ * @param materialPath Specifies the sticker resource file path that should be added.
+ * @param zorder Specifies the order of the sticker that should be added.
+ */
+- (void)addMaterialWithPath:(NSString *)materialPath zorder:(int)zorder;
+
+/**
  * 删除贴纸/贴图/实景抠图需要替换的背景。
  * @param materialPath 要删除的素材的路径。
  */
@@ -838,5 +870,13 @@
  * @param show YES/NO.
  */
 - (void)showARWritingDetectPoint:(BOOL)show;
+
+/**
+ * 获取运行时上下文信息
+ */
+/****
+ * Get runtime infomations.
+ */
+- (NSDictionary *)getEngineRuntimeInfo;
 
 @end
