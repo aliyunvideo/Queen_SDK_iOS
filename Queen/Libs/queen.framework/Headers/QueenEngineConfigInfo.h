@@ -132,12 +132,24 @@ typedef NS_ENUM(NSInteger, kQueenBeautyType) {
      * Feature: Concentration Detect
      */
     kQueenBeautyTypedConcentrationDetect = 18,
+    /** 功能类型: 异常行为(物体)检测
+     */
+    /****
+     * Feature: Abnormal action Detect
+     */
+    kQueenBeautyTypedAbnormalActionDetect = 19,
+    /** 功能类型: 活体检测
+     */
+    /****
+     * Feature: Living human Detect
+     */
+    kQueenBeautyTypedLivingHumanDetect = 20,
     /** 最大值
      */
     /****
      * Beauty type count.
      */
-    kQueenBeautyTypeMax = 19
+    kQueenBeautyTypeMax = 21
 };
 
 /** 对应美颜类型的模式
@@ -1542,6 +1554,216 @@ typedef NS_ENUM(NSInteger, kQueenLicenseVer) {
      * Version 1.
      */
     kQueenLicenseVer1 = 1,
+};
+
+/** 专注度类型
+ */
+/****
+ * Concentration types.
+ */
+typedef NS_ENUM(NSInteger, kConcentrationType) {
+    /** 眨眼
+     */
+    /****
+     * Blink.
+     */
+    kConcentrationTypeBlink = 0,
+    /** 张嘴
+     */
+    /****
+     * Open mouth.
+     */
+    kConcentrationTypeOpenMouth = 1,
+    /** 摇头
+     */
+    /****
+     * Head shaking.
+     */
+    kConcentrationTypeShakingHead = 2,
+    /** 头上下移动
+     */
+    /****
+     * Head moves up and down.
+     */
+    kConcentrationTypeYPR_Head_UpDown = 3,
+    /** 头左右移动
+     */
+    /****
+     * Head moves left and right.
+     */
+    kConcentrationTypeYPR_Head_LeftRight = 4
+};
+
+/** 异常动作(物体)类型
+ */
+/****
+ * Abnormal action types.
+ */
+typedef NS_ENUM(NSInteger, kAbnormalActionType) {
+    /** 设备在左侧
+     */
+    /****
+     * Device on the left side.
+     */
+    kAbnormalActionTypeScene_Video_Left = 0,
+    /** 光线过暗
+     */
+    /****
+     * Light is too dark.
+     */
+    kAbnormalActionTypeScene_Light_Dark_Out = 1,
+    /** 光线过亮
+     */
+    /****
+     * Light is too bright.
+     */
+    kAbnormalActionTypeScene_Light_Bright_Out = 2,
+    /** 人物进入
+     */
+    /****
+     * Someone enter.
+     */
+    kAbnormalActionTypeScene_Person_Enter = 3,
+    /** 人物离开
+     */
+    /****
+     * Someone exit.
+     */
+    kAbnormalActionTypeScene_Person_Exit = 4,
+    /** 人物画面占比
+     */
+    /****
+     * The ratio of the person to the screen.
+     */
+    kAbnormalActionTypeScene_Person_In_Rect_Ratio = 5,
+    /** 发现帽子
+     */
+    /****
+     * Hat detected.
+     */
+    kAbnormalActionTypeObjectDetect_Hat = 31,
+    /** 发现手机
+     */
+    /****
+     * Cellphone detected.
+     */
+    kAbnormalActionTypeObjectDetect_CellPhone = 32,
+    /** 发现手表
+     */
+    /****
+     * Watch detected.
+     */
+    kAbnormalActionTypeObjectDetect_Watch = 33,
+    /** 发现头戴式耳机
+     */
+    /****
+     * Headphone detected.
+     */
+    kAbnormalActionTypeObjectDetect_Headphone = 34,
+    /** 发现入耳式耳机
+     */
+    /****
+     * Earphone detected.
+     */
+    kAbnormalActionTypeObjectDetect_EarPhone = 35,
+    /** 发现图片
+     */
+    /****
+     * Picture detected.
+     */
+    kAbnormalActionTypeObjectDetect_Picture = 36,
+    /** 发现显示器
+     */
+    /****
+     * Moniter detected.
+     */
+    kAbnormalActionTypeObjectDetect_Moniter = 37,
+    /** 发现手镯
+     */
+    /****
+     * Bracelet detected.
+     */
+    kAbnormalActionTypeObjectDetect_Bracelet = 38,
+    /** 发现围巾
+     */
+    /****
+     * Scarf detected.
+     */
+    kAbnormalActionTypeObjectDetect_Scarf = 39,
+    /** 低抬头
+     */
+    /****
+     * Head moves up and down.
+     */
+    kAbnormalActionTypeAction_Head_UpDown = 100,
+    /** 左右摆头
+     */
+    /****
+     * Head moves left and right.
+     */
+    kAbnormalActionTypeAction_Head_LeftRight = 101,
+    /** 摇头
+     */
+    /****
+     * Head shaking.
+     */
+    kAbnormalActionTypeAction_Head_Shaking = 102,
+    /** 起立
+     */
+    /****
+     * Stand up.
+     */
+    kAbnormalActionTypeAction_Pose_Standup = 103,
+    /** 坐下
+     */
+    /****
+     * Sit down.
+     */
+    kAbnormalActionTypeAction_Pose_Sitting = 104,
+    /** 举手
+     */
+    /****
+     * Hands up.
+     */
+    kAbnormalActionTypeAction_Pose_Handup = 105,
+    /** 人声说话
+     */
+    /****
+     * Someone speaking.
+     */
+    kAbnormalActionTypeAction_Person_Speech = 106
+};
+
+/** 活体动作类型
+ */
+/****
+ * Living human action types.
+ */
+typedef NS_ENUM(NSInteger, kLivingHumanActionType) {
+    /** 眯眼
+     */
+    /****
+     * Blink.
+     */
+    kLivingHumanActionType_Blink = 0,
+    /** 张嘴哈欠
+     */
+    /****
+     * Open mouth.
+     */
+    kLivingHumanActionType_OpenMouth = 1,
+    /** 摇头晃脑
+     */
+    /****
+     * Head shaking.
+     */
+    kLivingHumanActionType_ShakingHead = 2,
+    /** 低抬头
+     */
+    /****
+     * Head moves up and down.
+     */
+    kLivingHumanActionType_YPR_Head_UpDown = 3
 };
 
 @interface QueenEngineConfigInfo :NSObject

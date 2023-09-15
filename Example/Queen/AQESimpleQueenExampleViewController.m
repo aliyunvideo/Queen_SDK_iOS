@@ -85,6 +85,7 @@
 //    [self testARWriting];
 //    [self testSkinHSV];
 //    [self testFaceMosaicing];
+//    [self testActionDetect];
 //    [self testDebug];
 }
 
@@ -378,6 +379,43 @@
     [self.beautyEngine setQueenBeautyParams:kQueenBeautyParamsFaceMosaicing value:0.2f];
 }
 
+- (void)testActionDetect
+{
+    //设置代理
+    self.beautyEngine.delegate = self;
+    
+    // 开启专注度检测
+    [self.beautyEngine setQueenBeautyType:kQueenBeautyTypedConcentrationDetect enable:YES];
+//    // 关闭专注度检测
+//    [self.beautyEngine setQueenBeautyType:kQueenBeautyTypedConcentrationDetect enable:NO];
+    
+    // 开启异常行为(物体)检测
+    [self.beautyEngine setQueenBeautyType:kQueenBeautyTypedAbnormalActionDetect enable:YES];
+//    // 关闭异常行为(物体)检测
+//    [self.beautyEngine setQueenBeautyType:kQueenBeautyTypedAbnormalActionDetect enable:NO];
+
+    // 开启活体检测
+    [self.beautyEngine setQueenBeautyType:kQueenBeautyTypedLivingHumanDetect enable:YES];
+//    // 关闭活体检测
+//    [self.beautyEngine setQueenBeautyType:kQueenBeautyTypedLivingHumanDetect enable:NO];
+}
+
+// 人脸相似度检测(需要在渲染线程调用)
+- (void)testFaceSimilarity
+{
+    UIImage *image1 = [UIImage imageNamed:@"test_face1"];
+    UIImage *image2 = [UIImage imageNamed:@"test_face2"];
+    float *feature1 = [self.beautyEngine createFaceFeatureWithImage:image1];
+    float *feature2 = [self.beautyEngine createFaceFeatureWithImage:image2];
+    if (feature1 && feature2)
+    {
+        float score = [self.beautyEngine calFaceSimilarityWithFaceFeature1:feature1 withFaceFeature2:feature2];
+        NSLog(@"%f", score);
+    }
+    if (feature1) free(feature1);
+    if (feature2) free(feature2);
+}
+
 - (void)testDebug
 {
     // 展示人脸识别特征点
@@ -454,6 +492,24 @@
 - (void)queenEngine:(QueenEngine *)engine didDetectGesture:(QEGestureData *)gestureData
 {
     NSLog(@"识别到手势类型：%ld，动作类型：%ld", (long)gestureData.gesture, (long)gestureData.action);
+}
+
+// 专注度检测结果回调
+- (void)queenEngine:(QueenEngine *)engine didDetectConcentrationInfo:(QEConcentrationInfoData *)concentrationInfoData
+{
+    NSLog(@"%@", concentrationInfoData);
+}
+
+// 异常行为(物体)检测结果回调
+- (void)queenEngine:(QueenEngine *)engine didDetectAbnormalActionInfo:(QEAbnormalActionInfoData *)abnormalActionInfoData
+{
+    NSLog(@"%@", abnormalActionInfoData);
+}
+
+// 活体检测结果回调
+- (void)queenEngine:(QueenEngine *)engine didDetectLivingHumanInfo:(QELivingHumanInfoData *)livingHumanInfoData
+{
+    NSLog(@"%@", livingHumanInfoData);
 }
 
 #pragma mark - CameraRotate

@@ -21,17 +21,17 @@
 
 ### pods集成方式：
 ```ruby
-pod 'Queen', '6.1.0-official-pro'
+pod 'Queen', '6.2.0-official-pro'
 ```
 
 ### 本地集成方式：
 1. 下载并解压Sample示例工程，获取以下framework文件:
 ```
 queen.framework
-opencv2.framework
 ```
 2. 打开Xcode，在工程target的General页签下，在Frameworks, Libraries, and Embedded Content区域中添加以上framework，并将以上添加的framework的Embed属性设置成Embed & Sign。
 3. 将获取到的queen.framework文件中的mnn.metallib添加到工程目录中。
+4. 在工程target的Build Settings页签下，在选项“Runpath Search Paths”中添加一项："@executable_path/Frameworks"。
 
 ## 使用示例
 ### 1. 初始化引擎

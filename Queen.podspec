@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'Queen'
-  s.version          = '6.1.0-official-pro'
+  s.version          = '6.2.0-official-pro'
   s.summary          = 'Aliyun Queen library'
   s.description      = <<-DESC
 Aliyun Render And Compute Everything Engine.
@@ -13,5 +13,5 @@ Aliyun Render And Compute Everything Engine.
   s.requires_arc = true
   s.source_files = 'Queen/Libs/queen.framework/Headers/*'
   s.resources = 'Queen/Libs/queen.framework/mnn.metallib'
-  s.vendored_frameworks = 'Queen/Libs/queen.framework', 'Queen/Libs/opencv2.framework'
+  s.vendored_frameworks = 'Queen/Libs/queen.framework'
 end

@@ -10,6 +10,7 @@
 #import <CoreVideo/CoreVideo.h>
 #import "QueenEngineConfigInfo.h"
 #import <CoreMedia/CoreMedia.h>
+#import <UIKit/UIKit.h>
 
 @interface QEPixelBufferData : NSObject
 
@@ -219,11 +220,51 @@
 
 @end
 
+@interface QEConcentrationDetectedItem : NSObject
+
+@property (nonatomic, assign) kConcentrationType itemType;
+@property (nonatomic, assign) float score;
+
+@end
+
 @interface QEConcentrationInfoData : NSObject
 
 @property (nonatomic, assign) float score;
-@property (nonatomic, strong) NSArray<NSNumber *> *scoreList;
+@property (nonatomic, strong) NSArray<QEConcentrationDetectedItem *> *detectedItems;
 @property (nonatomic, assign) int faceNum;
+@property (nonatomic, assign) int detectType;
+
+@end
+
+@interface QEAbnormalActionDetectedItem : NSObject
+
+@property (nonatomic, assign) kAbnormalActionType itemType;
+@property (nonatomic, assign) float score;
+
+@end
+
+@interface QEAbnormalActionInfoData : NSObject
+
+@property (nonatomic, assign) float score;
+@property (nonatomic, strong) NSArray<QEAbnormalActionDetectedItem *> *detectedItems;
+@property (nonatomic, assign) int faceNum;
+@property (nonatomic, assign) int detectType;
+
+@end
+
+@interface QELivingHumanDetectedItem : NSObject
+
+@property (nonatomic, assign) kLivingHumanActionType itemType;
+@property (nonatomic, assign) float score;
+
+@end
+
+@interface QELivingHumanInfoData : NSObject
+
+@property (nonatomic, assign) float score;
+@property (nonatomic, strong) NSArray<QELivingHumanDetectedItem *> *detectedItems;
+@property (nonatomic, assign) int faceNum;
+@property (nonatomic, assign) int detectType;
 
 @end
 
@@ -296,14 +337,38 @@
 /**
  * 检测到人体的回调。
  * @param engine 引擎对象。
- * @param bodyInfoData 人体数据对象。
+ * @param concentrationInfoData 人体数据对象。
  */
 /****
- * Called when body is detected.
+ * Called when concentration is detected.
  * @param engine The engine object.
- * @param bodyInfoData The detected body data.
+ * @param concentrationInfoData The detected concentration data.
  */
 - (void)queenEngine:(QueenEngine *)engine didDetectConcentrationInfo:(QEConcentrationInfoData *)concentrationInfoData;
+
+/**
+ * 检测到异常行为的回调。
+ * @param engine 引擎对象。
+ * @param abnormalActionInfoData 异常行为数据对象。
+ */
+/****
+ * Called when abnormal action is detected.
+ * @param engine The engine object.
+ * @param abnormalActionInfoData The detected abnormal action data.
+ */
+- (void)queenEngine:(QueenEngine *)engine didDetectAbnormalActionInfo:(QEAbnormalActionInfoData *)abnormalActionInfoData;
+
+/**
+ * 检测到活体信息的回调。
+ * @param engine 引擎对象。
+ * @param livingHumanInfoData 活体信息数据对象。
+ */
+/****
+ * Called when living human is detected.
+ * @param engine The engine object.
+ * @param livingHumanInfoData The detected living human data.
+ */
+- (void)queenEngine:(QueenEngine *)engine didDetectLivingHumanInfo:(QELivingHumanInfoData *)livingHumanInfoData;
 
 @end
 
@@ -431,6 +496,22 @@
  * @param mode kQueenBeautyFilterMode.
  */
 - (void)setQueenBeautyType:(kQueenBeautyType)type enable:(BOOL)enabled mode:(kQueenBeautyFilterMode)mode;
+
+/**
+ * 打开或者关闭某个功能效果。
+ * @param type kQueenBeautyType 类型的一个值。
+ * @param enabled YES: 打开，NO:关闭。
+ * @param mode kQueenBeautyFilterMode 类型的一个值。
+ * @param userInfo 预留字段。
+ */
+/****
+ * Enabled features.
+ * @param type kQueenBeautyType.
+ * @param enabled YES/NO.
+ * @param mode kQueenBeautyFilterMode.
+ * @param userInfo todo.
+ */
+- (void)setQueenBeautyType:(kQueenBeautyType)type enable:(BOOL)enabled mode:(kQueenBeautyFilterMode)mode userInfo:(NSString *)userInfo;
 
 /**
  * 设置功能参数。
@@ -819,6 +900,50 @@
 - (void)updateInputDataAndRunAlg:(uint8_t *)imageData withImgFormat:(kQueenImageFormat)format withWidth:(int)width withHeight:(int)height withStride:(int)stride
                   withInputAngle:(int)intputAngle withOutputAngle:(int)outputAngle withFlipAxis:(int)flipAxis;
 
+#pragma mark - "人脸比对"
+
+/**
+ * 提取照片中人脸特征
+ * @param image: UIImage对象
+ * @return 返回特征数组，若无人脸，则内部数据为NA
+ */
+/****
+ * Create facial features from a photo.
+ * @param image: UIImage object.
+ * @return Returning an array of features, with "NA" as the internal data if no face is detected.
+ */
+- (float *)createFaceFeatureWithImage:(UIImage *)image;
+
+/**
+ * 提取照片中人脸特征
+ * @param rgbBuf: rgb格式的字节数组buf
+ * @param width：Buf数据对应画面的宽
+ * @param height：Buf数据对应画面的高
+ * @return 返回特征数组，若无人脸，则内部数据为NA
+ */
+/****
+ * Create facial features from a photo.
+ * @param rgbBuf: buf from rgb format.
+ * @param width：The width of the image corresponding to the Buf data.
+ * @param height：The height of the image corresponding to the Buf data.
+ * @return Returning an array of features, with "NA" as the internal data if no face is detected.
+ */
+- (float *)createFaceFeature:(uint8_t *)rgbBuf withWidth:(int)width withHeight:(int)height;
+
+/**
+ * 计算两张人脸的相似度
+ * @param faceFeature1：人脸1的特征数据
+ * @param faceFeature2：人脸2的特征数据
+ * @return：返回打分，分值范围：[0.0-1.0]
+ */
+/****
+ * Calculate the similarity between two faces.
+ * @param faceFeature1：Facial feature data for face 1.
+ * @param faceFeature2：Facial feature data for face 2.
+ * @return：Returning a score with a range of [0.0-1.0].
+ */
+- (float)calFaceSimilarityWithFaceFeature1:(float*)faceFeature1 withFaceFeature2:(float *)faceFeature2;
+
 #pragma mark - "调试相关"
 
 /**
@@ -870,6 +995,16 @@
  * @param show YES/NO.
  */
 - (void)showARWritingDetectPoint:(BOOL)show;
+
+/**
+ * 展示物体识别框。
+ * @param show 是否展示。
+ */
+/****
+ * Show key points for object detecting.
+ * @param show YES/NO.
+ */
+- (void)showObjectDetectPoint:(BOOL)show;
 
 /**
  * 获取运行时上下文信息
