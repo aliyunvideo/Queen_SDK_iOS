@@ -6,6 +6,9 @@
 //  Copyright © 2021 alibaba-inc. All rights reserved.
 //
 
+#ifndef QueenEngineConfigInfo_H
+#define QueenEngineConfigInfo_H
+
 #import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
@@ -1875,3 +1878,5 @@ typedef NS_ENUM(NSInteger, kLivingHumanActionType) {
 @end
 
 NS_ASSUME_NONNULL_END
+
+#endif

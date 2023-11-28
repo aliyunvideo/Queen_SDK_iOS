@@ -6,6 +6,9 @@
 //  Copyright © 2022 alibabaAliyun. All rights reserved.
 //
 
+#ifndef QueenMaterial_H
+#define QueenMaterial_H
+
 #import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
@@ -140,3 +143,5 @@ typedef NS_ENUM(NSUInteger, kQueenMaterialType) {
 @end
 
 NS_ASSUME_NONNULL_END
+
+#endif

@@ -6,6 +6,9 @@
 //  Copyright © 2021 alibaba-inc. All rights reserved.
 //
 
+#ifndef QueenEngine_H
+#define QueenEngine_H
+
 #import <Foundation/Foundation.h>
 #import <CoreVideo/CoreVideo.h>
 #import "QueenEngineConfigInfo.h"
@@ -1015,3 +1018,5 @@
 - (NSDictionary *)getEngineRuntimeInfo;
 
 @end
+
+#endif
