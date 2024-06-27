@@ -1868,6 +1868,30 @@ typedef NS_ENUM(NSInteger, kLivingHumanActionType) {
 @property (nonatomic, assign) BOOL enableDebugLog;
 
 /**
+ * 是否允许 SDK 缓存日志到本地文件，默认为YES
+ */
+/****
+ * Whether to allow cache logs to file , the default is YES.
+ */
+@property (nonatomic, assign) BOOL enableCacheLog;
+
+/**
+ * SDK 缓存日志到本地的文件目录路径
+ */
+/****
+ * The directory of logs, default is nil.
+ */
+@property (nonatomic, copy) NSString *logDirPath;
+
+/**
+ * 是否允许 SDK 上报 SDK的崩溃日志，默认为YES
+ */
+/****
+ * Whether to allow report crash log of the SDK, the default is YES.
+ */
+@property (nonatomic, assign) BOOL enableCrashReport;
+
+/**
  * 预留字段，选填
  */
 /****

@@ -7,9 +7,9 @@
         "hasShapeFlexibility" : "0",
         "isOptional" : "0",
         "dataType" : "Float32",
-        "formattedType" : "MultiArray (Float32 2 × 288 × 160)",
+        "formattedType" : "MultiArray (Float32 2 × 272 × 160)",
         "shortDescription" : "",
-        "shape" : "[2, 288, 160]",
+        "shape" : "[2, 272, 160]",
         "name" : "MobileNetV3_Seg__Softmax__0",
         "type" : "MultiArray"
       }
@@ -28,17 +28,17 @@
       "macCatalyst" : "12.0"
     },
     "neuralNetworkLayerTypeHistogram" : {
-      "PoolingAverage" : 4,
-      "Concat" : 31,
-      "UnaryThreshold" : 2,
-      "Convolution" : 93,
+      "PoolingAverage" : 5,
+      "Concat" : 30,
+      "UnaryThreshold" : 3,
+      "Convolution" : 92,
       "ResizeBilinear" : 4,
       "Softmax" : 1,
       "Add" : 6,
-      "BatchNorm" : 93,
-      "Multiply" : 6,
-      "ActivationLinear" : 7,
-      "ActivationReLU" : 52,
+      "BatchNorm" : 92,
+      "Multiply" : 8,
+      "ActivationLinear" : 9,
+      "ActivationReLU" : 53,
       "LoadConstant" : 2
     },
     "modelType" : {
@@ -53,9 +53,9 @@
         "hasShapeFlexibility" : "0",
         "isOptional" : "0",
         "dataType" : "Float32",
-        "formattedType" : "MultiArray (Float32 3 × 288 × 160)",
+        "formattedType" : "MultiArray (Float32 3 × 272 × 160)",
         "shortDescription" : "",
-        "shape" : "[3, 288, 160]",
+        "shape" : "[3, 272, 160]",
         "name" : "inputnode__0",
         "type" : "MultiArray"
       }

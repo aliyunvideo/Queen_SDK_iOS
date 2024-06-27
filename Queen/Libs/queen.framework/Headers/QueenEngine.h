@@ -13,7 +13,9 @@
 #import <CoreVideo/CoreVideo.h>
 #import "QueenEngineConfigInfo.h"
 #import <CoreMedia/CoreMedia.h>
+#if TARGET_OS_IPHONE
 #import <UIKit/UIKit.h>
+#endif
 
 @interface QEPixelBufferData : NSObject
 
@@ -472,6 +474,32 @@
  */
 - (void)setOutputRectWithOriginX:(int)originX withOriginY:(int)originY withWidth:(int)width withHeight:(int)height;
 
+/*!
+ * 设置裁剪输出
+ * @param originX 默认0
+ * @param originY 默认0
+ * @param width 默认0
+ * @param height 默认0
+ */
+/****
+ * Set the output cropping rectangle.
+ * @param originX Default is 0.
+ * @param originY Default is 0.
+ * @param width Default is 0.
+ * @param height Default is 0.
+ */
+- (void)setCropRectWithOriginX:(int)originX withOriginY:(int)originY withWidth:(int)width withHeight:(int)height;
+
+/**
+ * 设置等比放大裁剪
+ * @param scale 放大倍数
+ */
+/****
+ * Set the output cropping scale.
+ * @param scale Default is 1.
+ */
+- (void)setCropScale:(float)scale;
+
 #pragma mark - "美颜类型和美颜参数API"
 
 /**
@@ -905,6 +933,7 @@
 
 #pragma mark - "人脸比对"
 
+#if TARGET_OS_IPHONE
 /**
  * 提取照片中人脸特征
  * @param image: UIImage对象
@@ -916,6 +945,7 @@
  * @return Returning an array of features, with "NA" as the internal data if no face is detected.
  */
 - (float *)createFaceFeatureWithImage:(UIImage *)image;
+#endif
 
 /**
  * 提取照片中人脸特征
