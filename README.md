@@ -21,7 +21,7 @@
 
 ### pods集成方式：
 ```ruby
-pod 'Queen', '6.8.1-official-pro'
+pod 'Queen', '6.8.3-official-pro'
 ```
 
 ### 本地集成方式：

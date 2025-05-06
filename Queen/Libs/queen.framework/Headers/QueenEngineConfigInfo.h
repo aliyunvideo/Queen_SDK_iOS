@@ -1876,6 +1876,14 @@ typedef NS_ENUM(NSInteger, kLivingHumanActionType) {
 @property (nonatomic, assign) BOOL enableCacheLog;
 
 /**
+ * 是否允许人脸检测算法采用gpu推理模式，默认为YES
+ */
+/****
+ * Whether to allow face detect with gpu mode , the default is YES.
+ */
+@property (nonatomic, assign) BOOL enableFaceDetectGPUMode;
+
+/**
  * SDK 缓存日志到本地的文件目录路径
  */
 /****
