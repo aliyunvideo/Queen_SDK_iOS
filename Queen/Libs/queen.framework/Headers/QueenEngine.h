@@ -438,6 +438,7 @@
  */
 - (void)powerSavingEnabled:(BOOL)enabled;
 
+
 /**
  * 设置渲染的viewport。
  * 注意：如果不设置默认使用输入的数据的宽和高。
